@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="id.astrajingga.monicca.SplashScreen">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/splashscreen_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:id="@+id/splashscreen_viewpager_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/splashscreen_btn_learnmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_outline"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="learn more"
+        android:layout_above="@id/splashscreen_viewpager_indicator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:textColor="#FFD600"
+        android:visibility="invisible"/>
+
+    <!-- logo
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/signin_logo" />
+   -->
+
+</RelativeLayout>

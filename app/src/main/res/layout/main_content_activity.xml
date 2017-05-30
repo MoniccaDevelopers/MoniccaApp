@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="id.astrajingga.monicca.Main"
+    tools:showIn="@layout/main_appbar_container">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EEEEEE"
+        android:orientation="vertical">
+
+        <!-- nametag -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:text="@string/main_welcome"
+                android:textSize="15sp" />
+
+            <TextView android:id="@+id/main_text_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- viewpager -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/main_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_viewpager_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_viewpager"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <!-- content -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <!-- news feed -->
+            <RelativeLayout android:id="@+id/nf"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="16dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingBottom="10dp">
+
+                    <Button android:id="@+id/main_button_newsfeed"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_nf"
+                        android:backgroundTint="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_button_newsfeed"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/main_nf"
+                        android:textColor="#BDBDBD"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- education cost calculator -->
+            <RelativeLayout android:id="@+id/ep"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_above="@id/nf"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:onClick="ep">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:onClick="ep">
+
+                    <Button android:id="@+id/main_button_educationplan"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_ep"
+                        android:backgroundTint="#FFD600"
+                        android:onClick="ep" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/main_button_educationplan"
+                        android:layout_centerHorizontal="true"
+                        android:onClick="ep"
+                        android:text="@string/main_ep"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- invesment -->
+            <RelativeLayout android:id="@+id/inv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/nf"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingBottom="10dp">
+
+                    <Button android:id="@+id/inv_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_inv"
+                        android:backgroundTint="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/inv_btn"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/main_inv"
+                        android:textColor="#BDBDBD"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- haj -->
+            <RelativeLayout  android:id="@+id/hj"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/nf"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#FFFFFF">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <Button android:id="@+id/hj_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_hj"
+                        android:backgroundTint="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/hj_btn"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/main_hj"
+                        android:textAlignment="center"
+                        android:textColor="#BDBDBD"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- personal advisor -->
+            <RelativeLayout android:id="@+id/pa"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toLeftOf="@id/nf"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <Button android:id="@+id/pa_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_pa"
+                        android:backgroundTint="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pa_btn"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/main_pa"
+                        android:textAlignment="center"
+                        android:textColor="#BDBDBD"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- financial check -->
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_above="@+id/pa"
+                android:layout_toLeftOf="@+id/ep"
+                android:layout_toStartOf="@+id/ep"
+                android:background="#FFFFFF"
+                android:onClick="fc">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:onClick="fc">
+
+                    <Button android:id="@+id/fc_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_fc"
+                        android:backgroundTint="#FFD600"
+                        android:onClick="fc" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fc_btn"
+                        android:layout_centerHorizontal="true"
+                        android:onClick="fc"
+                        android:text="@string/main_fc"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- goal base -->
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_above="@+id/inv"
+                android:layout_toEndOf="@+id/ep"
+                android:layout_toRightOf="@+id/ep"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:onClick="gb">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:onClick="gb"
+                    android:paddingBottom="10dp">
+
+                    <Button android:id="@+id/gb_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_gb"
+                        android:backgroundTint="#FFD600"
+                        android:onClick="gb" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/gb_btn"
+                        android:layout_centerHorizontal="true"
+                        android:onClick="gb"
+                        android:text="@string/main_gb"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- commodity -->
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/pa"
+                android:layout_toLeftOf="@id/hj"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingBottom="10dp">
+
+                    <Button android:id="@+id/cmd_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_cmd"
+                        android:backgroundTint="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cmd_btn"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/main_cmd"
+                        android:textColor="#BDBDBD"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- history -->
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/inv"
+                android:layout_toRightOf="@id/hj"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingBottom="10dp">
+
+                    <Button android:id="@+id/oth_btn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/main_btn_hst"
+                        android:backgroundTint="#BDBDBD" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/oth_btn"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/main_hst"
+                        android:textColor="#BDBDBD"
+                        android:textSize="10sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+Sunday, April 28, 2017
+MONICCA Alpha V0.1.0
+-- Introduction to basic Protoype that consist of 3 features, Financial Check-Up, Education Cost Calculator and Goal Base.
+
+
+Sunday, May 21, 2017
+MONICCA v0.1.1
+-- Huge change on UI;
+-- New program structure;
+-- Faster than before, because fragment implementation;
+-- New icon for device;
+-- Implementation on Auth system. Sign-In and Sign-Up still disabled, but can access the demo version;
+-- Add Navigation Drawer;
+-- Add View Page as mini carrousel;
+-- Change Financial Checkup to Financial Check and Education Cost Calculator to Education Plan;
+-- Fixed Formula for calculations of Financial Check, Education Plan and Goal Base;
+-- Change keyboard input for every user input field, text keyboard input for text and number phone keypad for numeric purpose;
+-- Auto number format for every numeric input;
+-- Add description to every features;
+-- Fixed Padding;
+-- Add realtime TimeStamps to History;
+-- History for every feature now expandable.

@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">MONICCA</string>
+
+    <!-- sign in -->
+    <string name="signin_desc_img">Monicca App Logo</string>
+    <string name="signin_hint_username">Username or Email</string>
+    <string name="signin_hint_password">Password</string>
+    <string name="signin_btn_signin">sign in</string>
+    <string name="signin_btn_signup">sign up</string>
+    <string name="signin_text_demo">or try our</string>
+    <string name="signin_btn_demo">DEMO HERE!</string>
+
+    <!-- sign up -->
+    <string name="signup_desc_img">Sign Up Header</string>
+    <string name="signup_hint_email">Email</string>
+    <string name="signup_hint_password">Password</string>
+    <string name="signup_hint_income">Current Income</string>
+    <string name="signup_btn_signup">sign up</string>
+    <string name="signup_text_haveaccount">Already Have an Account?</string>
+    <string name="signup_btn_signin">Sign In!</string>
+
+    <!-- main -->
+    <string name="main_welcome">Welcome,</string>
+    <string name="main_fc">FINANCIAL\nCHECKUP</string>
+    <string name="main_ep">EDUCATION\nPLAN</string>
+    <string name="main_gb">GOAL BASE</string>
+    <string name="main_inv">INVESMENT</string>
+    <string name="main_nf">NEWS FEED</string>
+    <string name="main_pa">PERSONAL\nADVISOR</string>
+    <string name="main_cmd">COMMODITY</string>
+    <string name="main_hj">HAJ AND\nUMROH</string>
+    <string name="main_hst">HISTORY</string>
+
+    <!-- navigation drawer -->
+    <string name="navdrawer_home">Home</string>
+    <string name="navdrawer_editprofile">Edit Profile</string>
+    <string name="navdrawer_income">Income</string>
+    <string name="navdrawer_bank">Bank Name</string>
+    <string name="navdrawer_bankaccount">Bank Account Type</string>
+    <string name="navdrawer_settings">Settings</string>
+    <string name="navdrawer_logout">Log Out</string>
+
+    <!-- financial checkup -->
+    <!-- main -->
+    <string name="fc_desc_img">Financial Check Logo</string>
+    <string name="fc_text_title">Financial Check</string>
+    <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
+    <string name="fc_btn_start">start</string>
+
+    <!-- start -->
+    <string name="fc_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
+    <string name="fc_text_accinfo">ACCOUNT INFORMATION</string>
+    <string name="fc_hint_balance">Current Balance</string>
+    <string name="fc_hint_income">Monthly Current Income</string>
+    <string name="fc_hint_savings">Monthly Current Savings</string>
+    <string name="fc_hint_mortgage">Monthly Current Mortgage</string>
+    <string name="fc_btn_calculate">calculate</string>
+
+    <!-- result -->
+    <string name="fc_text_titleresult">Analysis Result</string>
+    <string name="fc_text_financialconditionresult">Your Financial Condition</string>
+    <string name="fc_text_recommends">MONICCA Recommends</string>
+    <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
+    <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
+    <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
+    <string name="fc_btn_save">save result</string>
+
+    <!-- history -->
+    <string name="fc_text_titlehistory">Financial Checkup History</string>
+    <string name="fc_desc_dropdownicon">Dropdown Icon</string>
+    <string name="fc_btn_home">back to home</string>
+
+    <!-- spinner -->
+    <string-array name="edulevel_list">
+        <item>Elementary School</item>
+        <item>Middle School</item>
+        <item>High School</item>
+        <item>College</item>
+    </string-array>
+    <string-array name="time_list">
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string-array name="object_list">
+        <item>Car</item>
+        <item>Bike</item>
+        <item>Marriage</item>
+        <item>Trip</item>
+        <item>Gadget</item>
+    </string-array>
+    <string-array name="language_list">
+        <item>English</item>
+        <item>Bahasa</item>
+    </string-array>
+
+    <!-- etc -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="id.astrajingga.monicca.features.ep.FragmentEpMain">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
+
+        <!-- image -->
+        <ImageView android:id="@+id/ep_image_logo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/main_btn_ep" />
+
+        <!-- title -->
+        <TextView android:id="@+id/ep_text_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ep_image_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:text="Education Plan"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <!-- desc -->
+        <TextView
+            android:background="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:layout_below="@id/ep_text_logo"
+            android:text="An education planner calculator to determine how much money you should save to fund your education in the future." />
+
+    </RelativeLayout>
+
+    <!-- button -->
+    <Button android:id="@+id/epmain_button_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button"
+        android:text="start"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+</LinearLayout>

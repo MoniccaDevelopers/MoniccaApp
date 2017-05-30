@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical"
+    tools:context="id.astrajingga.monicca.Signin">
+
+    <!-- logo -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_white"
+            android:contentDescription="@string/signin_desc_img"
+            android:src="@drawable/signin_logo" />
+
+    </RelativeLayout>
+
+    <!-- sign in -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:paddingEnd="40dp"
+        android:paddingStart="40dp"
+        android:paddingTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:paddingBottom="14dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp">
+
+            <!-- username -->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:textColorHint="#BDBDBD">
+
+                <EditText
+                    android:id="@+id/signin_edittext_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/signin_username"
+                    android:hint="@string/signin_hint_username"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLength="16"
+                    android:maxLines="1"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- password -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/toogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:textColorHint="#BDBDBD"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="#BDBDBD">
+
+                <EditText
+                    android:id="@+id/signin_edittext_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/signin_visibilityoff"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/signin_password"
+                    android:fontFamily="@string/font_family_regular"
+                    android:hint="@string/signin_hint_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:maxLength="16"
+                    android:maxLines="1"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- sign in button -->
+                <Button
+                    android:id="@+id/signin_button_signin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button"
+                    android:text="@string/signin_btn_signin"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <!-- sign up button -->
+                <Button
+                    android:id="@+id/signin_button_signup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button_outline"
+                    android:text="@string/signin_btn_signup"
+                    android:textColor="#FFD600"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- demo button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <!-- text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/signin_text_demo" />
+
+            <!-- button -->
+            <TextView
+                android:id="@+id/signin_button_demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signin_btn_demo"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
