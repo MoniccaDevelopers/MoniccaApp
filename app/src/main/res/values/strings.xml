@@ -41,34 +41,38 @@
     <string name="navdrawer_logout">Log Out</string>
 
     <!-- financial checkup -->
-    <!-- main -->
-    <string name="fc_desc_img">Financial Check Logo</string>
-    <string name="fc_text_title">Financial Check</string>
-    <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
-    <string name="fc_btn_start">start</string>
+        <!-- main -->
+        <string name="fc_desc_img">Financial Check Logo</string>
+        <string name="fc_text_title">Financial Check</string>
+        <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
+        <string name="fc_btn_start">start</string>
 
-    <!-- start -->
-    <string name="fc_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
-    <string name="fc_text_accinfo">ACCOUNT INFORMATION</string>
-    <string name="fc_hint_balance">Current Balance</string>
-    <string name="fc_hint_income">Monthly Current Income</string>
-    <string name="fc_hint_savings">Monthly Current Savings</string>
-    <string name="fc_hint_mortgage">Monthly Current Mortgage</string>
-    <string name="fc_btn_calculate">calculate</string>
+        <!-- start -->
+        <string name="fc_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
+        <string name="fc_text_accinfo">ACCOUNT INFORMATION</string>
+        <string name="fc_hint_balance">Current Balance</string>
+        <string name="fc_hint_income">Monthly Current Income</string>
+        <string name="fc_hint_savings">Monthly Current Savings</string>
+        <string name="fc_hint_mortgage">Monthly Current Mortgage</string>
+        <string name="fc_btn_calculate">calculate</string>
 
-    <!-- result -->
-    <string name="fc_text_titleresult">Analysis Result</string>
-    <string name="fc_text_financialconditionresult">Your Financial Condition</string>
-    <string name="fc_text_recommends">MONICCA Recommends</string>
-    <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
-    <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
-    <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
-    <string name="fc_btn_save">save result</string>
+        <!-- result -->
+        <string name="fc_text_titleresult">Analysis Result</string>
+        <string name="fc_text_financialconditionresult">Your Financial Condition</string>
+        <string name="fc_text_recommends">MONICCA Recommends</string>
+        <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
+        <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
+        <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
+        <string name="fc_btn_save">save result</string>
 
-    <!-- history -->
-    <string name="fc_text_titlehistory">Financial Checkup History</string>
-    <string name="fc_desc_dropdownicon">Dropdown Icon</string>
-    <string name="fc_btn_home">back to home</string>
+        <!-- history -->
+        <string name="fc_text_titlehistory">Financial Checkup History</string>
+        <string name="fc_desc_dropdownicon">Dropdown Icon</string>
+        <string name="fc_btn_home">back to home</string>
+
+    <!-- Education Plan -->
+        <!-- main -->
+        <string name="ep_desc_img">Education Plan Logo</string>
 
     <!-- spinner -->
     <string-array name="edulevel_list">
