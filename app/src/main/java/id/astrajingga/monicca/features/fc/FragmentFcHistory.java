@@ -61,9 +61,9 @@ public class FragmentFcHistory extends Fragment {
         String history = date + "\n\n" +
                 "Financial Condition: " + fchistoryStringCondition + "\n\n" +
                 "MONICCA Recommends\n" +
-                "Ideal Balance: " + fchistoryStringIdealbalance + "\n" +
-                "Ideal Monthly Savings: " + fchistoryStringIdealsavings + "\n" +
-                "Ideal Monthly Mortgage: " + fchistoryStringIdealmortgage;
+                "Ideal Minimum Balance: " + fchistoryStringIdealbalance + "\n" +
+                "Ideal Minimum Monthly Savings: " + fchistoryStringIdealsavings + "\n" +
+                "Ideal Maximum Monthly Mortgage: " + fchistoryStringIdealmortgage;
 
         expandableTextView = (ExpandableTextView)view.findViewById(R.id.fchistory_expand_item);
         expandableTextView.setText(history);
