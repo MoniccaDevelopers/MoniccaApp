@@ -73,6 +73,7 @@
     <!-- Education Plan -->
         <!-- main -->
         <string name="ep_desc_img">Education Plan Logo</string>
+        <string name="ep_text_title">Education Plan</string>
 
     <!-- spinner -->
     <string-array name="edulevel_list">
