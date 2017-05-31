@@ -26,7 +26,7 @@ public class register_process extends AsyncTask<String,Void,String> {
     }
     protected String doInBackground(String... params) {
 
-        String reg_url="http://monicca.ai/api/oke/register.php";
+        String reg_url="http://monicca.ai/api/okerubahhh/register.php";
         String method= params[0];
         if (method.equals("register")){
             String nama = params [1];
