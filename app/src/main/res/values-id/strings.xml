@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- financial checkup -->
+        <!-- main -->
+        <string name="fc_desc_img">Financial Check Logo</string>
+        <string name="fc_text_title">Financial Check</string>
+        <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
+        <string name="fc_btn_start">start</string>
+
+</resources>

@@ -1,24 +1,19 @@
 package id.astrajingga.monicca;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 public class SplashScreen extends AppCompatActivity {
     // variables
+    Typeface typeface;
+
     // view pager
     ViewPager viewPager;
-
-    // view pager indicator
-    LinearLayout splashScreenViewPagerIndicator;
-    private int dotsCount;
-    private ImageView[] dot;
 
     Button splashscreenButtonLearnmore;
 
@@ -31,23 +26,6 @@ public class SplashScreen extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.splashscreen_viewpager);
         SplashScreenViewPagerAdapter splashScreenViewPagerAdapter = new SplashScreenViewPagerAdapter(this);
         viewPager.setAdapter(splashScreenViewPagerAdapter);
-
-        // view pager indicator
-        splashScreenViewPagerIndicator = (LinearLayout) findViewById(R.id.splashscreen_viewpager_indicator);
-        dotsCount = splashScreenViewPagerAdapter.getCount();
-        dot = new ImageView[dotsCount];
-
-        for (int i = 0; i < dotsCount; i++) {
-            dot[i] = new ImageView(this);
-            dot[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.dot_nonactive));
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(8, 0, 8, 0);
-
-            splashScreenViewPagerIndicator.addView(dot[i], params);
-        }
-
-        dot[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.dot_active));
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
@@ -58,14 +36,10 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
 
-                for (int i = 0; i < dotsCount; i++) {
-                    dot[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.dot_nonactive));
-                }
-
-                dot[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.dot_active));
-
-                if (position == 2) {
+                if (position == 3) {
+                    typeface = Typeface.createFromAsset(getAssets(), "fonts/BebasNeue.otf");
                     splashscreenButtonLearnmore = (Button) findViewById(R.id.splashscreen_btn_learnmore);
+                    splashscreenButtonLearnmore.setTypeface(typeface);
                     splashscreenButtonLearnmore.setVisibility(View.VISIBLE);
                     splashscreenButtonLearnmore.setOnClickListener(new View.OnClickListener() {
 
