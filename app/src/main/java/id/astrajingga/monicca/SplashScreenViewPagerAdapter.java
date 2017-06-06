@@ -3,23 +3,18 @@ package id.astrajingga.monicca;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import static android.R.string.no;
 
 public class SplashScreenViewPagerAdapter extends PagerAdapter {
     // variables
     private Context context;
     private LayoutInflater layoutInflater;
-    private int[] imageSrc = {R.drawable.sample_one, R.drawable.sample_two, R.drawable.sample_three};
+    private int[] imageSrc = {R.drawable.splashscreen_one, R.drawable.splashscreen_two, R.drawable.splashscreen_three, R.drawable.splashscreen_four};
 
-    public SplashScreenViewPagerAdapter(Context context) {
+    SplashScreenViewPagerAdapter(Context context) {
         this.context = context;
     }
 
@@ -47,7 +42,7 @@ public class SplashScreenViewPagerAdapter extends PagerAdapter {
             public void onClick(View v) {
 
                 if (position == 2) {
-                    Toast.makeText(context, "bullshit", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "dummy", Toast.LENGTH_SHORT).show();
                 }
 
             }

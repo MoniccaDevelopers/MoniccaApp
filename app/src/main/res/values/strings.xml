@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">MONICCA</string>
 
+    <!-- splash screen -->
+    <string name="splashscreen_desc_img">Splash Screen Images</string>
+    <string name="splashscreen_btn_learnmore">learn more</string>
+
     <!-- sign in -->
     <string name="signin_desc_img">Monicca App Logo Baru</string>
     <string name="signin_hint_username">Username or Email</string>
@@ -8,7 +12,7 @@
     <string name="signin_btn_signin">sign in</string>
     <string name="signin_btn_signup">sign up</string>
     <string name="signin_text_demo">or try our</string>
-    <string name="signin_btn_demo">ANOTHER TEST</string>
+    <string name="signin_btn_demo">DEMO</string>
 
     <!-- sign up -->
     <string name="signup_desc_img">Sign Up Header</string>

@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId 'ai.astrajingga.monicca'
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 2
         versionName 'sample_one.sample_one'
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.splashscreen_one.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
