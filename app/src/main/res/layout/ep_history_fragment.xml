@@ -32,7 +32,7 @@
                 android:layout_marginBottom="4dp"
                 android:background="#FFFFFF"
                 app:animDuration="200"
-                app:maxCollapsedLines="4">
+                app:maxCollapsedLines="5">
 
                 <TextView
                     android:id="@+id/expandable_text"
@@ -61,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/btn_bg_rs_yellow"
         android:text="back to home"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />

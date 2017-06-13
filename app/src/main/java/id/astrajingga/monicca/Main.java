@@ -36,8 +36,6 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 public class Main extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
     // variables
-    String mainStringUsername;
-
     // view pager
     ViewPager viewPager;
 
@@ -78,7 +76,7 @@ public class Main extends AppCompatActivity
                 dot[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.dot_nonactive));
 
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                params.setMargins(8, 0, 8, 0);
+                params.setMargins(4, 0, 4, 0);
 
                 mainViewPagerIndicator.addView(dot[i], params);
             }
@@ -109,12 +107,7 @@ public class Main extends AppCompatActivity
 
         // view pager timer
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new viewPagerTimerTask(), 3500, 3500);
-
-        Intent intent = getIntent();
-        TextView mainTextUsername = (TextView) findViewById(R.id.main_text_username);
-        mainStringUsername = intent.getStringExtra("username");
-        mainTextUsername.setText(mainStringUsername);
+        timer.scheduleAtFixedRate(new viewPagerTimerTask(), 4000, 4000);
     }
 
     @Override
@@ -158,21 +151,14 @@ public class Main extends AppCompatActivity
 
         if (id == R.id.nav_button_home) {
             Intent intent = new Intent(Main.this, Main.class);
-            intent.putExtra("username", mainStringUsername);
             startActivity(intent);
-        } else if (id == R.id.nav_button_editprofile) {
+        } else if (id == R.id.nav_button_history) {
             Toast.makeText(this, "Unavailable in Demo Mode.", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.navIncome) {
-            Toast.makeText(this, "Unavailable in Demo Mode.", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.navBankName) {
-            Toast.makeText(this, "Unavailable in Demo Mode.", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.navBankAccountType) {
-            Toast.makeText(this, "Unavailable in Demo Mode.", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.navSettings) {
+        } else if (id == R.id.nav_button_settings) {
             FragmentSettings fragmentSettings = new FragmentSettings();
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentSettings).addToBackStack("Main").commit();
-        } else if (id == R.id.navLogout) {
+        } else if (id == R.id.nav_button_logout) {
             Intent intent = new Intent(Main.this, Signin.class);
             startActivity(intent);
         }

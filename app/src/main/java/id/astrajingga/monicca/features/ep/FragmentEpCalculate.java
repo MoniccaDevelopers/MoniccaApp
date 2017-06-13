@@ -125,7 +125,7 @@ public class FragmentEpCalculate extends Fragment {
                 epcalculateDoubleEntrancefee = Double.parseDouble(epcalculateStringEntrancefee);
                 epcalculateDoubleTuitionfee = Double.parseDouble(epcalculateStringTuitionfee);
                 epcalculationDoubleAnnualfee = Double.parseDouble(epcalculateStringAnnualfee);
-                double interest = 0.065;
+                double interest = 0.96;
                 double inflationRate = 0.05;
                 double educationCost = 0.151;
                 double totalTuition = totalSemester * epcalculateDoubleTuitionfee;

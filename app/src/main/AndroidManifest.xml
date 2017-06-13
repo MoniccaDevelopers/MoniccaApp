@@ -12,7 +12,7 @@
 
         <!-- Main -->
         <activity
-            android:name=".SplashScreen"
+            android:name=".Intro"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,6 @@
             android:name=".Main"
             android:screenOrientation="portrait" />
         <activity android:name=".auth.register" />
-        <activity android:name=".SplashScreenViewPagerAdapter"></activity>
     </application>
 
 </manifest>

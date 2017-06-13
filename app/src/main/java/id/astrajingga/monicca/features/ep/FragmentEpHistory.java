@@ -58,6 +58,7 @@ public class FragmentEpHistory extends Fragment {
 
         // set currency symbol
         DecimalFormat indonesianRp = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+        indonesianRp.setMaximumFractionDigits(0);
         DecimalFormatSymbols rp = new DecimalFormatSymbols();
         rp.setCurrencySymbol("Rp ");
         rp.setMonetaryDecimalSeparator(',');
@@ -72,7 +73,8 @@ public class FragmentEpHistory extends Fragment {
         String date = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
         String history = date + "\n\n" +
-                "Applicant Name: " + ephistoryStringApplicantname + "\n" +
+                "Applicant Name: " + ephistoryStringApplicantname + "\n\n" +
+                "More Detail...\n\n" +
                 ephistoryStringEducationlevel + " at " + ephistoryStringInstitutionname + "\n" +
                 ephistoryStringEnrolltime + " Years to go\n\n" +
                 "MONICCA Recommends\n\n" +
