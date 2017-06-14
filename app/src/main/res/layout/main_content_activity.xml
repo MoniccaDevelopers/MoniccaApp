@@ -211,11 +211,13 @@
                 android:layout_marginTop="16dp"
                 android:layout_toLeftOf="@id/nf"
                 android:background="#FFFFFF"
+                android:onClick="pa"
                 android:gravity="center_horizontal">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="pa"
                     android:layout_centerInParent="true">
 
                     <Button
@@ -223,6 +225,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerHorizontal="true"
+                        android:onClick="pa"
                         android:background="@drawable/main_btn_pa" />
 
                     <TextView
@@ -232,7 +235,8 @@
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_pa"
                         android:textAlignment="center"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/colorAccentDark"
+                        android:onClick="pa"
                         android:textSize="10sp" />
 
                 </RelativeLayout>

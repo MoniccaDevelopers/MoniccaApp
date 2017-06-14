@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/fc_hint_mortgage"
                     android:drawableEnd="@drawable/signin_visibilityoff"
-                    android:imeOptions="actionNext"
+                    android:imeOptions="actionDone"
                     android:inputType="numberPassword"
                     android:maxLength="17"
                     android:maxLines="1"

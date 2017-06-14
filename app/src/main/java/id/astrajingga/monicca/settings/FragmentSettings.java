@@ -33,7 +33,7 @@ public class FragmentSettings extends Fragment {
 
         // credits
         String credits = "Credits\n\n" +
-                "Icons made by Freepik from www.flaticon.com";
+                "Copyright \u00a9 2017 Astrajingga Inovasi Digital";
 
         expandableTextView = (ExpandableTextView) view.findViewById(R.id.settings_expand_item);
         expandableTextView.setText(credits);

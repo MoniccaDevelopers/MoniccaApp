@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:paddingBottom="8dp"
-    android:paddingTop="32dp">
+    android:paddingTop="24dp">
 
     <!-- profile picture -->
     <ImageView

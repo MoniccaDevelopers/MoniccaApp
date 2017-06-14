@@ -186,6 +186,10 @@ public class Main extends AppCompatActivity
         fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentGbMain).addToBackStack("Main").commit();
     }
 
+    public void pa(View view) {
+        Toast.makeText(getApplicationContext(), "Will be available on the next implementation.", Toast.LENGTH_SHORT).show();
+    }
+
     // automated view pager
     public class viewPagerTimerTask extends TimerTask {
 
