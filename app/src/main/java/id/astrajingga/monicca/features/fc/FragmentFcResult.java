@@ -1,13 +1,16 @@
 package id.astrajingga.monicca.features.fc;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -18,6 +21,7 @@ import id.astrajingga.monicca.R;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class FragmentFcResult extends Fragment {
     // variables
     String fcresultStringCondition;
@@ -25,6 +29,8 @@ public class FragmentFcResult extends Fragment {
     double fcresultDoubleIdealbalance,
             fcresultDoubleIdealsavings,
             fcresultDoubleIdealmortgage;
+
+    ImageView indicator;
 
     public FragmentFcResult() {
         // Required empty public constructor
@@ -43,8 +49,21 @@ public class FragmentFcResult extends Fragment {
         fcresultDoubleIdealsavings = bundle.getDouble("idealSavings");
         fcresultDoubleIdealmortgage = bundle.getDouble("idealMortgage");
 
+        // determine the indicator bar
+        indicator = (ImageView)view.findViewById(R.id.fcresult_img_indicator);
+        if (fcresultStringCondition.equals("Bad")) {
+            indicator.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.indicator_bad));
+        } else if (fcresultStringCondition.equals("Warning")) {
+            indicator.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.indicator_warning));
+        } else if (fcresultStringCondition.equals("Good")) {
+            indicator.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.indicator_good));
+        } else if (fcresultStringCondition.equals("Excellent")) {
+            indicator.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.indicator_excellent));
+        }
+
         // set currency symbol
         DecimalFormat indonesianRp = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+        indonesianRp.setMaximumFractionDigits(0);
         DecimalFormatSymbols rp = new DecimalFormatSymbols();
         rp.setCurrencySymbol("Rp ");
         rp.setMonetaryDecimalSeparator(',');
@@ -92,5 +111,4 @@ public class FragmentFcResult extends Fragment {
         return view;
 
     }
-
 }

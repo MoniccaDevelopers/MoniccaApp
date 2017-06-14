@@ -7,10 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Spinner;
 
 import id.astrajingga.monicca.R;
-import id.astrajingga.monicca.features.fc.FragmentFcStart;
 
 /**
  * A simple {@link Fragment} subclass.

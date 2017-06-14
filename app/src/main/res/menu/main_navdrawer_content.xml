@@ -2,41 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <item
-        android:id="@+id/nav_button_home"
-        android:icon="@drawable/navdrawer_home"
-        android:title="Home" />
-
-    <item
-        android:id="@+id/nav_button_editprofile"
-        android:icon="@drawable/navdrawer_edit"
-        android:title="Edit Profile" />
-
     <group
         android:id="@+id/group_two"
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/navIncome"
-            android:icon="@drawable/signup_income"
-            android:title="Income" />
-        <item
-            android:id="@+id/navBankName"
-            android:icon="@drawable/navdrawer_bank"
-            android:title="Bank Name" />
+            android:id="@+id/nav_button_home"
+            android:icon="@drawable/navdrawer_home"
+            android:title="Home" />
 
         <item
-            android:id="@+id/navBankAccountType"
-            android:icon="@drawable/navdrawer_account"
-            android:title="Bank Account Type" />
+            android:id="@+id/nav_button_history"
+            android:icon="@drawable/navdrawer_history"
+            android:title="History" />
 
     </group>
 
-    <item android:id="@+id/navSettings"
+    <item android:id="@+id/nav_button_settings"
         android:icon="@drawable/navdrawer_settings"
         android:title="Settings" />
 
-    <item android:id="@+id/navLogout"
+    <item android:id="@+id/nav_button_logout"
         android:icon="@drawable/navdrawer_logout"
         android:title="Log Out" />
 

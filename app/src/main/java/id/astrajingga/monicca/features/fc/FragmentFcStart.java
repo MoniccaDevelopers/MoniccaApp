@@ -1,8 +1,7 @@
 package id.astrajingga.monicca.features.fc;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -10,10 +9,8 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import java.text.DecimalFormat;
@@ -38,9 +35,7 @@ public class FragmentFcStart extends Fragment {
             fcstartStringMortgage,
             fcstartStringCondition;
 
-    Boolean fcstartBoolEmergencyfunds,
-        fcstartBoolSavingsratio,
-        fcstartBoolDebtserviceratio;
+    int parameter;
 
     public FragmentFcStart() {
         // Required empty public constructor
@@ -51,6 +46,27 @@ public class FragmentFcStart extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fc_start_fragment, container, false);
+
+        // visibility toggles
+        TextInputLayout fcstartTextlayoutBalance = (TextInputLayout)view.findViewById(R.id.fcstart_textlayout_balance);
+        TextInputLayout fcstartTextlayoutIncome = (TextInputLayout)view.findViewById(R.id.fcstart_textlayout_income);
+        TextInputLayout fcstartTextlayoutSavings = (TextInputLayout)view.findViewById(R.id.fcstart_textlayout_savings);
+        TextInputLayout fcstartTextlayoutMortage = (TextInputLayout)view.findViewById(R.id.fcstart_textlayout_mortgage);
+        if (fcstartTextlayoutBalance.getEditText() != null) {
+            fcstartTextlayoutBalance.getEditText();
+        }
+
+        if (fcstartTextlayoutIncome.getEditText() != null) {
+            fcstartTextlayoutIncome.getEditText();
+        }
+
+        if (fcstartTextlayoutSavings.getEditText() != null) {
+            fcstartTextlayoutSavings.getEditText();
+        }
+
+        if (fcstartTextlayoutMortage.getEditText() != null) {
+            fcstartTextlayoutMortage.getEditText();
+        }
 
         fcstartEdittextBalance = (EditText) view.findViewById(R.id.fcstart_edittext_balance);
         fcstartEdittextBalance.addTextChangedListener(TextwatcherBalance());
@@ -103,26 +119,31 @@ public class FragmentFcStart extends Fragment {
             double fcstartDoubleMortgage = Double.parseDouble(fcstartStringMortgage);
 
             // calculation to determine financial status result
+            parameter = 0;
             if(fcstartDoubleBalance >= (2 * fcstartDoubleIncome)) {
-                fcstartBoolEmergencyfunds = true;
+                parameter = parameter + 1;
             } else {
-                fcstartBoolEmergencyfunds = false;
+                parameter = parameter + 0;
             }
             if(fcstartDoubleSavings >= (0.1 * fcstartDoubleIncome)) {
-                fcstartBoolSavingsratio = true;
+                parameter = parameter + 1;
             } else {
-                fcstartBoolSavingsratio = false;
+                parameter = parameter + 0;
             }
             if(fcstartDoubleMortgage <= (0.35 * fcstartDoubleIncome)) {
-                fcstartBoolDebtserviceratio = true;
+                parameter = parameter + 1;
             } else {
-                fcstartBoolDebtserviceratio = false;
+                parameter = parameter + 0;
             }
 
-            if(fcstartBoolEmergencyfunds == true && fcstartBoolSavingsratio == true && fcstartBoolDebtserviceratio == true) {
-                fcstartStringCondition = "Healthy";
-            } else {
-                fcstartStringCondition = "Unhealthy";
+            if (parameter == 3) {
+                fcstartStringCondition = "Excellent";
+            } else if (parameter == 2) {
+                fcstartStringCondition = "Good";
+            } else if (parameter == 1) {
+                fcstartStringCondition = "Warning";
+            } else if (parameter == 0) {
+                fcstartStringCondition = "Bad";
             }
 
             // calculation for ideal financial advice

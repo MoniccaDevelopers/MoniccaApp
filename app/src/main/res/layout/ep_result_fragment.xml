@@ -119,8 +119,6 @@
                     android:layout_height="0.5dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="4dp"
                     android:background="#BDBDBD" />
 
@@ -152,8 +150,6 @@
                     android:layout_height="0.5dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="4dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="4dp"
                     android:background="#BDBDBD" />
 
@@ -188,8 +184,6 @@
                             android:text="Years to go"/>
 
                     </LinearLayout>
-
-
 
                 </LinearLayout>
 
@@ -238,7 +232,7 @@
     <Button android:id="@+id/epresult_button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/btn_bg_rs_yellow"
         android:text="save result"
         android:textColor="#FFFFFF"
         android:textStyle="bold"/>

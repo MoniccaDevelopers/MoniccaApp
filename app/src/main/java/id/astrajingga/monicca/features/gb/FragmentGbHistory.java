@@ -62,6 +62,7 @@ public class FragmentGbHistory extends Fragment {
 
         // set currency symbol
         DecimalFormat indonesianRp = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+        indonesianRp.setMaximumFractionDigits(0);
         DecimalFormatSymbols rp = new DecimalFormatSymbols();
         rp.setCurrencySymbol("Rp ");
         rp.setMonetaryDecimalSeparator(',');
@@ -77,7 +78,8 @@ public class FragmentGbHistory extends Fragment {
         String date = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
         String history = date + "\n\n" +
-                "Object: " + gbhistoryStringObject + "\n" +
+                "Object: " + gbhistoryStringObject + "\n\n" +
+                "More Detail...\n\n" +
                 "Object Name or Title: " + gbhistoryStringObjectname + "\n" +
                 "Current Price: " + gbhistoryStringObjectprice + "\n" +
                 "Target Deadline: " + gbhistoryStringTimevalue + " " + gbhistoryStringTime + "\n" +

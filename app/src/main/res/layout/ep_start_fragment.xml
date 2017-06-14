@@ -13,15 +13,6 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <!-- image
-        <ImageView android:id="@+id/ep_image_logo"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/main_btn_ep"/>
-        -->
-
         <!-- title -->
         <TextView
             android:layout_width="wrap_content"
@@ -104,7 +95,8 @@
                         android:layout_marginRight="4dp"
                         android:hint="Applicant Age. Max. 25 y.o."
                         android:imeOptions="actionNext"
-                        android:inputType="numberDecimal|phone"
+                        android:inputType="number|phone"
+                        android:maxLength="2"
                         android:maxLines="1"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp" />
@@ -177,7 +169,7 @@
     <Button android:id="@+id/epstart_button_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/btn_bg_yellow"
         android:text="next"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
