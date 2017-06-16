@@ -1,13 +1,23 @@
 <resources>
-    <string name="app_name">MONICCA</string>
+    <string name="app_name">Monicca</string>
 
-    <!-- splash screen -->
-    <string name="splashscreen_desc_img">Splash Screen Images</string>
-    <string name="splashscreen_btn_learnmore">learn more</string>
+    <!-- intro -->
+    <string name="intro_desc_img">Intro Images</string>
+    <string name="intro_first_title">WELCOME. LET US INTRODUCE MONICCA</string>
+    <string name="intro_first_desc">An app powered by artificial intelligence\nand designed to give you accurate\nfinancial calculation and planning.</string>
+    <string name="intro_second_title">SPECIAL FEATURE. GOAL BASE</string>
+    <string name="intro_second_desc">Our personal robo-advisor goal base.\nSpecially crafted to help you fulfilling\nthe variety of your financial goals.</string>
+    <string name="intro_third_title">BUILD YOUR OWN PORTFOLIO</string>
+    <string name="intro_third_desc">Monicca aims to help you in creating\nand improving the performance of your\ndiversified portfolio.</string>
+    <string name="intro_fourth_title">FEEDBACK. MARKET INTELLIGENCE</string>
+    <string name="intro_fourth_desc">And, we utilizes dynamic and real-time\nmarket data to give feasible and\ncomprehensive financial advises for you.</string>
+    <string name="intro_btn_skip">skip</string>
+    <string name="intro_btn_next">next</string>
+    <string name="intro_btn_gotit">got it!</string>
 
     <!-- sign in -->
-    <string name="signin_desc_img">Monicca App Logo Baru</string>
-    <string name="signin_hint_username">Username or Email</string>
+    <string name="signin_desc_img">Monicca App Logo</string>
+    <string name="signin_hint_email">Email Address</string>
     <string name="signin_hint_password">Password</string>
     <string name="signin_btn_signin">sign in</string>
     <string name="signin_btn_signup">sign up</string>
@@ -62,14 +72,14 @@
 
         <!-- result -->
         <string name="fc_text_titleresult">Analysis Result</string>
-        <string name="fc_text_financialconditionresult">Your Financial Condition</string>
+        <string name="fc_text_financialconditionresult">Your financial condition is</string>
         <string name="fc_text_recommends">MONICCA Recommends</string>
         <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
         <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
         <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
         <string name="fc_btn_save">save result</string>
 
-        <!-- history -->
+        <!-- navdrawer_history -->
         <string name="fc_text_titlehistory">Financial Checkup History</string>
         <string name="fc_desc_dropdownicon">Dropdown Icon</string>
         <string name="fc_btn_home">back to home</string>
@@ -93,7 +103,7 @@
     <string-array name="object_list">
         <item>Car</item>
         <item>Bike</item>
-        <item>Marriage</item>
+        <item>Wedding</item>
         <item>Trip</item>
         <item>Gadget</item>
     </string-array>

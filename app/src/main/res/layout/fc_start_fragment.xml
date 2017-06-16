@@ -1,9 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EEEEEE"
     android:orientation="vertical"
+    android:clickable="true"
     tools:context="id.astrajingga.monicca.features.fc.FragmentFcStart">
 
     <!-- header -->
@@ -30,6 +32,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"
@@ -47,10 +50,11 @@
             android:textStyle="bold" />
 
         <LinearLayout
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
-            android:background="#FFFFFF"
+            android:background="@color/colorAccentLight"
             android:orientation="vertical"
             android:paddingBottom="14dp"
             android:paddingLeft="16dp"
@@ -59,19 +63,23 @@
 
             <!-- balance field -->
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/fcstart_textlayout_balance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:textColorHint="#BDBDBD">
+                android:textColorHint="@color/colorAccentDark"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorAccentDark">
 
                 <EditText
                     android:id="@+id/fcstart_edittext_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/signin_visibilityoff"
                     android:hint="@string/fc_hint_balance"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
-                    android:maxLength="12"
+                    android:inputType="numberPassword"
+                    android:maxLength="17"
                     android:maxLines="1"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp" />
@@ -80,19 +88,23 @@
 
             <!-- income field -->
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/fcstart_textlayout_income"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:textColorHint="#BDBDBD">
+                android:textColorHint="@color/colorAccentDark"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorAccentDark">
 
                 <EditText
                     android:id="@+id/fcstart_edittext_income"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fc_hint_income"
+                    android:drawableEnd="@drawable/signin_visibilityoff"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
-                    android:maxLength="12"
+                    android:inputType="numberPassword"
+                    android:maxLength="17"
                     android:maxLines="1"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp" />
@@ -101,18 +113,22 @@
 
             <!-- savings field -->
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/fcstart_textlayout_savings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#BDBDBD">
+                android:textColorHint="@color/colorAccentDark"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorAccentDark">
 
                 <EditText
                     android:id="@+id/fcstart_edittext_savings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fc_hint_savings"
+                    android:drawableEnd="@drawable/signin_visibilityoff"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
-                    android:maxLength="12"
+                    android:inputType="numberPassword"
+                    android:maxLength="17"
                     android:maxLines="1"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp" />
@@ -121,18 +137,22 @@
 
             <!-- mortgage field -->
             <android.support.design.widget.TextInputLayout
+                android:id="@+id/fcstart_textlayout_mortgage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#BDBDBD">
+                android:textColorHint="@color/colorAccentDark"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorAccentDark">
 
                 <EditText
                     android:id="@+id/fcstart_edittext_mortgage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/fc_hint_mortgage"
+                    android:drawableEnd="@drawable/signin_visibilityoff"
                     android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:maxLength="12"
+                    android:inputType="numberPassword"
+                    android:maxLength="17"
                     android:maxLines="1"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp" />
@@ -148,7 +168,7 @@
         android:id="@+id/fcstart_button_calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/btn_bg_yellow"
         android:text="@string/fc_btn_calculate"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />

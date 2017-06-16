@@ -65,6 +65,7 @@ public class FragmentEpResult extends Fragment {
 
         // set currency symbol
         DecimalFormat indonesianRp = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+        indonesianRp.setMaximumFractionDigits(0);
         DecimalFormatSymbols rp = new DecimalFormatSymbols();
         rp.setCurrencySymbol("Rp ");
         rp.setMonetaryDecimalSeparator(',');

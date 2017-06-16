@@ -1,6 +1,5 @@
 package id.astrajingga.monicca;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,14 +14,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
-
 public class Signin extends AppCompatActivity {
     // variables
-    EditText signinEdittextUsername,
+    EditText signinEdittextEmail,
             signinEdittextPassword;
 
-    String signinStringUsername,
+    String signinStringEmail,
             signinStringPassword;
 
     @Override
@@ -30,12 +27,10 @@ public class Signin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_signin_activity);
 
-
-
         // password visibility toggle
-        TextInputLayout toogle = (TextInputLayout) findViewById(R.id.toogle);
-        if (toogle.getEditText() != null) {
-            toogle.getEditText();
+        TextInputLayout signinTextlayoutPassword = (TextInputLayout) findViewById(R.id.signin_textlayout_password);
+        if (signinTextlayoutPassword.getEditText() != null) {
+            signinTextlayoutPassword.getEditText();
         }
 
         // sign in button function
@@ -45,36 +40,36 @@ public class Signin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            signinEdittextUsername = (EditText) findViewById(R.id.signin_edittext_username);
+            signinEdittextEmail = (EditText) findViewById(R.id.signin_edittext_email);
 
             signinEdittextPassword = (EditText) findViewById(R.id.signin_edittext_password);
 
-            signinStringUsername = signinEdittextUsername.getText().toString();
+            signinStringEmail = signinEdittextEmail.getText().toString();
 
             signinStringPassword = signinEdittextPassword.getText().toString();
 
             // fields check
-            if (TextUtils.isEmpty(signinStringUsername)) {
-                signinEdittextUsername.setError("You can't leave this empty.");
+            if (TextUtils.isEmpty(signinStringEmail)) {
+                signinEdittextEmail.setError("You can't leave this empty.");
                 return;
             } else if (TextUtils.isEmpty(signinStringPassword)) {
                 signinEdittextPassword.setError("You can't leave this empty.");
                 return;
-            } else if (!"listrik".equals(signinStringUsername)) {
-                Toast.makeText(getApplicationContext(), "Wrong Username or Password.", Toast.LENGTH_SHORT).show();
+            } else if (!"listrik".equals(signinStringEmail)) {
+                Toast.makeText(getApplicationContext(), "Wrong Email or Password.", Toast.LENGTH_SHORT).show();
                 return;
             } else if (!"petir".equals(signinStringPassword)) {
-                Toast.makeText(getApplicationContext(), "Wrong Username or Password.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Wrong Email or Password.", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             // go to Main class if pass fields check
             Intent intent = new Intent(getApplicationContext(), Main.class);
-            intent.putExtra("username", signinStringUsername);
             startActivity(intent);
             }
         });
 
+        /*
         // sign up button function
         Button signInButtonSignUp = (Button) findViewById(R.id.signin_button_signup);
         signInButtonSignUp.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +80,7 @@ public class Signin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
 
         // demo button function
         TextView signInButtonDemo = (TextView) findViewById(R.id.signin_button_demo);
@@ -92,10 +88,7 @@ public class Signin extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                signinStringUsername = "Demo Account";
-
                 Intent intent = new Intent(getApplicationContext(), Main.class);
-                intent.putExtra("username", signinStringUsername);
                 startActivity(intent);
             }
         });

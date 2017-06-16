@@ -55,19 +55,30 @@
                 android:padding="8dp"
                 android:paddingBottom="8dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/fc_text_financialconditionresult"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/fcresult_text_condition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:maxLines="1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:text="@string/fc_text_financialconditionresult" />
+
+                    <TextView
+                        android:id="@+id/fcresult_text_condition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/fcresult_img_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -114,8 +125,6 @@
                     android:layout_height="0.5dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
                     android:background="#BDBDBD" />
 
@@ -147,8 +156,6 @@
                     android:layout_height="0.5dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
                     android:background="#BDBDBD" />
 
@@ -184,7 +191,7 @@
         android:id="@+id/fcresult_button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_button"
+        android:background="@drawable/btn_bg_yellow"
         android:text="@string/fc_btn_save"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />

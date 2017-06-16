@@ -39,8 +39,7 @@ public class FragmentGbStart extends Fragment {
             gbstartEdittextTimevalue,
             gbstartEdittextObjectprice;
 
-    TextView gbstartTextBasedon,
-            gbstartTextInflationrate;
+    TextView gbstartTextInflationrate;
 
     String gbstartStringObject,
             gbstartStringObjectname,
@@ -64,8 +63,6 @@ public class FragmentGbStart extends Fragment {
 
         View view = inflater.inflate(R.layout.gb_start_fragment, container, false);
 
-        gbstartTextBasedon = (TextView) view.findViewById(R.id.gbstart_text_basedon);
-
         gbstartTextInflationrate = (TextView) view.findViewById(R.id.gbstart_text_inflationrate);
 
         gbstartEdittextObjectname = (EditText)view.findViewById(R.id.gbstart_edittext_objectname);
@@ -88,20 +85,15 @@ public class FragmentGbStart extends Fragment {
 
                 // determine market info content
                 if (gbstartSpinnerObject.getSelectedItem().toString().equals("Car")) {
-                    gbstartTextBasedon.setText("Based on MarketWatch's Research");
-                    gbstartTextInflationrate.setText("Car Price Deflation: 10.00% / Year");
+                    gbstartTextInflationrate.setText("Car Price Inflation: 7.5% / Year");
                 } else if (gbstartSpinnerObject.getSelectedItem().toString().equals("Bike")) {
-                    gbstartTextBasedon.setText("Based on MarketWatch's Research");
-                    gbstartTextInflationrate.setText("Bike Price Deflation: 13.00% / Year");
-                } else if (gbstartSpinnerObject.getSelectedItem().toString().equals("Marriage")) {
-                    gbstartTextBasedon.setText("Based on BIG Media's Research");
-                    gbstartTextInflationrate.setText("Marriage Cost Inflation: 15.00% / Year");
+                    gbstartTextInflationrate.setText("Bike Price Inflation: 3% / Year");
+                } else if (gbstartSpinnerObject.getSelectedItem().toString().equals("Wedding")) {
+                    gbstartTextInflationrate.setText("Wedding Cost Inflation: 12.5% / Year");
                 } else if (gbstartSpinnerObject.getSelectedItem().toString().equals("Trip")) {
-                    gbstartTextBasedon.setText("Based on ZapFinance's Survey");
-                    gbstartTextInflationrate.setText("Trip Cost Inflation: 15.10% / Year");
+                    gbstartTextInflationrate.setText("Trip Cost Inflation: 15% / Year");
                 } else if (gbstartSpinnerObject.getSelectedItem().toString().equals("Gadget")) {
-                    gbstartTextBasedon.setText("Based on MarketWatch's Survey");
-                    gbstartTextInflationrate.setText("Gadget Price Deflation: 10.00% / Year");
+                    gbstartTextInflationrate.setText("Gadget Price Deflation: 36% / Year");
                 }
             }
 
@@ -158,22 +150,22 @@ public class FragmentGbStart extends Fragment {
                 gbstartDoubleTimevalue = Double.valueOf(gbstartStringTimevalue);
 
                 // variables for calculation
-                double interest = 0.065;
-                double carPriceDeflation = 0.1;
-                double bikePriceDeflation = 0.13;
-                double marriageCostInflation = 0.15;
-                double tripCostInflation = 0.151;
-                double gadgetPriceDeflation = 0.1;
+                double interest = 0.96;
+                double carPriceInflation = 0.075;
+                double bikePriceInflation = 0.03;
+                double weddingCostInflation = 0.125;
+                double tripCostInflation = 0.15;
+                double gadgetPriceDeflation = 0.36;
 
                 // conditional, logic, calculation and fucking cancer
                 if (gbstartStringObject.equals("Car")) {
                     if (gbstartStringTime.equals("Month")) {
-                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * (Math.pow((1 - carPriceDeflation), (gbstartDoubleTimevalue / 12)));
+                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * (Math.pow((1 + carPriceInflation), (gbstartDoubleTimevalue / 12)));
                         double factor = (Math.pow((1 + interest), (gbstartDoubleTimevalue / 12)) - 1) / interest;
                         gbstartDoubleSavingsyearly = gbstartDoubleFuturevalue / factor;
                         gbstartDoubleSavingsmonthly = gbstartDoubleSavingsyearly / 12;
                     } else if (gbstartStringTime.equals("Year")) {
-                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * Math.pow((1 - carPriceDeflation), gbstartDoubleTimevalue);
+                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * Math.pow((1 + carPriceInflation), gbstartDoubleTimevalue);
                         double factor = (Math.pow((1 + interest), gbstartDoubleTimevalue) - 1) / interest;
                         gbstartDoubleSavingsyearly = gbstartDoubleFuturevalue / factor;
                         gbstartDoubleSavingsmonthly = gbstartDoubleSavingsyearly / 12;
@@ -181,25 +173,25 @@ public class FragmentGbStart extends Fragment {
 
                 } else if (gbstartStringObject.equals("Bike")) {
                     if (gbstartStringTime.equals("Month")) {
-                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * (Math.pow((1 - bikePriceDeflation), (gbstartDoubleTimevalue / 12)));
+                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * (Math.pow((1 + bikePriceInflation), (gbstartDoubleTimevalue / 12)));
                         double factor = (Math.pow((1 + interest), (gbstartDoubleTimevalue / 12)) - 1) / interest;
                         gbstartDoubleSavingsyearly = gbstartDoubleFuturevalue / factor;
                         gbstartDoubleSavingsmonthly = gbstartDoubleSavingsyearly / 12;
                     } else if (gbstartStringTime.equals("Year")) {
-                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * Math.pow((1 - bikePriceDeflation), gbstartDoubleTimevalue);
+                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * Math.pow((1 + bikePriceInflation), gbstartDoubleTimevalue);
                         double factor = (Math.pow((1 + interest), gbstartDoubleTimevalue) - 1) / interest;
                         gbstartDoubleSavingsyearly = gbstartDoubleFuturevalue / factor;
                         gbstartDoubleSavingsmonthly = gbstartDoubleSavingsyearly / 12;
                     }
 
-                } else if (gbstartStringObject.equals("Marriage")) {
+                } else if (gbstartStringObject.equals("Wedding")) {
                     if (gbstartStringTime.equals("Month")) {
-                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * (Math.pow((1 + marriageCostInflation), (gbstartDoubleTimevalue / 12)));
+                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * (Math.pow((1 + weddingCostInflation), (gbstartDoubleTimevalue / 12)));
                         double factor = (Math.pow((1 + interest), (gbstartDoubleTimevalue / 12)) - 1) / interest;
                         gbstartDoubleSavingsyearly = gbstartDoubleFuturevalue / factor;
                         gbstartDoubleSavingsmonthly = gbstartDoubleSavingsyearly / 12;
                     } else if (gbstartStringTime.equals("Year")) {
-                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * Math.pow((1 + marriageCostInflation), gbstartDoubleTimevalue);
+                        gbstartDoubleFuturevalue = gbstartDoubleObjectprice * Math.pow((1 + weddingCostInflation), gbstartDoubleTimevalue);
                         double factor = (Math.pow((1 + interest), gbstartDoubleTimevalue) - 1) / interest;
                         gbstartDoubleSavingsyearly = gbstartDoubleFuturevalue / factor;
                         gbstartDoubleSavingsmonthly = gbstartDoubleSavingsyearly / 12;

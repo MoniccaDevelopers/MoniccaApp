@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_marginStart="4dp"
-                android:background="@drawable/bg_button"
+                android:background="@drawable/btn_bg_rs_white"
                 android:text="@string/signup_btn_signup"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />

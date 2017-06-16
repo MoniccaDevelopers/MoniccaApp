@@ -46,6 +46,7 @@ public class FragmentFcHistory extends Fragment {
 
         // set currency symbol
         DecimalFormat indonesianRp = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+        indonesianRp.setMaximumFractionDigits(0);
         DecimalFormatSymbols rp = new DecimalFormatSymbols();
         rp.setCurrencySymbol("Rp ");
         rp.setMonetaryDecimalSeparator(',');
@@ -60,6 +61,7 @@ public class FragmentFcHistory extends Fragment {
 
         String history = date + "\n\n" +
                 "Financial Condition: " + fchistoryStringCondition + "\n\n" +
+                "More Detail...\n" +
                 "MONICCA Recommends\n" +
                 "Ideal Minimum Balance: " + fchistoryStringIdealbalance + "\n" +
                 "Ideal Minimum Monthly Savings: " + fchistoryStringIdealsavings + "\n" +
@@ -73,10 +75,8 @@ public class FragmentFcHistory extends Fragment {
 
             @Override
             public void onClick(View v) {
-                String username = "DEMO ACCOUNT";
 
                 Intent intent =  new Intent(getActivity(), id.astrajingga.monicca.Main.class);
-                intent.putExtra("username", username);
                 startActivity(intent);
             }
         });
