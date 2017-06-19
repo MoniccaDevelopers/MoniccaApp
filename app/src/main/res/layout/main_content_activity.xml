@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_container"
+    android:id="@+id/main_fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -19,7 +19,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="4dp"
             android:layout_weight="1">
 
             <android.support.v4.view.ViewPager
@@ -52,7 +51,7 @@
                 android:layout_height="80dp"
                 android:layout_centerInParent="true"
                 android:layout_margin="16dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 
@@ -91,7 +90,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:gravity="center_horizontal"
                 android:onClick="ep">
 
@@ -133,7 +132,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_toRightOf="@id/nf"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 
@@ -172,7 +171,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:visibility="invisible">
 
                 <RelativeLayout
@@ -210,7 +209,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_toLeftOf="@id/nf"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:onClick="pa"
                 android:gravity="center_horizontal">
 
@@ -250,7 +249,7 @@
                 android:layout_above="@+id/pa"
                 android:layout_toLeftOf="@+id/ep"
                 android:layout_toStartOf="@+id/ep"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:onClick="fc">
 
                 <RelativeLayout
@@ -289,7 +288,7 @@
                 android:layout_above="@+id/inv"
                 android:layout_toEndOf="@+id/ep"
                 android:layout_toRightOf="@+id/ep"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:gravity="center_horizontal"
                 android:onClick="gb">
 
@@ -328,7 +327,7 @@
                 android:layout_height="80dp"
                 android:layout_below="@id/pa"
                 android:layout_toLeftOf="@id/hj"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 
@@ -359,13 +358,13 @@
 
             </RelativeLayout>
 
-            <!-- navdrawer_history -->
+            <!-- history -->
             <RelativeLayout
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_below="@id/inv"
                 android:layout_toRightOf="@id/hj"
-                android:background="#FFFFFF"
+                android:background="@drawable/btn_bg_rs_white"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 

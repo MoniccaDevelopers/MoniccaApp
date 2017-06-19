@@ -165,7 +165,7 @@ public class FragmentFcStart extends Fragment {
             FragmentFcResult fragmentFcResult = new FragmentFcResult();
             fragmentFcResult.setArguments(bundle);
 
-            fragmentTransaction.replace(R.id.fragment_container, fragmentFcResult).addToBackStack("Main");
+            fragmentTransaction.replace(R.id.main_fragment_container, fragmentFcResult).addToBackStack("Main");
             fragmentTransaction.commit();
             }
         });

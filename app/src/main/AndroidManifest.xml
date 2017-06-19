@@ -24,7 +24,7 @@
             android:name=".Signin"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Signup"
+            android:name=".FragmentSignup"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Main"

@@ -35,7 +35,7 @@ public class FragmentEpMain extends Fragment {
             public void onClick(View v) {
                 FragmentEpStart fragmentEpStart = new FragmentEpStart();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentEpStart).addToBackStack("Main").commit();
+                fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentEpStart).addToBackStack("Main").commit();
             }
         });
         return view;

@@ -125,7 +125,7 @@ public class FragmentGbResult extends Fragment {
                 FragmentGbHistory fragmentGbHistory = new FragmentGbHistory();
                 fragmentGbHistory.setArguments(bundle);
 
-                fragmentTransaction.replace(R.id.fragment_container, fragmentGbHistory).addToBackStack("Main");
+                fragmentTransaction.replace(R.id.main_fragment_container, fragmentGbHistory).addToBackStack("Main");
                 fragmentTransaction.commit();
 
             }

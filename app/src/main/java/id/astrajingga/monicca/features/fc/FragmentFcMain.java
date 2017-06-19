@@ -34,7 +34,7 @@ public class FragmentFcMain extends Fragment {
             public void onClick(View v) {
                 FragmentFcStart fragmentFcStart = new FragmentFcStart();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentFcStart).addToBackStack("Main").commit();
+                fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentFcStart).addToBackStack("Main").commit();
             }
         });
 

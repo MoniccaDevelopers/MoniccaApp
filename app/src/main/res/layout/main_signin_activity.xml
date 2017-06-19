@@ -24,6 +24,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/signin_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
@@ -35,14 +36,13 @@
             android:id="@+id/signin_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:paddingBottom="14dp"
             android:paddingEnd="16dp"
             android:paddingStart="16dp"
             android:paddingTop="8dp">
 
-            <!-- email address -->
+            <!-- signin_email address -->
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,16 +54,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="6dp"
-                    android:drawableStart="@drawable/signin_username"
+                    android:drawableStart="@drawable/signin_email"
                     android:hint="@string/signin_hint_email"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:paddingEnd="8dp"
-                    android:paddingStart="8dp"
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/white"
-                    android:textCursorDrawable="@drawable/textcursordrawable"
+                    android:textCursorDrawable="@drawable/txtcursor_bg_white"
                     app:backgroundTint="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
@@ -74,6 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
+                android:layout_marginBottom="16dp"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@android:color/white">
 
@@ -89,68 +88,108 @@
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:paddingEnd="8dp"
-                    android:paddingStart="8dp"
                     android:textColor="@android:color/white"
                     android:textColorHint="@android:color/white"
-                    android:textCursorDrawable="@drawable/textcursordrawable"
+                    android:textCursorDrawable="@drawable/txtcursor_bg_white"
                     app:backgroundTint="@android:color/white" />
 
             </android.support.design.widget.TextInputLayout>
 
-        </LinearLayout>
-
-        <!-- sign in button -->
-        <Button
-            android:id="@+id/signin_button_signin"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/signin_field"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="30dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/btn_bg_rs_yellow"
-            android:text="@string/signin_btn_signin"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/signin_button_signin"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingEnd="20dp"
-            android:paddingStart="20dp">
-
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0.5dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:background="@android:color/white" />
-
-            <!-- demo button -->
-            <TextView
-                android:id="@+id/signin_button_demo"
-                android:layout_width="wrap_content"
+            <!-- sign in button -->
+            <Button
+                android:id="@+id/signin_button_signin"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginStart="4dp"
-                android:text="@string/signin_btn_demo"
+                android:background="@drawable/btn_bg_rs_yellow"
+                android:text="@string/signin_btn_signin"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0.5dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:background="@android:color/white" />
+            <!-- signup button -->
+            <LinearLayout
+                android:id="@+id/signin_text_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingEnd="4dp"
+                android:paddingStart="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/signin_text_signup"
+                    android:textColor="@color/colorAccentLight"/>
+
+                <TextView
+                    android:id="@+id/signin_button_signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/signin_btn_signup"
+                    android:textColor="@color/colorAccentLight"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- demo button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginBottom="58dp"
+                android:paddingEnd="4dp"
+                android:paddingStart="4dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/signin_button_demo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/signin_btn_demo"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@android:color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

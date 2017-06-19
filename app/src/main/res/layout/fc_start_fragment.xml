@@ -80,9 +80,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="numberPassword"
                     android:maxLength="17"
-                    android:maxLines="1"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp" />
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -105,9 +103,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="numberPassword"
                     android:maxLength="17"
-                    android:maxLines="1"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp" />
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -129,9 +125,7 @@
                     android:imeOptions="actionNext"
                     android:inputType="numberPassword"
                     android:maxLength="17"
-                    android:maxLines="1"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp" />
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -153,9 +147,7 @@
                     android:imeOptions="actionDone"
                     android:inputType="numberPassword"
                     android:maxLength="17"
-                    android:maxLines="1"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp" />
+                    android:maxLines="1" />
 
             </android.support.design.widget.TextInputLayout>
 
