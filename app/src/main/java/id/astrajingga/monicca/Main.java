@@ -137,7 +137,7 @@ public class Main extends AppCompatActivity
         if (id == R.id.action_settings) {
             FragmentSettings fragmentSettings = new FragmentSettings();
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentSettings).addToBackStack("Main").commit();
+            fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentSettings).addToBackStack("Main").commit();
         }
 
         return super.onOptionsItemSelected(item);
@@ -157,7 +157,7 @@ public class Main extends AppCompatActivity
         } else if (id == R.id.nav_button_settings) {
             FragmentSettings fragmentSettings = new FragmentSettings();
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentSettings).addToBackStack("Main").commit();
+            fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentSettings).addToBackStack("Main").commit();
         } else if (id == R.id.nav_button_logout) {
             Intent intent = new Intent(Main.this, Signin.class);
             startActivity(intent);
@@ -171,19 +171,19 @@ public class Main extends AppCompatActivity
     public void fc(View view) {
         FragmentFcMain fragmentFcMain = new FragmentFcMain();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentFcMain).addToBackStack("Main").commit();
+        fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentFcMain).addToBackStack("Main").commit();
     }
 
     public void ep(View view) {
         FragmentEpMain fragmentEpMain = new FragmentEpMain();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentEpMain).addToBackStack("Main").commit();
+        fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentEpMain).addToBackStack("Main").commit();
     }
 
     public void gb(View view) {
         FragmentGbMain fragmentGbMain = new FragmentGbMain();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.fragment_container, fragmentGbMain).addToBackStack("Main").commit();
+        fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentGbMain).addToBackStack("Main").commit();
     }
 
     public void pa(View view) {

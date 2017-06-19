@@ -127,7 +127,7 @@ public class FragmentEpResult extends Fragment {
                 FragmentEpHistory fragmentEpHistory = new FragmentEpHistory();
                 fragmentEpHistory.setArguments(bundle);
 
-                fragmentTransaction.replace(R.id.fragment_container, fragmentEpHistory).addToBackStack("Main");
+                fragmentTransaction.replace(R.id.main_fragment_container, fragmentEpHistory).addToBackStack("Main");
                 fragmentTransaction.commit();
             }
         });

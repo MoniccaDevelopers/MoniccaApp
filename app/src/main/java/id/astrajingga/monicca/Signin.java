@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MotionEvent;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,18 +71,19 @@ public class Signin extends AppCompatActivity {
             }
         });
 
-        /*
         // sign up button function
-        Button signInButtonSignUp = (Button) findViewById(R.id.signin_button_signup);
+        TextView signInButtonSignUp = (TextView) findViewById(R.id.signin_button_signup);
         signInButtonSignUp.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Signin.this, Signup.class);
-                startActivity(intent);
+                LinearLayout signinField = (LinearLayout) findViewById(R.id.signin_field);
+                signinField.setVisibility(View.GONE);
+                FragmentSignup fragmentSignup = new FragmentSignup();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.signin_fragment_container, fragmentSignup).addToBackStack("Main").commit();
             }
         });
-        */
 
         // demo button function
         TextView signInButtonDemo = (TextView) findViewById(R.id.signin_button_demo);
