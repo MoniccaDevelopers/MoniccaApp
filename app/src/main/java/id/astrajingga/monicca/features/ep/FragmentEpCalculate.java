@@ -165,7 +165,7 @@ public class FragmentEpCalculate extends Fragment {
                 FragmentEpResult fragmentEpResult = new FragmentEpResult();
                 fragmentEpResult.setArguments(bundle);
 
-                fragmentTransaction.replace(R.id.fragment_container, fragmentEpResult).addToBackStack("Main");
+                fragmentTransaction.replace(R.id.main_fragment_container, fragmentEpResult).addToBackStack("Main");
                 fragmentTransaction.commit();
 
             }

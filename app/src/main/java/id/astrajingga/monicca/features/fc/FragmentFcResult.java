@@ -103,7 +103,7 @@ public class FragmentFcResult extends Fragment {
             FragmentFcHistory fragmentFcHistory = new FragmentFcHistory();
             fragmentFcHistory.setArguments(bundle);
 
-            fragmentTransaction.replace(R.id.fragment_container, fragmentFcHistory).addToBackStack("Main");
+            fragmentTransaction.replace(R.id.main_fragment_container, fragmentFcHistory).addToBackStack("Main");
             fragmentTransaction.commit();
             }
         });

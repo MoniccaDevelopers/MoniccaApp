@@ -45,7 +45,7 @@ public class register_process extends AsyncTask<String,Void,String> {
                 String data = URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(nama,"UTF-8")+"&"+
                               URLEncoder.encode("signin_password","UTF-8")+"="+URLEncoder.encode(harga,"UTF-8")+"&"+
                               URLEncoder.encode("phone","UTF-8")+"="+URLEncoder.encode(durasi,"UTF-8")+"&"+
-                              URLEncoder.encode("email","UTF-8")+"=" +URLEncoder.encode(hasil,"UTF-8");
+                              URLEncoder.encode("signin_email","UTF-8")+"=" +URLEncoder.encode(hasil,"UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();

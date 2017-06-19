@@ -242,7 +242,7 @@ public class FragmentGbStart extends Fragment {
             FragmentGbResult fragmentGbResult = new FragmentGbResult();
             fragmentGbResult.setArguments(bundle);
 
-            fragmentTransaction.replace(R.id.fragment_container, fragmentGbResult).addToBackStack("Main");
+            fragmentTransaction.replace(R.id.main_fragment_container, fragmentGbResult).addToBackStack("Main");
             fragmentTransaction.commit();
             }
 

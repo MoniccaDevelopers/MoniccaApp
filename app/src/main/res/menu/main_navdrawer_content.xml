@@ -9,21 +9,21 @@
         <item
             android:id="@+id/nav_button_home"
             android:icon="@drawable/navdrawer_home"
-            android:title="Home" />
+            android:title="@string/navdrawer_home" />
 
         <item
             android:id="@+id/nav_button_history"
             android:icon="@drawable/navdrawer_history"
-            android:title="History" />
+            android:title="@string/navdrawer_history" />
 
     </group>
 
     <item android:id="@+id/nav_button_settings"
         android:icon="@drawable/navdrawer_settings"
-        android:title="Settings" />
+        android:title="@string/navdrawer_settings" />
 
     <item android:id="@+id/nav_button_logout"
         android:icon="@drawable/navdrawer_logout"
-        android:title="Log Out" />
+        android:title="@string/navdrawer_logout" />
 
 </menu>

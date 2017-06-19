@@ -138,7 +138,7 @@ public class FragmentEpStart extends Fragment {
                 FragmentEpCalculate fragmentEpCalculate = new FragmentEpCalculate();
                 fragmentEpCalculate.setArguments(bundle);
 
-                fragmentTransaction.replace(R.id.fragment_container, fragmentEpCalculate).addToBackStack("Main");
+                fragmentTransaction.replace(R.id.main_fragment_container, fragmentEpCalculate).addToBackStack("Main");
                 fragmentTransaction.commit();
             }
         });
