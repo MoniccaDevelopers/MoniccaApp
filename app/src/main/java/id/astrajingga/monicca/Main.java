@@ -1,11 +1,9 @@
 package id.astrajingga.monicca;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.internal.NavigationMenu;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
@@ -14,7 +12,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -50,17 +47,18 @@ public class Main extends AppCompatActivity
     private int dotsCount;
     private ImageView[] dot;
 
-
-    String dummy = "gagang";
+    TextView mainNametag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_navdrawer_container);
 
+        // toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // navigation drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -118,14 +116,29 @@ public class Main extends AppCompatActivity
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new viewPagerTimerTask(), 4000, 4000);
 
-        //tes facebook get id
-        /*
-        SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
-        TextView tes = (TextView) findViewById(R.id.tesid);
-        String prefemail = preferences.getString("emailfb", "");
-        String tampil = prefemail;
-        tes.setText(tampil);
-        */
+        // nametag
+        Intent intent = getIntent();
+
+        mainNametag = (TextView) findViewById(R.id.main_nametag);
+
+        String authChecker = intent.getStringExtra("authchecker");
+
+        // change username to email address later
+        if ("signin".equals(authChecker)) {
+            String username = intent.getStringExtra("username");
+            mainNametag.setText(username);
+        } else if ("signup".equals(authChecker)) {
+            String username = intent.getStringExtra("username");
+            mainNametag.setText(username);
+        } else if ("demo".equals(authChecker)) {
+            String username = intent.getStringExtra("username");
+            mainNametag.setText(username);
+        } else {
+            SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
+            String prefUsername = preferences.getString("namefb", "");
+            String username = prefUsername;
+            mainNametag.setText(username);
+        }
     }
 
     @Override

@@ -27,7 +27,8 @@ public class FragmentSignup extends Fragment {
 
     String signupStringEmail,
             signupStringPassword,
-            signupStringIncome;
+            signupStringIncome,
+            authChecker;
 
     public FragmentSignup() {
         // Required empty public constructor
@@ -64,8 +65,6 @@ public class FragmentSignup extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "Will be available on next implementation.\nPlease use our Demo instead.", Toast.LENGTH_SHORT).show();
-
                 signupStringEmail = signupEdittextEmail.getText().toString();
 
                 signupStringPassword = signupEdittextPassword.getText().toString();
@@ -84,8 +83,10 @@ public class FragmentSignup extends Fragment {
                 }
 
                 // go to Main class if pass fields check
+                authChecker = "signup";
                 Intent intent = new Intent(getActivity(), Main.class);
-                intent.putExtra("signin_email", signupStringEmail);
+                intent.putExtra("authchecker", authChecker);
+                intent.putExtra("username", signupStringEmail);
                 intent.putExtra("password", signupStringPassword);
                 intent.putExtra("income", signupStringIncome);
                 startActivity(intent);

@@ -13,7 +13,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#EEEEEE"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <!-- name tag -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_welcome"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:id="@+id/main_nametag"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <!-- viewpager -->
         <RelativeLayout
@@ -234,7 +259,7 @@
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_pa"
                         android:textAlignment="center"
-                        android:textColor="@color/colorAccentDark"
+                        android:textColor="@color/colorPrimaryDark"
                         android:onClick="pa"
                         android:textSize="10sp" />
 

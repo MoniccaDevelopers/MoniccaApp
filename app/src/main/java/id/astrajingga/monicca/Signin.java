@@ -43,7 +43,8 @@ public class Signin extends AppCompatActivity {
             signinEdittextPassword;
 
     String signinStringEmail,
-            signinStringPassword;
+            signinStringPassword,
+            authChecker;
 
     //Facebook Declaration
     private CallbackManager callbackManager;
@@ -84,16 +85,24 @@ public class Signin extends AppCompatActivity {
             } else if (TextUtils.isEmpty(signinStringPassword)) {
                 signinEdittextPassword.setError("You can't leave this empty.");
                 return;
-            } else if (!"listrik".equals(signinStringEmail)) {
+            }
+
+            /* listrik petir auth
+
+            else if (!"listrik".equals(signinStringEmail)) {
                 Toast.makeText(getApplicationContext(), "Wrong Email or Password.", Toast.LENGTH_SHORT).show();
                 return;
             } else if (!"petir".equals(signinStringPassword)) {
                 Toast.makeText(getApplicationContext(), "Wrong Email or Password.", Toast.LENGTH_SHORT).show();
                 return;
             }
+            */
 
             // go to Main class if pass fields check
+            authChecker = "signin";
             Intent intent = new Intent(getApplicationContext(), Main.class);
+            intent.putExtra("authchecker", authChecker);
+            intent.putExtra("username", signinStringEmail);
             startActivity(intent);
             }
         });
@@ -118,13 +127,16 @@ public class Signin extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                authChecker = "demo";
+                signinStringEmail = "Demo";
                 Intent intent = new Intent(getApplicationContext(), Main.class);
+                intent.putExtra("authchecker", authChecker);
+                intent.putExtra("username", signinStringEmail);
                 startActivity(intent);
             }
         });
 
         //Facebook Processing
-
         callbackManager = CallbackManager.Factory.create();
         accessTokenTracker = new AccessTokenTracker() {
             @Override
@@ -222,8 +234,8 @@ public class Signin extends AppCompatActivity {
         //Profile profile = Profile.getCurrentProfile();
         //nextActivity(profile);
         SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
-        String prefemail = preferences.getString("emailfb", "");
-        if (prefemail!=""){
+        String prefUsername = preferences.getString("namefb", "");
+        if (prefUsername!=""){
             Intent main = new Intent(Signin.this, Main.class);
             startActivity(main);
         }
