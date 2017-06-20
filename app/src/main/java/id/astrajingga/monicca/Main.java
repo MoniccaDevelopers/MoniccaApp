@@ -1,8 +1,11 @@
 package id.astrajingga.monicca;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.internal.NavigationMenu;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
@@ -11,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +26,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.facebook.login.LoginManager;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -36,13 +42,16 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 public class Main extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
     // variables
-    // view pager
+    // viewpager
     ViewPager viewPager;
 
-    // view pager indicator
+    // viewpager indicator
     LinearLayout mainViewPagerIndicator;
     private int dotsCount;
     private ImageView[] dot;
+
+
+    String dummy = "gagang";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +117,15 @@ public class Main extends AppCompatActivity
         // view pager timer
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new viewPagerTimerTask(), 4000, 4000);
+
+        //tes facebook get id
+        /*
+        SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
+        TextView tes = (TextView) findViewById(R.id.tesid);
+        String prefemail = preferences.getString("emailfb", "");
+        String tampil = prefemail;
+        tes.setText(tampil);
+        */
     }
 
     @Override
@@ -159,8 +177,18 @@ public class Main extends AppCompatActivity
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentSettings).addToBackStack("Main").commit();
         } else if (id == R.id.nav_button_logout) {
-            Intent intent = new Intent(Main.this, Signin.class);
-            startActivity(intent);
+            LoginManager.getInstance().logOut();
+            Intent login = new Intent(Main.this, Signin.class);
+            SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            String cleardata = "";
+            editor.putString("namefb", cleardata );
+            editor.putString("emailfb", cleardata );
+            editor.putString("genderfb", cleardata );
+            editor.apply();
+            startActivity(login);
+
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
