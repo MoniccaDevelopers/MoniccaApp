@@ -26,15 +26,16 @@ import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
 
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import id.astrajingga.monicca.auth.SQLiteHandler;
+import id.astrajingga.monicca.auth.SessionManager;
 import id.astrajingga.monicca.features.ep.FragmentEpMain;
 import id.astrajingga.monicca.features.fc.FragmentFcMain;
 import id.astrajingga.monicca.features.gb.FragmentGbMain;
 import id.astrajingga.monicca.settings.FragmentSettings;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class Main extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,6 +49,10 @@ public class Main extends AppCompatActivity
     private ImageView[] dot;
 
     TextView mainNametag;
+
+    //Declaration clear session
+    private SQLiteHandler db;
+    private SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +128,13 @@ public class Main extends AppCompatActivity
 
         String authChecker = intent.getStringExtra("authchecker");
 
+        //Button Logout Processing clear session
+        // SqLite database handler
+        db = new SQLiteHandler(getApplicationContext());
+
+        // session manager
+        session = new SessionManager(getApplicationContext());
+
         // change username to email address later
         if ("signin".equals(authChecker)) {
             String username = intent.getStringExtra("username");
@@ -135,9 +147,19 @@ public class Main extends AppCompatActivity
             mainNametag.setText(username);
         } else {
             SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
-            String prefUsername = preferences.getString("namefb", "");
+            String prefUsername = preferences.getString("emailfb", "");
             String username = prefUsername;
             mainNametag.setText(username);
+
+            db = new SQLiteHandler(getApplicationContext());
+            // Fetching user details from SQLite
+            HashMap<String, String> user = db.getUserDetails();
+
+            String email = user.get("email");
+
+            if (username.isEmpty()){
+                mainNametag.setText(email);
+            }
         }
     }
 
@@ -199,6 +221,9 @@ public class Main extends AppCompatActivity
             editor.putString("emailfb", cleardata );
             editor.putString("genderfb", cleardata );
             editor.apply();
+            session.setLogin(false);
+
+            db.deleteUsers();
             startActivity(login);
 
             finish();
