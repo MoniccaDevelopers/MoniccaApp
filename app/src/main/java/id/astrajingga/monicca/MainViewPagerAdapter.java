@@ -15,7 +15,10 @@ public class MainViewPagerAdapter extends PagerAdapter {
     // variables
     private Context context;
     private LayoutInflater layoutInflater;
-    private int[] imageSrc = {R.drawable.bannerone, R.drawable.bannertwo};
+    private int[] imageSrc = {R.drawable.banner_first,
+                            R.drawable.banner_second,
+                            R.drawable.banner_third,
+                            R.drawable.banner_fourth};
 
     public MainViewPagerAdapter(Context context) {
         this.context = context;

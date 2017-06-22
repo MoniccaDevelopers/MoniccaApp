@@ -12,6 +12,6 @@
         android:color="@color/colorAccentLight" />
 
     <corners
-        android:radius="4dp" />
+        android:radius="6dp" />
 
 </shape>
