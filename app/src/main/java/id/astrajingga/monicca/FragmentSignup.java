@@ -1,5 +1,6 @@
 package id.astrajingga.monicca;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
+
+import id.astrajingga.monicca.auth.AddressUrl;
+import id.astrajingga.monicca.auth.AppController;
+import id.astrajingga.monicca.auth.SQLiteHandler;
+import id.astrajingga.monicca.auth.SessionManager;
 
 public class FragmentSignup extends Fragment {
     // variables
@@ -29,6 +46,12 @@ public class FragmentSignup extends Fragment {
             signupStringPassword,
             signupStringIncome,
             authChecker;
+
+    //For Register Declaration
+    private SessionManager session;
+    private SQLiteHandler db;
+    private ProgressDialog pDialog;
+    private static final String TAG = FragmentSignup.class.getSimpleName();
 
     public FragmentSignup() {
         // Required empty public constructor
@@ -52,11 +75,21 @@ public class FragmentSignup extends Fragment {
         }
 
         signupEdittextEmail = (EditText) view.findViewById(R.id.signup_edittext_email);
-
         signupEdittextPassword = (EditText) view.findViewById(R.id.signup_edittext_password);
 
         signupEdittextIncome = (EditText) view.findViewById(R.id.signup_edittext_income);
         signupEdittextIncome.addTextChangedListener(TextwatcherIncome());
+
+
+        //Loading
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setCancelable(false);
+
+        // Session manager
+        session = new SessionManager(getActivity());
+
+        // SQLite database handler
+        db = new SQLiteHandler(getActivity());
 
         // sign up button function
         Button signUpButtonSignUp = (Button) view.findViewById(R.id.signup_button_signup);
@@ -65,11 +98,9 @@ public class FragmentSignup extends Fragment {
             @Override
             public void onClick(View v) {
 
-                signupStringEmail = signupEdittextEmail.getText().toString();
-
-                signupStringPassword = signupEdittextPassword.getText().toString();
-
-                signupStringIncome = signupEdittextIncome.getText().toString();
+                signupStringEmail = signupEdittextEmail.getText().toString().trim();
+                signupStringPassword = signupEdittextPassword.getText().toString().trim();
+                signupStringIncome = signupEdittextIncome.getText().toString().trim();
 
                 if (TextUtils.isEmpty(signupStringEmail)) {
                     signupEdittextEmail.setError("You can't leave this empty.");
@@ -82,14 +113,10 @@ public class FragmentSignup extends Fragment {
                     return;
                 }
 
-                // go to Main class if pass fields check
-                authChecker = "signup";
-                Intent intent = new Intent(getActivity(), Main.class);
-                intent.putExtra("authchecker", authChecker);
-                intent.putExtra("username", signupStringEmail);
-                intent.putExtra("password", signupStringPassword);
-                intent.putExtra("income", signupStringIncome);
-                startActivity(intent);
+                //give auto name todatabase for release
+                String namaa = "user v1";
+                registerUser(namaa, signupStringEmail, signupStringPassword);
+
             }
         });
 
@@ -147,5 +174,98 @@ public class FragmentSignup extends Fragment {
                 signupEdittextIncome.addTextChangedListener(this);
             }
         };
+    }
+
+    //Registering Proccess
+    private void registerUser(final String name, final String email,
+                              final String password) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_register";
+
+        //view Loding interface
+        pDialog.setMessage("Registering ...");
+        showDialog();
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AddressUrl.URL_REGISTER, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Register Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+                    if (!error) {
+                        // User successfully stored in MySQL
+                        // Now store the user in sqlite
+                        String uid = jObj.getString("uid");
+
+                        JSONObject user = jObj.getJSONObject("user");
+                        String name = user.getString("name");
+                        String email = user.getString("email");
+                        String created_at = user
+                                .getString("created_at");
+
+                        // Inserting row in users table
+                        db.addUser(name, email, uid, created_at);
+
+                        Toast.makeText(getActivity(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
+
+                        // Launch login activity
+                        Intent intent = new Intent(
+                                getActivity(),
+                                Signin.class);
+                        startActivity(intent);
+                    } else {
+
+                        // Error occurred in registration. Get the error
+                        // message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getActivity(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Registration Error: " + error.getMessage());
+                Toast.makeText(getActivity(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting params to register url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("name", name);
+                params.put("email", email);
+                params.put("password", password);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 }
