@@ -1,8 +1,12 @@
 package id.astrajingga.monicca;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +22,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -26,16 +36,21 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.Profile;
-import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.facebook.login.widget.ProfilePictureView;
 
 import org.json.JSONObject;
 import org.json.JSONException;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import id.astrajingga.monicca.auth.AddressUrl;
+import id.astrajingga.monicca.auth.AppController;
+import id.astrajingga.monicca.auth.LoginRequest;
+import id.astrajingga.monicca.auth.SQLiteHandler;
+import id.astrajingga.monicca.auth.SessionManager;
 
 public class Signin extends AppCompatActivity {
     // variables
@@ -50,6 +65,12 @@ public class Signin extends AppCompatActivity {
     private CallbackManager callbackManager;
     private AccessTokenTracker accessTokenTracker;
 
+    //For Login Declaration
+    private SessionManager session;
+    private SQLiteHandler db;
+    private ProgressDialog pDialog;
+    private static final String TAG = FragmentSignup.class.getSimpleName();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,28 +84,36 @@ public class Signin extends AppCompatActivity {
             signinTextlayoutPassword.getEditText();
         }
 
-        // sign in button function
+        signinEdittextEmail = (EditText) findViewById(R.id.signin_edittext_email);
+        signinEdittextPassword = (EditText) findViewById(R.id.signin_edittext_password);
+
+        // Progress dialog
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+
+        // SQLite database handler
+        db = new SQLiteHandler(getApplicationContext());
+
+        // Session manager
+        session = new SessionManager(getApplicationContext());
+
+       // sign in button function
         Button signInButtonSignIn = (Button) findViewById(R.id.signin_button_signin);
         signInButtonSignIn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-            signinEdittextEmail = (EditText) findViewById(R.id.signin_edittext_email);
-
-            signinEdittextPassword = (EditText) findViewById(R.id.signin_edittext_password);
-
-            signinStringEmail = signinEdittextEmail.getText().toString();
-
-            signinStringPassword = signinEdittextPassword.getText().toString();
+            String email = signinEdittextEmail.getText().toString().trim();
+            String password = signinEdittextPassword.getText().toString().trim();
 
             // fields check
-            if (TextUtils.isEmpty(signinStringEmail)) {
-                signinEdittextEmail.setError("You can't leave this empty.");
-                return;
-            } else if (TextUtils.isEmpty(signinStringPassword)) {
-                signinEdittextPassword.setError("You can't leave this empty.");
-                return;
+            if (!email.isEmpty() && !password.isEmpty() ) {
+                checkLogin(email, password);
+            } else {
+                Toast.makeText(getApplicationContext(),
+                        "Please enter the Email & Password", Toast.LENGTH_LONG)
+                        .show();
             }
 
             /* listrik petir auth
@@ -97,13 +126,6 @@ public class Signin extends AppCompatActivity {
                 return;
             }
             */
-
-            // go to Main class if pass fields check
-            authChecker = "signin";
-            Intent intent = new Intent(getApplicationContext(), Main.class);
-            intent.putExtra("authchecker", authChecker);
-            intent.putExtra("username", signinStringEmail);
-            startActivity(intent);
             }
         });
 
@@ -136,46 +158,15 @@ public class Signin extends AppCompatActivity {
             }
         });
 
-        //Facebook Processing
+        //Facebook Processing Token
         callbackManager = CallbackManager.Factory.create();
         accessTokenTracker = new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldToken, AccessToken newToken) {
             }
         };
-        /*
-        profileTracker = new ProfileTracker() {
-            @Override
-            protected void onCurrentProfileChanged(Profile oldProfile, Profile newProfile) {
-                nextActivity(newProfile);
-            }
-        };
-        accessTokenTracker.startTracking();
-        profileTracker.startTracking();
-        */
-
         LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday"));
-        /*FacebookCallback<LoginResult> callback = new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                Profile profile = Profile.getCurrentProfile();
-                nextActivity(profile);
-
-                Toast.makeText(getApplicationContext(), "Logging in..." + loginResult.getAccessToken().getToken(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancel() {
-            }
-
-            @Override
-            public void onError(FacebookException e) {
-            }
-        };
-        loginButton.setReadPermissions("user_friends");
-        loginButton.registerCallback(callbackManager, callback);
-        */
 
         // Facebook Callback registration
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -230,14 +221,18 @@ public class Signin extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        //Facebook keep login
-        //Profile profile = Profile.getCurrentProfile();
-        //nextActivity(profile);
+        //Keep login session
         SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
-        String prefUsername = preferences.getString("namefb", "");
+        String prefUsername = preferences.getString("emailfb", "");
         if (prefUsername!=""){
             Intent main = new Intent(Signin.this, Main.class);
             startActivity(main);
+        }
+        if (session.isLoggedIn()) {
+            // User is already logged in. Take to main activity
+            Intent intent = new Intent(Signin.this, Main.class);
+            startActivity(intent);
+            finish();
         }
     }
 
@@ -261,26 +256,7 @@ public class Signin extends AppCompatActivity {
 
     }
 
-    //Facebook Function
-    /*
-    private void nextActivity(Profile profile){
-        if(profile != null){
-            Intent main = new Intent(Signin.this, Main.class);
-
-            String name = profile.getName().toString();
-            String id   = profile.getId();
-
-            SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("namefb", name );
-            editor.putString("idfb", id );
-            editor.apply();
-
-            startActivity(main);
-        }
-    }
-    */
-
+    //Faceboot get data
     private void setProfileToView(JSONObject jsonObject) {
         try {
             Intent main = new Intent(Signin.this, Main.class);
@@ -300,6 +276,103 @@ public class Signin extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    //Login Proccessing
+    private void checkLogin(final String email, final String password) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_login";
+
+        //view Loading interface
+        pDialog.setMessage("Logging in ...");
+        showDialog();
+
+
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AddressUrl.URL_LOGIN, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Login Response: " + response.toString());
+                hideDialog();
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    // Check for error node in json
+                    if (!error) {
+                        // user successfully logged in
+                        // Create login session
+                        session.setLogin(true);
+
+                        // Now store the user in SQLite
+                        String uid = jObj.getString("uid");
+
+                        JSONObject user = jObj.getJSONObject("user");
+                        String name = user.getString("name");
+                        String email = user.getString("email");
+                        String created_at = user
+                                .getString("created_at");
+
+                        // Inserting row in users table
+                        db.addUser(name, email, uid, created_at);
+
+                        // Launch main activity
+                        Intent intent = new Intent(Signin.this,
+                                Main.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        // Error in login. Get the error message
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Login Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+                hideDialog();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting parameters to login url
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("email", email);
+                params.put("password", password);
+
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
+
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 
 }
