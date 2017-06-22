@@ -81,8 +81,6 @@ public class FragmentGbStart extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                // Toast.makeText(getContext(), parent.getItemAtPosition(position) + " Selected", Toast.LENGTH_SHORT).show();
-
                 // determine market info content
                 if (gbstartSpinnerObject.getSelectedItem().toString().equals("Car")) {
                     gbstartTextInflationrate.setText("Car Price Inflation: 7.5% / Year");
@@ -132,9 +130,9 @@ public class FragmentGbStart extends Fragment {
 
                 gbstartStringObjectname = gbstartEdittextObjectname.getText().toString();
 
-                gbstartStringObjectprice = gbstartEdittextObjectprice.getText().toString().replaceAll(",", "");
+                gbstartStringObjectprice = gbstartEdittextObjectprice.getText().toString().trim().replaceAll(",", "");
 
-                gbstartStringTimevalue = gbstartEdittextTimevalue.getText().toString();
+                gbstartStringTimevalue = gbstartEdittextTimevalue.getText().toString().trim();
 
                 // fields check
                 if (TextUtils.isEmpty(gbstartStringObjectname)) {

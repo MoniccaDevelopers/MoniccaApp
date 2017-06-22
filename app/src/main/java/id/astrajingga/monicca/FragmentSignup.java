@@ -39,13 +39,10 @@ import id.astrajingga.monicca.auth.SessionManager;
 public class FragmentSignup extends Fragment {
     // variables
     EditText signupEdittextEmail,
-            signupEdittextPassword,
-            signupEdittextIncome;
+            signupEdittextPassword;
 
     String signupStringEmail,
-            signupStringPassword,
-            signupStringIncome,
-            authChecker;
+            signupStringPassword;
 
     //For Register Declaration
     private SessionManager session;
@@ -65,20 +62,22 @@ public class FragmentSignup extends Fragment {
 
         // visibility toggles
         TextInputLayout signupTextlayoutPassword = (TextInputLayout)view.findViewById(R.id.signup_textlayout_password);
-        TextInputLayout signupTextlayoutIncome = (TextInputLayout)view.findViewById(R.id.signup_textlayout_income);
         if (signupTextlayoutPassword.getEditText() != null) {
             signupTextlayoutPassword.getEditText();
         }
 
+        /*
+        TextInputLayout signupTextlayoutIncome = (TextInputLayout)view.findViewById(R.id.signup_textlayout_income);
         if (signupTextlayoutIncome.getEditText() != null) {
             signupTextlayoutIncome.getEditText();
         }
 
-        signupEdittextEmail = (EditText) view.findViewById(R.id.signup_edittext_email);
-        signupEdittextPassword = (EditText) view.findViewById(R.id.signup_edittext_password);
-
         signupEdittextIncome = (EditText) view.findViewById(R.id.signup_edittext_income);
         signupEdittextIncome.addTextChangedListener(TextwatcherIncome());
+        */
+
+        signupEdittextEmail = (EditText) view.findViewById(R.id.signup_edittext_email);
+        signupEdittextPassword = (EditText) view.findViewById(R.id.signup_edittext_password);
 
 
         //Loading
@@ -100,22 +99,19 @@ public class FragmentSignup extends Fragment {
 
                 signupStringEmail = signupEdittextEmail.getText().toString().trim();
                 signupStringPassword = signupEdittextPassword.getText().toString().trim();
-                signupStringIncome = signupEdittextIncome.getText().toString().trim();
 
+                // fields check
                 if (TextUtils.isEmpty(signupStringEmail)) {
                     signupEdittextEmail.setError("You can't leave this empty.");
                     return;
                 } else if (TextUtils.isEmpty(signupStringPassword)) {
                     signupEdittextPassword.setError("You can't leave this empty.");
                     return;
-                } else if (TextUtils.isEmpty(signupStringIncome)) {
-                    signupEdittextIncome.setError("You can't leave this empty.");
-                    return;
                 }
 
                 //give auto name todatabase for release
-                String namaa = "user v1";
-                registerUser(namaa, signupStringEmail, signupStringPassword);
+                String nama = "user v1";
+                registerUser(nama, signupStringEmail, signupStringPassword);
 
             }
         });
@@ -134,6 +130,7 @@ public class FragmentSignup extends Fragment {
         return view;
     }
 
+    /*
     private TextWatcher TextwatcherIncome() {
         return new TextWatcher() {
             @Override
@@ -175,6 +172,7 @@ public class FragmentSignup extends Fragment {
             }
         };
     }
+    */
 
     //Registering Proccess
     private void registerUser(final String name, final String email,
@@ -211,7 +209,7 @@ public class FragmentSignup extends Fragment {
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
-                        Toast.makeText(getActivity(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "User successfully registered. Please sign in.", Toast.LENGTH_LONG).show();
 
                         // Launch login activity
                         Intent intent = new Intent(
@@ -237,7 +235,7 @@ public class FragmentSignup extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getActivity(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                        "Connection Error.\nPlease check your internet connection.", Toast.LENGTH_LONG).show();
                 hideDialog();
             }
         }) {

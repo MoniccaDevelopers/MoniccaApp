@@ -110,6 +110,7 @@ public class Intro extends AppCompatActivity {
         }
 
         if (dots.length > 0) {
+            dots[currentPage].setTextSize(36);
             dots[currentPage].setTextColor(colorActive[currentPage]);
         }
     }

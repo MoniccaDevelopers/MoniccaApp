@@ -80,11 +80,11 @@ public class FragmentEpCalculate extends Fragment {
             @Override
             public void onClick(View v) {
 
-                epcalculateStringEntrancefee = epcalculateEdittextEntrancefee.getText().toString().replaceAll(",", "");
+                epcalculateStringEntrancefee = epcalculateEdittextEntrancefee.getText().toString().trim().replaceAll(",", "");
 
-                epcalculateStringTuitionfee = epcalculateEdittextTuitionfee.getText().toString().replaceAll(",", "");
+                epcalculateStringTuitionfee = epcalculateEdittextTuitionfee.getText().toString().trim().replaceAll(",", "");
 
-                epcalculateStringAnnualfee = epcalculateEdittextAnnualfee.getText().toString().replaceAll(",", "");
+                epcalculateStringAnnualfee = epcalculateEdittextAnnualfee.getText().toString().trim().replaceAll(",", "");
 
                 // fields check
                 if (TextUtils.isEmpty(epcalculateStringEntrancefee)) {

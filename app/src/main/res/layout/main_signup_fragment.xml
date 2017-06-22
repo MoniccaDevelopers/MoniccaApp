@@ -9,7 +9,6 @@
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:paddingBottom="14dp"
-    android:paddingTop="8dp"
     tools:context="id.astrajingga.monicca.FragmentSignup">
 
     <!-- signin_email -->
@@ -41,6 +40,7 @@
         android:layout_height="wrap_content"
         android:textColorHint="@color/colorAccentLight"
         app:passwordToggleEnabled="true"
+        android:layout_marginBottom="16dp"
         app:passwordToggleTint="@color/colorAccentLight">
 
         <EditText
@@ -61,7 +61,7 @@
 
     </android.support.design.widget.TextInputLayout>
 
-    <!-- line -->
+    <!-- line
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
@@ -71,8 +71,9 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorAccentLight" />
+    -->
 
-    <!-- income -->
+    <!-- income
     <android.support.design.widget.TextInputLayout
         android:id="@+id/signup_textlayout_income"
         android:layout_width="match_parent"
@@ -99,6 +100,7 @@
             app:backgroundTint="@color/colorAccentLight"/>
 
     </android.support.design.widget.TextInputLayout>
+    -->
 
     <!-- sign up button -->
     <Button
