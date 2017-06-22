@@ -53,7 +53,6 @@ public class register_process extends AsyncTask<String,Void,String> {
                 InputStream IS = httpURLConnection.getInputStream();
                 IS.close();
 
-                return "Registration Sukses";
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e){
