@@ -29,7 +29,6 @@
         <activity
             android:name=".Main"
             android:screenOrientation="portrait" />
-        <activity android:name=".auth.register" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

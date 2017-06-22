@@ -87,8 +87,6 @@ public class Signin extends AppCompatActivity {
         signinEdittextEmail = (EditText) findViewById(R.id.signin_edittext_email);
         signinEdittextPassword = (EditText) findViewById(R.id.signin_edittext_password);
 
-        //login versi 2
-
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -98,14 +96,6 @@ public class Signin extends AppCompatActivity {
 
         // Session manager
         session = new SessionManager(getApplicationContext());
-
-        // Check if user is already logged in or not
-        /*if (session.isLoggedIn()) {
-            // User is already logged in. Take him to main activity
-            Intent intent = new Intent(Signin.this, Main.class);
-            startActivity(intent);
-            finish();
-        }*/
 
        // sign in button function
         Button signInButtonSignIn = (Button) findViewById(R.id.signin_button_signin);
@@ -117,23 +107,14 @@ public class Signin extends AppCompatActivity {
             String email = signinEdittextEmail.getText().toString().trim();
             String password = signinEdittextPassword.getText().toString().trim();
 
-
-
             // fields check
-
             if (!email.isEmpty() && !password.isEmpty() ) {
-                //signinEdittextEmail.setError("You can't leave this empty.");
-                //checkLogin(signinStringEmail, signinStringPassword);
                 checkLogin(email, password);
             } else {
-               // signinEdittextPassword.setError("You can't leave this empty.");
                 Toast.makeText(getApplicationContext(),
                         "Please enter the Email & Password", Toast.LENGTH_LONG)
                         .show();
             }
-                //checkLogin(email, password);
-
-
 
             /* listrik petir auth
 
@@ -145,53 +126,6 @@ public class Signin extends AppCompatActivity {
                 return;
             }
             */
-                // Login versi 1 - Response received from the server versi
-                /*
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("success");
-
-                            if (success) {
-                                String name = jsonResponse.getString("name");
-
-                                Intent intent = new Intent(Signin.this, Main.class);
-                                intent.putExtra("name", name);
-                                intent.putExtra("email", signinStringEmail);
-                                Signin.this.startActivity(intent);
-
-                                //authChecker = "signin";
-                                //intent.putExtra("authchecker", authChecker);
-                                //intent.putExtra("username", signinStringEmail);
-
-                                SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
-                                SharedPreferences.Editor editor = preferences.edit();
-                                editor.putString("emailfb", signinStringEmail );
-                                editor.apply();
-
-                                Toast.makeText(Signin.this, "Now Login With Register Email", Toast.LENGTH_SHORT).show();
-                            } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(Signin.this);
-                                builder.setMessage("Login Failed")
-                                        .setNegativeButton("Retry", null)
-                                        .create()
-                                        .show();
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-
-
-                // go to Main class if pass fields check
-                LoginRequest loginRequest = new LoginRequest(signinStringEmail, signinStringPassword, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(Signin.this);
-                queue.add(loginRequest);
-                */
             }
         });
 
@@ -287,7 +221,7 @@ public class Signin extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        //Facebook keep login
+        //Keep login session
         SharedPreferences preferences = getSharedPreferences("FBPREF",MODE_PRIVATE);
         String prefUsername = preferences.getString("emailfb", "");
         if (prefUsername!=""){
@@ -295,7 +229,7 @@ public class Signin extends AppCompatActivity {
             startActivity(main);
         }
         if (session.isLoggedIn()) {
-            // User is already logged in. Take him to main activity
+            // User is already logged in. Take to main activity
             Intent intent = new Intent(Signin.this, Main.class);
             startActivity(intent);
             finish();
@@ -344,15 +278,16 @@ public class Signin extends AppCompatActivity {
         }
     }
 
-    //Login via email versi 2
+    //Login Proccessing
     private void checkLogin(final String email, final String password) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_login";
 
-
+        //view Loading interface
         pDialog.setMessage("Logging in ...");
         showDialog();
 
-        // Tag used to cancel the request
-        String tag_string_req = "req_login";
+
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 AddressUrl.URL_LOGIN, new Response.Listener<String>() {
