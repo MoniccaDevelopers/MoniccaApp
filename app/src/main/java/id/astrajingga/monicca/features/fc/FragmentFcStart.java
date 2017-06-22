@@ -87,13 +87,13 @@ public class FragmentFcStart extends Fragment {
             @Override
             public void onClick(View v) {
 
-            fcstartStringBalance = fcstartEdittextBalance.getText().toString().replaceAll(",", "");
+            fcstartStringBalance = fcstartEdittextBalance.getText().toString().trim().replaceAll(",", "");
 
-            fcstartStringIncome = fcstartEdittextIncome.getText().toString().replaceAll(",", "");
+            fcstartStringIncome = fcstartEdittextIncome.getText().toString().trim().replaceAll(",", "");
 
-            fcstartStringSavings = fcstartEdittextSavings.getText().toString().replaceAll(",", "");
+            fcstartStringSavings = fcstartEdittextSavings.getText().toString().trim().replaceAll(",", "");
 
-            fcstartStringMortgage = fcstartEdittextMortgage.getText().toString().replaceAll(",", "");
+            fcstartStringMortgage = fcstartEdittextMortgage.getText().toString().trim().replaceAll(",", "");
 
             // fields check
             if (TextUtils.isEmpty(fcstartStringBalance)) {

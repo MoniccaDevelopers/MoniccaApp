@@ -1,12 +1,9 @@
 package id.astrajingga.monicca;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.FragmentManager;
@@ -23,11 +20,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -48,9 +43,10 @@ import java.util.Map;
 
 import id.astrajingga.monicca.auth.AddressUrl;
 import id.astrajingga.monicca.auth.AppController;
-import id.astrajingga.monicca.auth.LoginRequest;
 import id.astrajingga.monicca.auth.SQLiteHandler;
 import id.astrajingga.monicca.auth.SessionManager;
+
+import static id.astrajingga.monicca.R.id.email;
 
 public class Signin extends AppCompatActivity {
     // variables
@@ -70,7 +66,6 @@ public class Signin extends AppCompatActivity {
     private SQLiteHandler db;
     private ProgressDialog pDialog;
     private static final String TAG = FragmentSignup.class.getSimpleName();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,28 +99,19 @@ public class Signin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            String email = signinEdittextEmail.getText().toString().trim();
-            String password = signinEdittextPassword.getText().toString().trim();
+            signinStringEmail = signinEdittextEmail.getText().toString().trim();
+            signinStringPassword = signinEdittextPassword.getText().toString().trim();
 
-            // fields check
-            if (!email.isEmpty() && !password.isEmpty() ) {
-                checkLogin(email, password);
-            } else {
-                Toast.makeText(getApplicationContext(),
-                        "Please enter the Email & Password", Toast.LENGTH_LONG)
-                        .show();
-            }
-
-            /* listrik petir auth
-
-            else if (!"listrik".equals(signinStringEmail)) {
-                Toast.makeText(getApplicationContext(), "Wrong Email or Password.", Toast.LENGTH_SHORT).show();
-                return;
-            } else if (!"petir".equals(signinStringPassword)) {
-                Toast.makeText(getApplicationContext(), "Wrong Email or Password.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            */
+                // fields check
+                if (TextUtils.isEmpty(signinStringEmail)) {
+                    signinEdittextEmail.setError("You can't leave this empty.");
+                    return;
+                } else if (TextUtils.isEmpty(signinStringPassword)) {
+                    signinEdittextPassword.setError("You can't leave this empty.");
+                    return;
+                } else {
+                    checkLogin(signinStringEmail, signinStringPassword);
+                }
             }
         });
 
@@ -256,7 +242,7 @@ public class Signin extends AppCompatActivity {
 
     }
 
-    //Faceboot get data
+    //Facebook get data
     private void setProfileToView(JSONObject jsonObject) {
         try {
             Intent main = new Intent(Signin.this, Main.class);
@@ -286,8 +272,6 @@ public class Signin extends AppCompatActivity {
         //view Loading interface
         pDialog.setMessage("Logging in ...");
         showDialog();
-
-
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 AddressUrl.URL_LOGIN, new Response.Listener<String>() {
@@ -343,7 +327,7 @@ public class Signin extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Login Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
-                        error.getMessage(), Toast.LENGTH_LONG).show();
+                        "Connection Error.\nPlease check your internet connection.", Toast.LENGTH_LONG).show();
                 hideDialog();
             }
         }) {

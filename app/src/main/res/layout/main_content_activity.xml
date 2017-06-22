@@ -12,7 +12,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EEEEEE"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -22,9 +21,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginStart="18dp">
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@color/colorAccentLight"
+            android:paddingStart="18dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1.1">
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/main_viewpager"
@@ -67,16 +67,17 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/colorAccentLight"
             android:layout_weight="2">
 
             <!-- news feed -->
             <RelativeLayout
                 android:id="@+id/nf"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_centerInParent="true"
                 android:layout_margin="16dp"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_gray"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 
@@ -86,12 +87,14 @@
                     android:layout_centerInParent="true"
                     android:paddingBottom="10dp">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/main_button_newsfeed"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_nf" />
+                        android:background="@color/colorAccentLight"
+                        android:src="@drawable/main_btn_nf"
+                        android:tint="@color/colorAccentDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -99,8 +102,9 @@
                         android:layout_below="@id/main_button_newsfeed"
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_nf"
-                        android:textColor="#BDBDBD"
-                        android:textSize="10sp" />
+                        android:textColor="@color/colorAccentDark"
+                        android:textSize="10sp"
+                        android:textStyle="bold"/>
 
                 </RelativeLayout>
 
@@ -109,13 +113,13 @@
             <!-- education cost calculator -->
             <RelativeLayout
                 android:id="@+id/ep"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_above="@id/nf"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_yellow"
                 android:gravity="center_horizontal"
                 android:onClick="ep">
 
@@ -125,12 +129,14 @@
                     android:layout_centerInParent="true"
                     android:onClick="ep">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/main_button_educationplan"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_ep"
+                        android:src="@drawable/main_btn_ep"
+                        android:tint="@color/colorAccent"
+                        android:background="@color/colorAccentLight"
                         android:onClick="ep" />
 
                     <TextView
@@ -141,7 +147,8 @@
                         android:onClick="ep"
                         android:text="@string/main_ep"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
                         android:textSize="10sp" />
 
                 </RelativeLayout>
@@ -151,13 +158,13 @@
             <!-- invesment -->
             <RelativeLayout
                 android:id="@+id/inv"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_toRightOf="@id/nf"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_gray"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 
@@ -167,12 +174,14 @@
                     android:layout_centerInParent="true"
                     android:paddingBottom="10dp">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/inv_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_inv" />
+                        android:src="@drawable/main_btn_inv"
+                        android:background="@color/colorAccentLight"
+                        android:tint="@color/colorAccentDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -180,7 +189,8 @@
                         android:layout_below="@id/inv_btn"
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_inv"
-                        android:textColor="#BDBDBD"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccentDark"
                         android:textSize="10sp" />
 
                 </RelativeLayout>
@@ -190,13 +200,13 @@
             <!-- haj -->
             <RelativeLayout
                 android:id="@+id/hj"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_below="@id/nf"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_gray"
                 android:visibility="invisible">
 
                 <RelativeLayout
@@ -204,12 +214,14 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/hj_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_hj" />
+                        android:src="@drawable/main_btn_hj"
+                        android:background="@color/colorAccentLight"
+                        android:tint="@color/colorAccentDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -218,7 +230,8 @@
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_hj"
                         android:textAlignment="center"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/colorAccentDark"
+                        android:textStyle="bold"
                         android:textSize="10sp" />
 
                 </RelativeLayout>
@@ -228,13 +241,13 @@
             <!-- personal advisor -->
             <RelativeLayout
                 android:id="@+id/pa"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_toLeftOf="@id/nf"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_gray"
                 android:onClick="pa"
                 android:gravity="center_horizontal">
 
@@ -244,13 +257,15 @@
                     android:onClick="pa"
                     android:layout_centerInParent="true">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/pa_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:onClick="pa"
-                        android:background="@drawable/main_btn_pa" />
+                        android:background="@color/colorAccentLight"
+                        android:src="@drawable/main_btn_pa"
+                        android:tint="@color/colorAccentDark"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -259,7 +274,8 @@
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_pa"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorAccentDark"
+                        android:textStyle="bold"
                         android:onClick="pa"
                         android:textSize="10sp" />
 
@@ -269,12 +285,12 @@
 
             <!-- financial check -->
             <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_above="@+id/pa"
                 android:layout_toLeftOf="@+id/ep"
                 android:layout_toStartOf="@+id/ep"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_yellow"
                 android:onClick="fc">
 
                 <RelativeLayout
@@ -283,12 +299,14 @@
                     android:layout_centerInParent="true"
                     android:onClick="fc">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/fc_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_fc"
+                        android:src="@drawable/main_btn_fc"
+                        android:tint="@color/colorAccent"
+                        android:background="@color/colorAccentLight"
                         android:onClick="fc" />
 
                     <TextView
@@ -297,9 +315,10 @@
                         android:layout_below="@id/fc_btn"
                         android:layout_centerHorizontal="true"
                         android:onClick="fc"
+                        android:textStyle="bold"
                         android:text="@string/main_fc"
                         android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorAccent"
                         android:textSize="10sp" />
 
                 </RelativeLayout>
@@ -308,12 +327,12 @@
 
             <!-- goal base -->
             <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_above="@+id/inv"
                 android:layout_toEndOf="@+id/ep"
                 android:layout_toRightOf="@+id/ep"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_yellow"
                 android:gravity="center_horizontal"
                 android:onClick="gb">
 
@@ -324,12 +343,14 @@
                     android:onClick="gb"
                     android:paddingBottom="10dp">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/gb_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_gb"
+                        android:background="@color/colorAccentLight"
+                        android:src="@drawable/main_btn_gb"
+                        android:tint="@color/colorAccent"
                         android:onClick="gb" />
 
                     <TextView
@@ -339,7 +360,8 @@
                         android:layout_centerHorizontal="true"
                         android:onClick="gb"
                         android:text="@string/main_gb"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
                         android:textSize="10sp" />
 
                 </RelativeLayout>
@@ -348,11 +370,11 @@
 
             <!-- commodity -->
             <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_below="@id/pa"
                 android:layout_toLeftOf="@id/hj"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_gray"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 
@@ -362,13 +384,15 @@
                     android:layout_centerInParent="true"
                     android:paddingBottom="10dp">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/cmd_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_cmd" />
+                        android:src="@drawable/main_btn_cmd"
+                        android:tint="@color/colorAccentDark"
+                        android:background="@color/colorAccentLight"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -376,7 +400,8 @@
                         android:layout_below="@id/cmd_btn"
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_cmd"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/colorAccentDark"
+                        android:textStyle="bold"
                         android:textSize="10sp" />
 
                 </RelativeLayout>
@@ -385,11 +410,11 @@
 
             <!-- history -->
             <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_below="@id/inv"
                 android:layout_toRightOf="@id/hj"
-                android:background="@drawable/btn_bg_rs_white"
+                android:background="@drawable/btn_bg_rs_outline_gray"
                 android:gravity="center_horizontal"
                 android:visibility="invisible">
 
@@ -399,12 +424,14 @@
                     android:layout_centerInParent="true"
                     android:paddingBottom="10dp">
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/oth_btn"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:background="@drawable/main_btn_hst" />
+                        android:src="@drawable/main_btn_hst"
+                        android:tint="@color/colorAccentDark"
+                        android:background="@color/colorAccentLight"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -412,7 +439,8 @@
                         android:layout_below="@id/oth_btn"
                         android:layout_centerHorizontal="true"
                         android:text="@string/main_hst"
-                        android:textColor="#BDBDBD"
+                        android:textColor="@color/colorAccentDark"
+                        android:textStyle="bold"
                         android:textSize="10sp" />
 
                 </RelativeLayout>

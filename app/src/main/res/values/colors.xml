@@ -7,6 +7,7 @@
     <color name="colorAccentDark">#BDBDBD</color>
     <color name="colorAccentLight">@android:color/white</color>
 
+
     <array name="array_dot_active">
         <item>@color/colorAccent</item>
         <item>@color/colorAccent</item>

@@ -119,7 +119,7 @@ public class Main extends AppCompatActivity
 
         // view pager timer
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new viewPagerTimerTask(), 4000, 4000);
+        timer.scheduleAtFixedRate(new viewPagerTimerTask(), 6000, 6000);
 
         // nametag
         Intent intent = getIntent();
@@ -268,6 +268,10 @@ public class Main extends AppCompatActivity
                     if (viewPager.getCurrentItem() == 0) {
                         viewPager.setCurrentItem(1);
                     } else if (viewPager.getCurrentItem() == 1) {
+                        viewPager.setCurrentItem(2);
+                    } else if (viewPager.getCurrentItem() == 2) {
+                        viewPager.setCurrentItem(3);
+                    } else if (viewPager.getCurrentItem() == 3) {
                         viewPager.setCurrentItem(0);
                     }
                 }

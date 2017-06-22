@@ -77,9 +77,9 @@ public class FragmentEpStart extends Fragment {
             public void onClick(View v) {
 
                 epstartStringApplicantname = epstartEdittextApplicantname.getText().toString();
-                epstartStringApplicantage = epstartEdittextApplicantage.getText().toString();
+                epstartStringApplicantage = epstartEdittextApplicantage.getText().toString().trim();
                 epstartStringInstitutionname = epstartEdittextInstitutionname.getText().toString();
-                epstartStringEducationlevel = epstartSpinnerEducationlevel.getSelectedItem().toString();
+                epstartStringEducationlevel = epstartSpinnerEducationlevel.getSelectedItem().toString().trim();
 
                 // fields check
                 if (TextUtils.isEmpty(epstartStringApplicantname)) {
