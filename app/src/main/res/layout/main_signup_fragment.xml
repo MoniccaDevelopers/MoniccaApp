@@ -27,7 +27,6 @@
             android:hint="@string/signup_hint_email"
             android:textColor="@color/colorAccentLight"
             android:inputType="textEmailAddress"
-            android:maxLength="16"
             android:maxLines="1"
             app:backgroundTint="@color/colorAccentLight"/>
 
@@ -53,9 +52,8 @@
             android:drawableStart="@drawable/signin_password"
             android:fontFamily="@string/font_family_regular"
             android:hint="@string/signup_hint_password"
-            android:imeOptions="actionNext"
+            android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:maxLength="16"
             android:maxLines="1"
             app:backgroundTint="@color/colorAccentLight"/>
 
