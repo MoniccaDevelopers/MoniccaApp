@@ -111,7 +111,7 @@ public class FragmentEpCalculate extends Fragment {
                     epcalculateDoubleEnrollTime = 15 - epcalculateDoubleApplicantage;
                     educationDuration = 3;
                     totalSemester = 12;
-                } else if (epcalculateStringEducationlevel.equals("College")) {
+                } else if (epcalculateStringEducationlevel.equals("College / Univ.")) {
                     educationDuration = 4;
                     totalSemester = 2;
                     if (epcalculateDoubleApplicantage > 18) {

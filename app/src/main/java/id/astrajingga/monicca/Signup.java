@@ -4,14 +4,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
-import android.text.Editable;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,10 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 import id.astrajingga.monicca.auth.AddressUrl;
@@ -36,7 +29,11 @@ import id.astrajingga.monicca.auth.AppController;
 import id.astrajingga.monicca.auth.SQLiteHandler;
 import id.astrajingga.monicca.auth.SessionManager;
 
-public class FragmentSignup extends Fragment {
+/**
+ * Created by Djaffar on 7/4/2017.
+ */
+
+public class Signup extends AppCompatActivity {
     // variables
     EditText signupEdittextEmail,
             signupEdittextPassword;
@@ -48,52 +45,39 @@ public class FragmentSignup extends Fragment {
     private SessionManager session;
     private SQLiteHandler db;
     private ProgressDialog pDialog;
-    private static final String TAG = FragmentSignup.class.getSimpleName();
-
-    public FragmentSignup() {
-        // Required empty public constructor
-    }
+    private static final String TAG = Signup.class.getSimpleName();
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main_signup_activity);
 
-        View view = inflater.inflate(R.layout.main_signup_fragment, container, false);
-
-        // visibility toggles
-        TextInputLayout signupTextlayoutPassword = (TextInputLayout)view.findViewById(R.id.signup_textlayout_password);
+        // password visibility toggles
+        TextInputLayout signupTextlayoutPassword = (TextInputLayout) findViewById(R.id.signup_textlayout_password);
         if (signupTextlayoutPassword.getEditText() != null) {
             signupTextlayoutPassword.getEditText();
         }
 
-        /*
-        TextInputLayout signupTextlayoutIncome = (TextInputLayout)view.findViewById(R.id.signup_textlayout_income);
-        if (signupTextlayoutIncome.getEditText() != null) {
-            signupTextlayoutIncome.getEditText();
-        }
-
-        signupEdittextIncome = (EditText) view.findViewById(R.id.signup_edittext_income);
-        signupEdittextIncome.addTextChangedListener(TextwatcherIncome());
-        */
-
-        signupEdittextEmail = (EditText) view.findViewById(R.id.signup_edittext_email);
-        signupEdittextPassword = (EditText) view.findViewById(R.id.signup_edittext_password);
-
+        signupEdittextEmail = (EditText) findViewById(R.id.signup_edittext_email);
+        signupEdittextPassword = (EditText) findViewById(R.id.signup_edittext_password);
 
         //Loading
-        pDialog = new ProgressDialog(getActivity());
+        pDialog = new ProgressDialog(Signup.this);
         pDialog.setCancelable(false);
 
         // Session manager
-        session = new SessionManager(getActivity());
+        session = new SessionManager(Signup.this);
 
         // SQLite database handler
-        db = new SQLiteHandler(getActivity());
+        db = new SQLiteHandler(Signup.this);
 
-        // sign up button function
-        Button signUpButtonSignUp = (Button) view.findViewById(R.id.signup_button_signup);
-        signUpButtonSignUp.setOnClickListener(new View.OnClickListener() {
+        signupBtn();
+        signinBtn();
+    }
 
+    public void signupBtn() {
+        Button btnSignup = (Button) findViewById(R.id.signup_button_signup);
+        btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -115,64 +99,18 @@ public class FragmentSignup extends Fragment {
 
             }
         });
+    }
 
-        // sign in button
-        TextView signUpButtonSignIn = (TextView) view.findViewById(R.id.signup_button_signin);
-        signUpButtonSignIn.setOnClickListener(new View.OnClickListener() {
-
+    public void signinBtn() {
+        TextView signinBtn = (TextView) findViewById(R.id.signup_button_signin);
+        signinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =  new Intent(getActivity(), Signin.class);
+                Intent intent =  new Intent(Signup.this, Signin.class);
                 startActivity(intent);
             }
         });
-
-        return view;
     }
-
-    /*
-    private TextWatcher TextwatcherIncome() {
-        return new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                signupEdittextIncome.removeTextChangedListener(this);
-
-                try {
-                    String originalString = s.toString();
-
-                    Long longval;
-                    if (originalString.contains(",")) {
-                        originalString = originalString.replaceAll(",", "");
-                    }
-                    longval = Long.parseLong(originalString);
-
-                    DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
-                    formatter.applyPattern("#,###,###,###");
-                    String formattedString = formatter.format(longval);
-
-                    // setting text after format to fcstartEdittextBalance
-                    signupEdittextIncome.setText(formattedString);
-                    signupEdittextIncome.setSelection(signupEdittextIncome.getText().length());
-
-                } catch (NumberFormatException nfe) {
-                    nfe.printStackTrace();
-                }
-
-                signupEdittextIncome.addTextChangedListener(this);
-            }
-        };
-    }
-    */
 
     //Registering Proccess
     private void registerUser(final String name, final String email,
@@ -196,6 +134,8 @@ public class FragmentSignup extends Fragment {
                     JSONObject jObj = new JSONObject(response);
                     boolean error = jObj.getBoolean("error");
                     if (!error) {
+
+                        session.setLogin(true);
                         // User successfully stored in MySQL
                         // Now store the user in sqlite
                         String uid = jObj.getString("uid");
@@ -209,19 +149,19 @@ public class FragmentSignup extends Fragment {
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
-                        Toast.makeText(getActivity(), "User successfully registered. Please sign in.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Signup.this, "User successfully registered. Please sign in.", Toast.LENGTH_LONG).show();
 
                         // Launch login activity
                         Intent intent = new Intent(
-                                getActivity(),
-                                Signin.class);
+                                Signup.this,
+                                Main.class);
                         startActivity(intent);
                     } else {
 
                         // Error occurred in registration. Get the error
                         // message
                         String errorMsg = jObj.getString("error_msg");
-                        Toast.makeText(getActivity(),
+                        Toast.makeText(Signup.this,
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
@@ -234,7 +174,7 @@ public class FragmentSignup extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Registration Error: " + error.getMessage());
-                Toast.makeText(getActivity(),
+                Toast.makeText(Signup.this,
                         "Connection Error.\nPlease check your internet connection.", Toast.LENGTH_LONG).show();
                 hideDialog();
             }

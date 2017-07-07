@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
     android:clickable="true"
     android:orientation="vertical"
     tools:context="id.astrajingga.monicca.features.gb.FragmentGbStart">
@@ -11,238 +10,249 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="2"
+        android:clickable="true">
 
-        <!-- image
+        <!-- background photo -->
         <ImageView
-            android:id="@+id/gb_image_logo"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/main_btn_gb" />
-        -->
-
-        <!-- title -->
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:textAllCaps="true"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_centerInParent="true"
-            android:textStyle="bold"
-            android:text="Please Fill In Required Data Below" />
-
-    </RelativeLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5">
+            android:contentDescription="@string/gb_desc_img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/goal_base" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:layout_gravity="center_vertical">
+            android:clickable="true"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="object information"
-                android:textAllCaps="true"
-                android:textStyle="bold"/>
-
-            <LinearLayout
+            <!-- title -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:background="#FFFFFF"
-                android:orientation="vertical"
-                android:paddingBottom="4dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="8dp">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusableInTouchMode="true">
 
-                <!-- desired object -->
+                <!-- title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:layout_centerInParent="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccentLight"
+                    android:text="@string/gb_text_header" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:layout_gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:text="Desired Object"
-                        android:textSize="10sp" />
-
-                    <Spinner android:id="@+id/gbstart_spinner_object"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_weight="1"
-                        android:entries="@array/object_list"/>
-
-                </LinearLayout>
-
-                <!-- line -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="4dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="4dp"
-                    android:background="#BDBDBD" />
-
-                <!-- object name or title field -->
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:textColorHint="#BDBDBD">
-
-                    <EditText android:id="@+id/gbstart_edittext_objectname"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:hint="Object Name or Title"
-                        android:imeOptions="actionNext"
-                        android:inputType="text"
-                        android:maxLines="1" />
-
-                </android.support.design.widget.TextInputLayout>
-
-                <!-- object price field -->
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:textColorHint="#BDBDBD">
-
-                    <EditText
-                        android:id="@+id/gbstart_edittext_objectprice"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:hint="Object Current Price"
-                        android:imeOptions="actionNext"
-                        android:inputType="number|phone"
-                        android:maxLength="17"
-                        android:maxLines="1" />
-
-                </android.support.design.widget.TextInputLayout>
-
-                <!-- target deadline -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
-                        android:text="Target Deadline"
-                        android:textSize="10sp" />
+                        android:text="@string/gb_text_objinfo"
+                        android:textColor="@color/colorAccentLight"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/field_bg_white"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp">
 
-                        <EditText android:id="@+id/gbstart_edittext_timevalue"
-                            android:layout_width="0dp"
+                        <!-- desired object -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
-                            android:layout_weight="1"
-                            android:textColorHint="@color/colorAccentDark"
-                            android:hint="0"
-                            android:maxLength="2"
-                            android:inputType="number|phone"
-                            android:textAlignment="center" />
+                            android:orientation="vertical">
 
-                        <Spinner android:id="@+id/gbstart_spinner_time"
-                            android:layout_width="0dp"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:text="@string/gb_text_desobj"
+                                android:textSize="12sp" />
+
+                            <Spinner android:id="@+id/gbstart_spinner_object"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_weight="1"
+                                android:entries="@array/object_list" />
+
+                        </LinearLayout>
+
+                        <!-- line -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/colorAccentDark" />
+
+                        <!-- object name or title field -->
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:layout_marginRight="4dp"
-                            android:layout_weight="1"
-                            android:entries="@array/time_list"/>
+                            android:textColorHint="@color/colorAccentDark">
+
+                            <EditText android:id="@+id/gbstart_edittext_objectname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/gb_hint_objname"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:maxLines="1" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <!-- object price field -->
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:textColorHint="@color/colorAccentDark">
+
+                            <EditText
+                                android:id="@+id/gbstart_edittext_objectprice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/gb_hint_objprice"
+                                android:imeOptions="actionNext"
+                                android:inputType="number|phone"
+                                android:maxLength="17"
+                                android:maxLines="1" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <!-- target deadline -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:text="@string/gb_text_deadline"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText android:id="@+id/gbstart_edittext_timevalue"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColorHint="@color/colorAccentDark"
+                                    android:hint="@string/gb_hint_deadline"
+                                    android:maxLength="2"
+                                    android:inputType="number|phone"
+                                    android:textAlignment="center" />
+
+                                <Spinner android:id="@+id/gbstart_spinner_time"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="4dp"
+                                    android:layout_weight="1"
+                                    android:entries="@array/time_list"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <!-- market information -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/gb_text_marinfo"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorAccentLight"
+                        android:textStyle="bold"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/field_bg_white"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gb_text_interest"/>
+
+                        <!-- line -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/colorAccentDark" />
+
+                        <TextView
+                            android:id="@+id/gbstart_text_inflationrate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                     </LinearLayout>
 
                 </LinearLayout>
 
-
-            </LinearLayout>
-
-            <!-- market information -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="market information"
-                android:textAllCaps="true"
-                android:textStyle="bold"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:orientation="vertical"
-                android:paddingBottom="8dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Interest: 0.96% / Year"/>
-
-                <!-- line -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="4dp"
-                    android:layout_marginTop="4dp"
-                    android:background="#BDBDBD" />
-
-                <TextView
-                    android:id="@+id/gbstart_text_inflationrate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
 
-    </ScrollView>
+    </RelativeLayout>
 
     <!-- button -->
     <Button android:id="@+id/gbstart_button_calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_yellow"
-        android:text="calculate"
-        android:textColor="#FFFFFF"
+        android:text="@string/gb_btn_afa"
+        android:textColor="@color/colorAccentLight"
         android:textStyle="bold" />
 
 </LinearLayout>

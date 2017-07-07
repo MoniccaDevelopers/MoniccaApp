@@ -63,20 +63,7 @@ public class Signin extends AppCompatActivity {
     private SessionManager session;
     private SQLiteHandler db;
     private ProgressDialog pDialog;
-    private static final String TAG = FragmentSignup.class.getSimpleName();
-
-
-    @Override
-    public void onBackPressed() {
-        int count = getFragmentManager().getBackStackEntryCount();
-
-        if (count == 0) {
-            super.onBackPressed();
-            //additional code
-        } else {
-            getFragmentManager().popBackStack();
-        }
-    }
+    private static final String TAG = Signup.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,11 +119,8 @@ public class Signin extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                LinearLayout signinField = (LinearLayout) findViewById(R.id.signin_field);
-                signinField.setVisibility(View.GONE);
-                FragmentSignup fragmentSignup = new FragmentSignup();
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.signin_fragment_container, fragmentSignup).addToBackStack("test").commit();
+            Intent intent = new Intent(Signin.this, Signup.class);
+            startActivity(intent);
             }
         });
 
