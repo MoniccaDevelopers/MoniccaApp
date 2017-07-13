@@ -1,69 +1,88 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
     android:clickable="true"
+    android:orientation="vertical"
     tools:context="id.astrajingga.monicca.features.gb.FragmentGbHistory">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TextView
+        <!-- background photo -->
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"
-            android:text="Goal Base History"/>
+            android:contentDescription="@string/gb_desc_img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/goal_base" />
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <com.ms.square.android.expandabletextview.ExpandableTextView
-                android:id="@+id/gbhistory_expand_item"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:background="#FFFFFF"
-                app:animDuration="200"
-                app:maxCollapsedLines="5">
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/colorAccentLight"
+                android:text="@string/gb_text_titlehistory"/>
 
-                <TextView
-                    android:id="@+id/expandable_text"
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.ms.square.android.expandabletextview.ExpandableTextView
+                    android:id="@+id/gbhistory_expand_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginTop="8dp" />
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/field_bg_white"
+                    app:animDuration="200"
+                    app:maxCollapsedLines="5">
 
-                <ImageButton
-                    android:id="@+id/expand_collapse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|bottom"
-                    android:background="@android:color/transparent"
-                    android:padding="16dp" />
+                    <TextView
+                        android:id="@+id/expandable_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="8dp" />
 
-            </com.ms.square.android.expandabletextview.ExpandableTextView>
+                    <ImageButton
+                        android:id="@+id/expand_collapse"
+                        android:layout_width="wrap_content"
+                        android:contentDescription="@string/gb_desc_dropdownicon"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:background="@android:color/transparent"
+                        android:padding="16dp" />
 
-        </ScrollView>
+                </com.ms.square.android.expandabletextview.ExpandableTextView>
 
-    </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/gbhistory_button_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@drawable/btn_bg_yellow"
-        android:text="back to home"
-        android:textColor="#FFFFFF"
+        android:text="@string/gb_btn_home"
+        android:textColor="@color/colorAccentLight"
         android:textStyle="bold" />
 
-</RelativeLayout>
+</LinearLayout>

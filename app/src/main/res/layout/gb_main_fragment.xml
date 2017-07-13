@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
     android:clickable="true"
     android:orientation="vertical"
     tools:context="id.astrajingga.monicca.features.gb.FragmentGbMain">
@@ -11,37 +10,51 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:gravity="center"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp">
+        android:gravity="center">
 
-        <!-- image -->
-        <ImageView android:id="@+id/gb_image_logo"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/main_btn_gb" />
+        <!-- background photo -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/gb_desc_img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/goal_base" />
 
         <!-- title -->
         <TextView
             android:id="@+id/gb_text_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/gb_image_logo"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="4dp"
-            android:text="Goal Base"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:text="@string/gb_text_title"
             android:textAppearance="?android:textAppearanceMedium" />
+
+        <!-- line -->
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/gb_text_logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/colorAccentLight" />
 
         <!-- desc -->
         <TextView
-            android:background="#FFFFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:padding="4dp"
-            android:layout_below="@id/gb_text_logo"
-            android:text="Simple planner tool that help you to find out how much you have to save monthly or yearly to achieve your desired goals." />
+            android:layout_below="@id/line"
+            android:layout_marginEnd="32dp"
+            android:text="@string/gb_text_desc"
+            android:layout_alignStart="@id/line"
+            android:textColor="@color/colorAccentLight" />
 
     </RelativeLayout>
 
@@ -50,8 +63,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_yellow"
-        android:text="start"
-        android:textColor="#FFFFFF"
+        android:text="@string/gb_btn_start"
+        android:textColor="@color/colorAccentLight"
         android:textStyle="bold" />
 
 </LinearLayout>

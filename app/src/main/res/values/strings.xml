@@ -1,18 +1,6 @@
 <resources>
     <string name="app_name">Monicca</string>
 
-    <!-- features -->
-        <string-array name="feature_names">
-            <item>Financial Check</item>
-            <item>Education Plan</item>
-            <item>Goal Base</item>
-            <item>Personal Advisor</item>
-            <item>News Feed</item>
-            <item>Investment</item>
-            <item>Commodity</item>
-            <item>Haj and Umroh</item>
-        </string-array>
-
     <!-- intro -->
         <string name="intro_desc_img">Intro Images</string>
         <string name="intro_first_title">WELCOME. LET US INTRODUCE MONICCA</string>
@@ -66,8 +54,8 @@
 
     <!-- financial checkup -->
         <!-- main -->
-        <string name="fc_desc_img">Financial Check Logo</string>
-        <string name="fc_text_title">Financial Check</string>
+        <string name="fc_desc_img">Financial Check Illustration Photo</string>
+        <string name="fc_text_title">FINANCIAL CHECK</string>
         <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
         <string name="fc_btn_start">start</string>
 
@@ -78,33 +66,105 @@
         <string name="fc_hint_income">Monthly Current Income</string>
         <string name="fc_hint_savings">Monthly Current Savings</string>
         <string name="fc_hint_mortgage">Monthly Current Mortgage</string>
-        <string name="fc_btn_calculate">calculate</string>
+        <string name="fc_btn_afa">ask for advice</string>
 
         <!-- result -->
-        <string name="fc_text_titleresult">Analysis Result</string>
+        <string name="fc_text_titleresult">ANALYSIS RESULT</string>
         <string name="fc_text_financialconditionresult">Your financial condition is</string>
-        <string name="fc_text_recommends">MONICCA Recommends</string>
+        <string name="fc_desc_indicator">Financial Condition Indicator</string>
+        <string name="fc_text_recommends">MONICCA RECOMMENDS</string>
         <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
         <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
         <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
         <string name="fc_btn_save">save result</string>
 
-        <!-- navdrawer_history -->
-        <string name="fc_text_titlehistory">Financial Checkup History</string>
+        <!-- history -->
+        <string name="fc_text_titlehistory">FINANCIAL CHECK HISTORY</string>
         <string name="fc_desc_dropdownicon">Dropdown Icon</string>
         <string name="fc_btn_home">back to home</string>
 
+
     <!-- Education Plan -->
         <!-- main -->
-        <string name="ep_desc_img">Education Plan Logo</string>
-        <string name="ep_text_title">Education Plan</string>
+        <string name="ep_desc_img">Education Plan Illustration Photo</string>
+        <string name="ep_text_title">EDUCATION PLAN</string>
+        <string name="ep_text_desc">An education planner calculator to determine how much money you should save to fund your education in the future.</string>
+        <string name="ep_btn_start">start</string>
+
+        <!-- start -->
+        <string name="ep_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
+        <string name="ep_text_appinfo">APPLICANT INFORMATION</string>
+        <string name="ep_hint_appname">Applicant Name</string>
+        <string name="ep_hint_appage">Applicant Age (Max 25 y.o)</string>
+        <string name="ep_hint_insname">Desired Institution Name</string>
+        <string name="ep_text_desedulvl">Desired Education Level</string>
+        <string name="ep_btn_next">next</string>
+
+        <!-- calculate -->
+        <string name="ep_text_headersec">PLEASE FILL IN REQUIRED DATA BELOW</string>
+        <string name="ep_text_insinfo">DESIRED INSTITUTION INFORMATION</string>
+        <string name="ep_hint_entfee">Institution Entrance Fee</string>
+        <string name="ep_hint_tuifee">Institution Tuition Fee</string>
+        <string name="ep_hint_annfee">Institution Annual Fee</string>
+        <string name="ep_text_marinfo">MARKET INFORMATION</string>
+        <string name="ep_text_interest">Interest: 0.96% / Year</string>
+        <string name="ep_text_inflation">Inflation Rate: 5.00% / Year</string>
+        <string name="ep_text_cost">Education Cost: 15.10% / Year</string>
+        <string name="ep_btn_afa">ask for advice</string>
+
+        <!-- result -->
+        <string name="ep_text_titleresult">ANALYSIS RESULT</string>
+        <string name="ep_text_appname">Application Name</string>
+        <string name="ep_text_insname">Institution Name</string>
+        <string name="ep_text_edulvl">Education Level</string>
+        <string name="ep_text_enroll">Enroll Time</string>
+        <string name="ep_text_togo">Years to go</string>
+        <string name="ep_text_rec">MONICCA RECOMMENDS</string>
+        <string name="ep_desc_dropdownicon">Dropdown Icon</string>
+        <string name="ep_btn_save">save result</string>
+
+        <!-- history -->
+        <string name="ep_text_titlehistory">EDUCATION PLAN HISTORY</string>
+        <string name="ep_btn_home">back to home</string>
+
+    <!-- goal base -->
+        <!-- main -->
+        <string name="gb_desc_img">Goal Base Illustration Photo</string>
+        <string name="gb_text_title">GOAL BASE</string>
+        <string name="gb_text_desc">Simple planner tool that help you to find out how much you have to save monthly or yearly to achieve your desired goals.</string>
+        <string name="gb_btn_start">start</string>
+
+        <!-- start -->
+        <string name="gb_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
+        <string name="gb_text_objinfo">OBJECT INFORMATION</string>
+        <string name="gb_text_desobj">Desired Object</string>
+        <string name="gb_hint_objname">Object Name or Title</string>
+        <string name="gb_hint_objprice">Object Current Price</string>
+        <string name="gb_text_deadline">Target Deadline</string>
+        <string name="gb_hint_deadline">0</string>
+        <string name="gb_text_marinfo">MARKET INFORMATION</string>
+        <string name="gb_text_interest">Interest: 0.96% / Year</string>
+        <string name="gb_btn_afa">ask for advice</string>
+
+        <!-- result -->
+        <string name="gb_text_titleresult">ANALYSIS RESULT</string>
+        <string name="gb_text_objprice">Current Price or Cost</string>
+        <string name="gb_text_estprice">Estimate Price or Cost</string>
+        <string name="gb_text_rec">MONICCA RECOMMENDS</string>
+        <string name="gb_desc_dropdownicon">Dropdown Icon</string>
+        <string name="gb_btn_save">save result</string>
+
+        <!--history -->
+        <string name="gb_text_titlehistory">GOAL BASE HISTORY</string>
+        <string name="gb_btn_home">back to home</string>
+
 
     <!-- spinner values-->
         <string-array name="edulevel_list">
             <item>Elementary School</item>
             <item>Middle School</item>
             <item>High School</item>
-            <item>College</item>
+            <item>College / Univ.</item>
         </string-array>
         <string-array name="time_list">
             <item>Month</item>
