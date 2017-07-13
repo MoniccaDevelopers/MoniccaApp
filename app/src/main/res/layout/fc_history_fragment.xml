@@ -80,9 +80,8 @@
         android:id="@+id/fchistory_button_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@drawable/btn_bg_yellow"
-        android:text="back to home"
+        android:text="@string/fc_btn_home"
         android:textColor="@color/colorAccentLight"
         android:textStyle="bold" />
 

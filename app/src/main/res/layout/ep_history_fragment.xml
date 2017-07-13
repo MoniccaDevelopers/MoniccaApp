@@ -80,7 +80,6 @@
         android:id="@+id/ephistory_button_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@drawable/btn_bg_rs_yellow"
         android:text="@string/ep_btn_home"
         android:textColor="@color/colorAccentLight"

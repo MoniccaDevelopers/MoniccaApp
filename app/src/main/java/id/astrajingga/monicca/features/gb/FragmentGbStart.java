@@ -148,7 +148,7 @@ public class FragmentGbStart extends Fragment {
                 gbstartDoubleTimevalue = Double.valueOf(gbstartStringTimevalue);
 
                 // variables for calculation
-                double interest = 0.96;
+                double interest = 0.0096;
                 double carPriceInflation = 0.075;
                 double bikePriceInflation = 0.03;
                 double weddingCostInflation = 0.125;
