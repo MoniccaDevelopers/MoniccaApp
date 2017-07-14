@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signinpage"
+    android:background="@drawable/signin"
     android:orientation="vertical"
     tools:context="id.astrajingga.monicca.Signin">
 
@@ -24,7 +24,6 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/signin_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
@@ -33,7 +32,6 @@
 
         <!-- sign in -->
         <LinearLayout
-            android:id="@+id/signin_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

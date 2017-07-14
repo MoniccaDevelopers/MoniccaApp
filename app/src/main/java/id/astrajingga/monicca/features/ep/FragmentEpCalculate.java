@@ -111,7 +111,7 @@ public class FragmentEpCalculate extends Fragment {
                     epcalculateDoubleEnrollTime = 15 - epcalculateDoubleApplicantage;
                     educationDuration = 3;
                     totalSemester = 12;
-                } else if (epcalculateStringEducationlevel.equals("College")) {
+                } else if (epcalculateStringEducationlevel.equals("College / Univ.")) {
                     educationDuration = 4;
                     totalSemester = 2;
                     if (epcalculateDoubleApplicantage > 18) {
@@ -125,7 +125,7 @@ public class FragmentEpCalculate extends Fragment {
                 epcalculateDoubleEntrancefee = Double.parseDouble(epcalculateStringEntrancefee);
                 epcalculateDoubleTuitionfee = Double.parseDouble(epcalculateStringTuitionfee);
                 epcalculationDoubleAnnualfee = Double.parseDouble(epcalculateStringAnnualfee);
-                double interest = 0.96;
+                double interest = 0.0096;
                 double inflationRate = 0.05;
                 double educationCost = 0.151;
                 double totalTuition = totalSemester * epcalculateDoubleTuitionfee;
