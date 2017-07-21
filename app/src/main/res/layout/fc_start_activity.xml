@@ -1,0 +1,202 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="id.astrajingga.monicca.features.fc.FcStart">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clickable="true">
+
+        <!-- background photo -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/fc_desc_img"
+            android:scaleType="centerCrop"
+            android:src="@drawable/financial_checkup" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <!-- title -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:text="@string/fc_text_header"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/colorAccentLight"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <!-- field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/fc_text_accinfo"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorAccentLight"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/field_bg_white"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingBottom="14dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- balance field -->
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/fcstart_textlayout_balance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:textColorHint="@color/colorAccentDark"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/colorAccentDark">
+
+                            <EditText
+                                android:id="@+id/fcstart_edittext_balance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableEnd="@drawable/signin_visibilityoff"
+                                android:hint="@string/fc_hint_balance"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberPassword"
+                                android:maxLength="17"
+                                android:maxLines="1" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+
+
+
+                    <!-- income field -->
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/fcstart_textlayout_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:textColorHint="@color/colorAccentDark"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/colorAccentDark">
+
+                        <EditText
+                            android:id="@+id/fcstart_edittext_income"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/signin_visibilityoff"
+                            android:hint="@string/fc_hint_income"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberPassword"
+                            android:maxLength="17"
+                            android:maxLines="1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!-- savings field -->
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/fcstart_textlayout_savings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorAccentDark"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/colorAccentDark">
+
+                        <EditText
+                            android:id="@+id/fcstart_edittext_savings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/signin_visibilityoff"
+                            android:hint="@string/fc_hint_savings"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberPassword"
+                            android:maxLength="17"
+                            android:maxLines="1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!-- mortgage field -->
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/fcstart_textlayout_mortgage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/colorAccentDark"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/colorAccentDark">
+
+                        <EditText
+                            android:id="@+id/fcstart_edittext_mortgage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/signin_visibilityoff"
+                            android:hint="@string/fc_hint_mortgage"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberPassword"
+                            android:maxLength="17"
+                            android:maxLines="1" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- button -->
+    <Button
+        android:id="@+id/fcstart_button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_yellow"
+        android:text="@string/fc_btn_afa"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+</LinearLayout>

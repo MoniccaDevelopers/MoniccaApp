@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- Main -->
+        <!-- FcMain -->
         <activity android:name=".Intro"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -27,6 +27,49 @@
         <activity android:name=".Signup"
             android:screenOrientation="portrait" />
         <activity android:name=".Main"
+            android:screenOrientation="portrait" />
+
+        <!-- financial check -->
+        <activity android:name=".features.fc.FcMain"
+            android:screenOrientation="portrait" />
+        <activity android:name=".features.fc.FcStart"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity android:name=".features.fc.FcResult"
+            android:screenOrientation="portrait" />
+        <activity android:name=".features.fc.FcHistory"
+            android:screenOrientation="portrait" />
+
+        <!-- education plan -->
+        <activity android:name=".features.ep.EpMain"
+            android:screenOrientation="portrait" />
+        <activity android:name=".features.ep.EpStart"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity android:name=".features.ep.EpCalculate"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity android:name=".features.ep.EpResult"
+            android:screenOrientation="portrait" />
+        <activity android:name=".features.ep.EpHistory"
+            android:screenOrientation="portrait" />
+
+        <!-- goal base -->
+        <activity android:name=".features.gb.GbMainAlt"
+            android:screenOrientation="portrait" />
+        <activity android:name=".features.gb.GbStartAlt"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
+        <activity android:name=".features.gb.GbResultAlt"
+            android:screenOrientation="portrait" />
+        <activity android:name=".features.gb.GbHistoryAlt"
+            android:screenOrientation="portrait" />
+
+        <!-- personal advisor -->
+        <activity android:name=".features.pa.PaMain"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".settings.Settings"
             android:screenOrientation="portrait" />
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"
