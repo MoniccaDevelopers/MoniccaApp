@@ -131,10 +131,8 @@ public class Signin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 authChecker = "demo";
-                signinStringEmail = "Demo";
                 Intent intent = new Intent(getApplicationContext(), Main.class);
                 intent.putExtra("authchecker", authChecker);
-                intent.putExtra("username", signinStringEmail);
                 startActivity(intent);
             }
         });
@@ -160,7 +158,7 @@ public class Signin extends AppCompatActivity {
 
                             @Override
                             public void onCompleted(JSONObject object, GraphResponse response) {
-                                Log.v("Main", response.toString());
+                                Log.v("FcMain", response.toString());
                                 setProfileToView(object);
                             }
                         });

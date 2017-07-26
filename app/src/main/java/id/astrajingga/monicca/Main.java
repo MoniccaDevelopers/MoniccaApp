@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -13,7 +12,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -32,10 +30,10 @@ import java.util.TimerTask;
 
 import id.astrajingga.monicca.auth.SQLiteHandler;
 import id.astrajingga.monicca.auth.SessionManager;
-import id.astrajingga.monicca.features.ep.FragmentEpMain;
-import id.astrajingga.monicca.features.fc.FragmentFcMain;
-import id.astrajingga.monicca.features.gb.FragmentGbMain;
-import id.astrajingga.monicca.settings.FragmentSettings;
+import id.astrajingga.monicca.features.ep.EpMain;
+import id.astrajingga.monicca.features.fc.FcMain;
+import id.astrajingga.monicca.features.gb.GbMainAlt;
+import id.astrajingga.monicca.settings.Settings;
 
 public class Main extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -53,6 +51,9 @@ public class Main extends AppCompatActivity
     //Declaration clear session
     private SQLiteHandler db;
     private SessionManager session;
+
+    private static final int TIME_LIMIT = 1800;
+    private static long backPressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,13 +166,17 @@ public class Main extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        if (getSupportFragmentManager().findFragmentByTag("Main") != null) {
-            getSupportFragmentManager().popBackStackImmediate("Main",0);
+        if (TIME_LIMIT + backPressed > System.currentTimeMillis()) {
+            // super.onBackPressed();
+            moveTaskToBack(true);
         } else {
-            super.onBackPressed();
+            Toast.makeText(Main.this, "Press back again to exit.", Toast.LENGTH_SHORT).show();
         }
+        backPressed = System.currentTimeMillis();
     }
 
+    /*
+    // overflow declaration
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -179,6 +184,7 @@ public class Main extends AppCompatActivity
         return true;
     }
 
+    // overflow function
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -190,11 +196,12 @@ public class Main extends AppCompatActivity
         if (id == R.id.action_settings) {
             FragmentSettings fragmentSettings = new FragmentSettings();
             FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentSettings).addToBackStack("Main").commit();
+            fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentSettings).addToBackStack("FcMain").commit();
         }
 
         return super.onOptionsItemSelected(item);
     }
+    */
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -202,15 +209,19 @@ public class Main extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        /*
+        // navbar home
         if (id == R.id.nav_button_home) {
             Intent intent = new Intent(Main.this, Main.class);
             startActivity(intent);
-        } else if (id == R.id.nav_button_history) {
-            Toast.makeText(this, "Unavailable in Demo Mode.", Toast.LENGTH_SHORT).show();
+        }
+        */
+
+        if (id == R.id.nav_button_history) {
+            Toast.makeText(this, "Will be available on the next implementation.", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_button_settings) {
-            FragmentSettings fragmentSettings = new FragmentSettings();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentSettings).addToBackStack("Main").commit();
+            Intent intent = new Intent(Main.this, Settings.class);
+            startActivity(intent);
         } else if (id == R.id.nav_button_logout) {
             LoginManager.getInstance().logOut();
             Intent login = new Intent(Main.this, Signin.class);
@@ -235,21 +246,18 @@ public class Main extends AppCompatActivity
     }
 
     public void fc(View view) {
-        FragmentFcMain fragmentFcMain = new FragmentFcMain();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentFcMain).addToBackStack("Main").commit();
+        Intent intent =  new Intent(Main.this, FcMain.class);
+        startActivity(intent);
     }
 
     public void ep(View view) {
-        FragmentEpMain fragmentEpMain = new FragmentEpMain();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentEpMain).addToBackStack("Main").commit();
+        Intent intent = new Intent(Main.this, EpMain.class);
+        startActivity(intent);
     }
 
     public void gb(View view) {
-        FragmentGbMain fragmentGbMain = new FragmentGbMain();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.main_fragment_container, fragmentGbMain).addToBackStack("Main").commit();
+        Intent intent = new Intent(Main.this, GbMainAlt.class);
+        startActivity(intent);
     }
 
     public void pa(View view) {

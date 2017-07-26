@@ -2,189 +2,211 @@
     <string name="app_name">Monicca</string>
 
     <!-- intro -->
-        <string name="intro_desc_img">Intro Images</string>
-        <string name="intro_first_title">WELCOME. LET US INTRODUCE MONICCA</string>
-        <string name="intro_first_desc">An app powered by artificial intelligence\nand designed to give you accurate\nfinancial calculation and planning.</string>
-        <string name="intro_second_title">SPECIAL FEATURE. GOAL BASE</string>
-        <string name="intro_second_desc">Our personal robo-advisor goal base.\nSpecially crafted to help you fulfilling\nthe variety of your financial goals.</string>
-        <string name="intro_third_title">BUILD YOUR OWN PORTFOLIO</string>
-        <string name="intro_third_desc">Monicca aims to help you in creating\nand improving the performance of your\ndiversified portfolio.</string>
-        <string name="intro_fourth_title">FEEDBACK. MARKET INTELLIGENCE</string>
-        <string name="intro_fourth_desc">And, we utilizes dynamic and real-time\nmarket data to give feasible and\ncomprehensive financial advises for you.</string>
-        <string name="intro_btn_skip">skip</string>
-        <string name="intro_btn_next">next</string>
-        <string name="intro_btn_gotit">got it!</string>
+    <string name="intro_desc_img">Intro Images</string>
+    <string name="intro_first_title">WELCOME. LET US INTRODUCE MONICCA</string>
+    <string name="intro_first_desc">An app powered by artificial intelligence\nand designed to give you accurate\nfinancial calculation and planning.</string>
+    <string name="intro_second_title">SPECIAL FEATURE. GOAL BASE</string>
+    <string name="intro_second_desc">Our personal robo-advisor goal base.\nSpecially crafted to help you fulfilling\nthe variety of your financial goals.</string>
+    <string name="intro_third_title">BUILD YOUR OWN PORTFOLIO</string>
+    <string name="intro_third_desc">Monicca aims to help you in creating\nand improving the performance of your\ndiversified portfolio.</string>
+    <string name="intro_fourth_title">FEEDBACK. MARKET INTELLIGENCE</string>
+    <string name="intro_fourth_desc">And, we utilizes dynamic and real-time\nmarket data to give feasible and\ncomprehensive financial advises for you.</string>
+    <string name="intro_btn_skip">skip</string>
+    <string name="intro_btn_next">next</string>
+    <string name="intro_btn_gotit">got it!</string>
 
     <!-- sign in -->
-        <string name="signin_desc_img">Monicca App Logo</string>
-        <string name="signin_hint_email">Email Address</string>
-        <string name="signin_hint_password">Password</string>
-        <string name="signin_btn_signin">sign in</string>
-        <string name="signin_text_signup">Don\'t Have an Account?</string>
-        <string name="signin_btn_signup">Sign up!</string>
-        <string name="signin_text_demo">or try our</string>
-        <string name="signin_btn_demo">DEMO</string>
+    <string name="signin_desc_img">Monicca App Logo</string>
+    <string name="signin_hint_email">Email Address</string>
+    <string name="signin_hint_password">Password</string>
+    <string name="signin_btn_signin">sign in</string>
+    <string name="signin_text_signup">Don\'t Have an Account?</string>
+    <string name="signin_btn_signup">Sign up!</string>
+    <string name="signin_text_demo">or try our</string>
+    <string name="signin_btn_demo">DEMO</string>
 
     <!-- sign up -->
-        <string name="signup_desc_img">Sign Up Header</string>
-        <string name="signup_hint_email">Email</string>
-        <string name="signup_hint_password">Password</string>
-        <string name="signup_hint_income">Current Income</string>
-        <string name="signup_btn_signup">sign up</string>
-        <string name="signup_text_haveaccount">Already Have an Account?</string>
-        <string name="signup_btn_signin">Sign In!</string>
+    <string name="signup_desc_img">Sign Up Header</string>
+    <string name="signup_hint_email">Email</string>
+    <string name="signup_hint_password">Password</string>
+    <string name="signup_hint_income">Current Income</string>
+    <string name="signup_btn_signup">sign up</string>
+    <string name="signup_text_haveaccount">Already Have an Account?</string>
+    <string name="signup_btn_signin">Sign In!</string>
 
     <!-- main -->
-        <string name="main_welcome">Welcome,</string>
-        <string name="main_fc">FINANCIAL\nCHECKUP</string>
-        <string name="main_ep">EDUCATION\nPLAN</string>
-        <string name="main_gb">GOAL BASE</string>
-        <string name="main_inv">INVESMENT</string>
-        <string name="main_nf">NEWS FEED</string>
-        <string name="main_pa">PERSONAL\nADVISOR</string>
-        <string name="main_cmd">COMMODITY</string>
-        <string name="main_hj">HAJ AND\nUMROH</string>
-        <string name="main_hst">HISTORY</string>
+    <string name="main_welcome">Welcome,</string>
+    <string name="main_fc">FINANCIAL\nCHECKUP</string>
+    <string name="main_ep">EDUCATION\nPLAN</string>
+    <string name="main_gb">GOAL BASE</string>
+    <string name="main_inv">INVESMENT</string>
+    <string name="main_nf">NEWS FEED</string>
+    <string name="main_pa">PERSONAL\nADVISOR</string>
+    <string name="main_cmd">COMMODITY</string>
+    <string name="main_hj">HAJ AND\nUMROH</string>
+    <string name="main_hst">HISTORY</string>
 
     <!-- navigation drawer -->
-        <string name="navdrawer_home">Home</string>
-        <string name="navdrawer_history">History</string>
-        <string name="navdrawer_settings">Settings</string>
-        <string name="navdrawer_logout">Log Out</string>
+    <string name="navdrawer_home">Home</string>
+    <string name="navdrawer_history">History</string>
+    <string name="navdrawer_settings">Settings</string>
+    <string name="navdrawer_logout">Log Out</string>
 
     <!-- financial checkup -->
-        <!-- main -->
-        <string name="fc_desc_img">Financial Check Illustration Photo</string>
-        <string name="fc_text_title">FINANCIAL CHECK</string>
-        <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
-        <string name="fc_btn_start">start</string>
+    <!-- main -->
+    <string name="fc_desc_img">Financial Check Illustration Photo</string>
+    <string name="fc_text_title">FINANCIAL CHECK</string>
+    <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
+    <string name="fc_btn_start">start</string>
 
-        <!-- start -->
-        <string name="fc_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
-        <string name="fc_text_accinfo">ACCOUNT INFORMATION</string>
-        <string name="fc_hint_balance">Current Balance</string>
-        <string name="fc_hint_income">Monthly Current Income</string>
-        <string name="fc_hint_savings">Monthly Current Savings</string>
-        <string name="fc_hint_mortgage">Monthly Current Mortgage</string>
-        <string name="fc_btn_afa">ask for advice</string>
+    <!-- start -->
+    <string name="fc_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
+    <string name="fc_text_accinfo">ACCOUNT INFORMATION</string>
+    <string name="fc_hint_balance">Current Balance</string>
+    <string name="fc_hint_income">Monthly Current Income</string>
+    <string name="fc_hint_savings">Monthly Current Savings</string>
+    <string name="fc_hint_mortgage">Monthly Current Mortgage</string>
+    <string name="fc_btn_afa">ask for advice</string>
 
-        <!-- result -->
-        <string name="fc_text_titleresult">ANALYSIS RESULT</string>
-        <string name="fc_text_financialconditionresult">Your financial condition is</string>
-        <string name="fc_desc_indicator">Financial Condition Indicator</string>
-        <string name="fc_text_recommends">MONICCA RECOMMENDS</string>
-        <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
-        <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
-        <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
-        <string name="fc_btn_save">save result</string>
+    <!-- result -->
+    <string name="fc_text_titleresult">ANALYSIS RESULT</string>
+    <string name="fc_text_financialconditionresult">Your financial condition is</string>
+    <string name="fc_desc_indicator">Financial Condition Indicator</string>
+    <string name="fc_text_recommends">MONICCA RECOMMENDS</string>
+    <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
+    <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
+    <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
+    <string name="fc_btn_save">save result</string>
 
-        <!-- history -->
-        <string name="fc_text_titlehistory">FINANCIAL CHECK HISTORY</string>
-        <string name="fc_desc_dropdownicon">Dropdown Icon</string>
-        <string name="fc_btn_home">back to home</string>
-
+    <!-- history -->
+    <string name="fc_text_titlehistory">FINANCIAL CHECK HISTORY</string>
+    <string name="fc_desc_dropdownicon">Dropdown Icon</string>
+    <string name="fc_btn_home">back to home</string>
 
     <!-- Education Plan -->
-        <!-- main -->
-        <string name="ep_desc_img">Education Plan Illustration Photo</string>
-        <string name="ep_text_title">EDUCATION PLAN</string>
-        <string name="ep_text_desc">An education planner calculator to determine how much money you should save to fund your education in the future.</string>
-        <string name="ep_btn_start">start</string>
+    <!-- main -->
+    <string name="ep_desc_img">Education Plan Illustration Photo</string>
+    <string name="ep_text_title">EDUCATION PLAN</string>
+    <string name="ep_text_desc">An education planner calculator to determine how much money you should save to fund your education in the future.</string>
+    <string name="ep_btn_start">start</string>
 
-        <!-- start -->
-        <string name="ep_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
-        <string name="ep_text_appinfo">APPLICANT INFORMATION</string>
-        <string name="ep_hint_appname">Applicant Name</string>
-        <string name="ep_hint_appage">Applicant Age (Max 25 y.o)</string>
-        <string name="ep_hint_insname">Desired Institution Name</string>
-        <string name="ep_text_desedulvl">Desired Education Level</string>
-        <string name="ep_btn_next">next</string>
+    <!-- start -->
+    <string name="ep_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
+    <string name="ep_text_appinfo">APPLICANT INFORMATION</string>
+    <string name="ep_hint_appname">Applicant Name</string>
+    <string name="ep_hint_appage">Applicant Age (Max 25 y.o)</string>
+    <string name="ep_hint_insname">Desired Institution Name</string>
+    <string name="ep_text_desedulvl">Desired Education Level</string>
+    <string name="ep_btn_next">next</string>
 
-        <!-- calculate -->
-        <string name="ep_text_headersec">PLEASE FILL IN REQUIRED DATA BELOW</string>
-        <string name="ep_text_insinfo">DESIRED INSTITUTION INFORMATION</string>
-        <string name="ep_hint_entfee">Institution Entrance Fee</string>
-        <string name="ep_hint_tuifee">Institution Tuition Fee</string>
-        <string name="ep_hint_annfee">Institution Annual Fee</string>
-        <string name="ep_text_marinfo">MARKET INFORMATION</string>
-        <string name="ep_text_interest">Interest: 0.96% / Year</string>
-        <string name="ep_text_inflation">Inflation Rate: 5.00% / Year</string>
-        <string name="ep_text_cost">Education Cost: 15.10% / Year</string>
-        <string name="ep_btn_afa">ask for advice</string>
+    <!-- calculate -->
+    <string name="ep_text_headersec">PLEASE FILL IN REQUIRED DATA BELOW</string>
+    <string name="ep_text_insinfo">DESIRED INSTITUTION INFORMATION</string>
+    <string name="ep_hint_entfee">Institution Entrance Fee</string>
+    <string name="ep_hint_tuifee">Institution Tuition Fee</string>
+    <string name="ep_hint_annfee">Institution Annual Fee</string>
+    <string name="ep_text_marinfo">MARKET INFORMATION</string>
 
-        <!-- result -->
-        <string name="ep_text_titleresult">ANALYSIS RESULT</string>
-        <string name="ep_text_appname">Application Name</string>
-        <string name="ep_text_insname">Institution Name</string>
-        <string name="ep_text_edulvl">Education Level</string>
-        <string name="ep_text_enroll">Enroll Time</string>
-        <string name="ep_text_togo">Years to go</string>
-        <string name="ep_text_rec">MONICCA RECOMMENDS</string>
-        <string name="ep_desc_dropdownicon">Dropdown Icon</string>
-        <string name="ep_btn_save">save result</string>
+    <string name="ep_text_interest_title">Average interest on Indonesian Banks</string>
+    <string name="ep_text_interest">Interest: 0.96% / Year</string>
 
-        <!-- history -->
-        <string name="ep_text_titlehistory">EDUCATION PLAN HISTORY</string>
-        <string name="ep_btn_home">back to home</string>
+    <string name="ep_text_inflation_rate">Based on Bank Indonesia</string>
+    <string name="ep_text_inflation">Inflation Rate: 5.00% / Year</string>
+
+    <string name="ep_text_edu_cost">Based on ZapFinance survey</string>
+    <string name="ep_text_edu">Education Cost: 15.10% / Year</string>
+
+    <string name="ep_btn_afa">ask for advice</string>
+
+    <!-- result -->
+    <string name="ep_text_titleresult">ANALYSIS RESULT</string>
+    <string name="ep_text_appname">Application Name</string>
+    <string name="ep_text_insname">Institution Name</string>
+    <string name="ep_text_edulvl">Education Level</string>
+    <string name="ep_text_enroll">Enroll Time</string>
+    <string name="ep_text_togo">Years to go</string>
+    <string name="ep_text_rec">MONICCA RECOMMENDS</string>
+    <string name="ep_desc_dropdownicon">Dropdown Icon</string>
+    <string name="ep_btn_save">save result</string>
+
+    <!-- history -->
+    <string name="ep_text_titlehistory">EDUCATION PLAN HISTORY</string>
+    <string name="ep_btn_home">back to home</string>
 
     <!-- goal base -->
-        <!-- main -->
-        <string name="gb_desc_img">Goal Base Illustration Photo</string>
-        <string name="gb_text_title">GOAL BASE</string>
-        <string name="gb_text_desc">Simple planner tool that help you to find out how much you have to save monthly or yearly to achieve your desired goals.</string>
-        <string name="gb_btn_start">start</string>
+    <!-- main -->
+    <string name="gb_desc_bg">Goal Base Illustration Photo</string>
+    <string name="gb_desc_img">Goal Base Feature Icon</string>
+    <string name="gb_text_title">GOAL BASE</string>
+    <string name="gb_text_desc">Simple planner tool that help you to find out how much you have to save monthly or yearly to achieve your desired goals.</string>
 
-        <!-- start -->
-        <string name="gb_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
-        <string name="gb_text_objinfo">OBJECT INFORMATION</string>
-        <string name="gb_text_desobj">Desired Object</string>
-        <string name="gb_hint_objname">Object Name or Title</string>
-        <string name="gb_hint_objprice">Object Current Price</string>
-        <string name="gb_text_deadline">Target Deadline</string>
-        <string name="gb_hint_deadline">0</string>
-        <string name="gb_text_marinfo">MARKET INFORMATION</string>
-        <string name="gb_text_interest">Interest: 0.96% / Year</string>
-        <string name="gb_btn_afa">ask for advice</string>
+    <!-- start -->
+    <string name="gb_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
+    <string name="gb_text_objinfo">OBJECT INFORMATION</string>
+    <string name="gb_text_desobj">Desired Object</string>
+    <string name="gb_hint_objname">Object Name or Title</string>
+    <string name="gb_hint_objprice">Object Current Price</string>
+    <string name="gb_text_deadline">Target Deadline</string>
+    <string name="gb_hint_deadline">0</string>
+    <string name="gb_text_marinfo">MARKET INFORMATION</string>
+    <string name="gb_text_interest_title">Average interest on Indonesian Banks</string>
+    <string name="gb_text_interest">Interest: 0.96% / Year</string>
 
-        <!-- result -->
-        <string name="gb_text_titleresult">ANALYSIS RESULT</string>
-        <string name="gb_text_objprice">Current Price or Cost</string>
-        <string name="gb_text_estprice">Estimate Price or Cost</string>
-        <string name="gb_text_rec">MONICCA RECOMMENDS</string>
-        <string name="gb_desc_dropdownicon">Dropdown Icon</string>
-        <string name="gb_btn_save">save result</string>
+    <string name="gb_text_car_rate">Based on Kementerian Perindustrian</string>
+    <string name="gb_text_car">Car price inflation: 7.5% / Year</string>
 
-        <!--history -->
-        <string name="gb_text_titlehistory">GOAL BASE HISTORY</string>
-        <string name="gb_btn_home">back to home</string>
+    <string name="gb_text_bike_rate">Based on Astra Honda Motor survey</string>
+    <string name="gb_text_bike">Bike price inflation: 3% / Year</string>
 
+    <string name="gb_text_wedding_rate">Based on seputarpernikahan.com survey</string>
+    <string name="gb_text_wedding">Wedding fee inflation: 12.5% / Year</string>
+
+    <string name="gb_text_trip_rate">Based on Kementerian Perhubungan</string>
+    <string name="gb_text_trip">Trip fee inflation: 15% / Year</string>
+
+    <string name="gb_text_gadget_rate">Based on APKOMINDO survey</string>
+    <string name="gb_text_gadget">Gadget price deflation: 36% / Year</string>
+
+    <string name="gb_btn_afa">ask for advice</string>
+
+    <!-- result -->
+    <string name="gb_text_titleresult">ANALYSIS RESULT</string>
+    <string name="gb_text_objprice">Current Price or Cost</string>
+    <string name="gb_text_estprice">Estimate Price or Cost</string>
+    <string name="gb_text_rec">MONICCA RECOMMENDS</string>
+    <string name="gb_desc_dropdownicon">Dropdown Icon</string>
+    <string name="gb_btn_save">save result</string>
+
+    <!--history -->
+    <string name="gb_text_titlehistory">GOAL BASE HISTORY</string>
+    <string name="gb_btn_home">back to home</string>
 
     <!-- spinner values-->
-        <string-array name="edulevel_list">
-            <item>Elementary School</item>
-            <item>Middle School</item>
-            <item>High School</item>
-            <item>College / Univ.</item>
-        </string-array>
-        <string-array name="time_list">
-            <item>Month</item>
-            <item>Year</item>
-        </string-array>
-        <string-array name="object_list">
-            <item>Car</item>
-            <item>Bike</item>
-            <item>Wedding</item>
-            <item>Trip</item>
-            <item>Gadget</item>
-        </string-array>
-        <string-array name="language_list">
-            <item>English</item>
-            <item>Bahasa</item>
-        </string-array>
+    <string-array name="edulevel_list">
+        <item>Elementary School</item>
+        <item>Middle School</item>
+        <item>High School</item>
+        <item>College / Univ.</item>
+    </string-array>
+    <string-array name="time_list">
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string-array name="object_list">
+        <item>Car</item>
+        <item>Bike</item>
+        <item>Wedding</item>
+        <item>Trip</item>
+        <item>Gadget</item>
+    </string-array>
+    <string-array name="language_list">
+        <item>English</item>
+        <item>Bahasa</item>
+    </string-array>
 
     <!-- etc -->
-        <string name="navigation_drawer_open">Open navigation drawer</string>
-        <string name="navigation_drawer_close">Close navigation drawer</string>
-        <string name="facebook_app_id">125194121353818</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="facebook_app_id">125194121353818</string>
 
 </resources>

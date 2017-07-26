@@ -1,0 +1,72 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="id.astrajingga.monicca.features.fc.FcMain">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <!-- background photo -->
+        <ImageView
+            android:contentDescription="@string/fc_desc_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/financial_checkup" />
+
+        <!-- title -->
+        <TextView
+            android:id="@+id/fc_text_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/fc_text_title"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <!-- line -->
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/fc_text_logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/colorAccentLight" />
+
+        <!-- desc -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:layout_alignStart="@id/line"
+            android:layout_marginEnd="32dp"
+            android:text="@string/fc_text_desc"
+            android:textColor="@color/colorAccentLight" />
+
+    </RelativeLayout>
+
+    <!-- button -->
+    <Button
+        android:id="@+id/fcmain_button_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_yellow"
+        android:text="@string/fc_btn_start"
+        android:textColor="@color/colorAccentLight"
+        android:textStyle="bold" />
+
+</LinearLayout>
