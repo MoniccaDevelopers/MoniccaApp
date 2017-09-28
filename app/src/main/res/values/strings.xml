@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">Monicca</string>
 
-    <!-- intro -->
+    <!-- TOOLBAR -->
+    <string name="toolbar_financial_checkup">Financial Checkup</string>
+    <string name="toolbar_education_plan">Education Plan</string>
+    <string name="toolbar_goal_base">Goal Base</string>
+    <string name="toolbar_personal_advisor">Personal Advisor</string>
+
+    <!-- DESCRIPTION -->
+
+    <!-- INTRO -->
     <string name="intro_desc_img">Intro Images</string>
     <string name="intro_first_title">WELCOME. LET US INTRODUCE MONICCA</string>
     <string name="intro_first_desc">An app powered by artificial intelligence\nand designed to give you accurate\nfinancial calculation and planning.</string>
@@ -15,17 +23,16 @@
     <string name="intro_btn_next">next</string>
     <string name="intro_btn_gotit">got it!</string>
 
-    <!-- sign in -->
+    <!-- SIGN IN -->
     <string name="signin_desc_img">Monicca App Logo</string>
     <string name="signin_hint_email">Email Address</string>
     <string name="signin_hint_password">Password</string>
     <string name="signin_btn_signin">sign in</string>
     <string name="signin_text_signup">Don\'t Have an Account?</string>
     <string name="signin_btn_signup">Sign up!</string>
-    <string name="signin_text_demo">or try our</string>
     <string name="signin_btn_demo">DEMO</string>
 
-    <!-- sign up -->
+    <!-- SIGN UP -->
     <string name="signup_desc_img">Sign Up Header</string>
     <string name="signup_hint_email">Email</string>
     <string name="signup_hint_password">Password</string>
@@ -34,63 +41,58 @@
     <string name="signup_text_haveaccount">Already Have an Account?</string>
     <string name="signup_btn_signin">Sign In!</string>
 
-    <!-- main -->
-    <string name="main_welcome">Welcome,</string>
-    <string name="main_fc">FINANCIAL\nCHECKUP</string>
-    <string name="main_ep">EDUCATION\nPLAN</string>
-    <string name="main_gb">GOAL BASE</string>
-    <string name="main_inv">INVESMENT</string>
-    <string name="main_nf">NEWS FEED</string>
-    <string name="main_pa">PERSONAL\nADVISOR</string>
-    <string name="main_cmd">COMMODITY</string>
-    <string name="main_hj">HAJ AND\nUMROH</string>
-    <string name="main_hst">HISTORY</string>
+    <!-- MAIN -->
+    <string name="main_desc_icon">Main Feature Icon</string>
+    <string name="main_fc">Financial Checkup</string>
+    <string name="main_ep">Education Plan</string>
+    <string name="main_gb">Goal Base</string>
+    <string name="main_pa">Personal Advisor</string>
 
-    <!-- navigation drawer -->
+    <!-- NAVIGATION DRAWER -->
     <string name="navdrawer_home">Home</string>
     <string name="navdrawer_history">History</string>
     <string name="navdrawer_settings">Settings</string>
     <string name="navdrawer_logout">Log Out</string>
 
-    <!-- financial checkup -->
-    <!-- main -->
+    <!-- FINANCIAL CHECKUP -->
+    <!-- MAIN -->
     <string name="fc_desc_img">Financial Check Illustration Photo</string>
     <string name="fc_text_title">FINANCIAL CHECK</string>
-    <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan a better financial condition.</string>
+    <string name="fc_text_desc">Checkup tool to help you find out current financial condition and give recommendation on how to plan the better one.</string>
     <string name="fc_btn_start">start</string>
 
-    <!-- start -->
+    <!-- START -->
     <string name="fc_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
     <string name="fc_text_accinfo">ACCOUNT INFORMATION</string>
     <string name="fc_hint_balance">Current Balance</string>
     <string name="fc_hint_income">Monthly Current Income</string>
     <string name="fc_hint_savings">Monthly Current Savings</string>
-    <string name="fc_hint_mortgage">Monthly Current Mortgage</string>
+    <string name="fc_hint_instalment">Monthly Current Instalment</string>
     <string name="fc_btn_afa">ask for advice</string>
 
-    <!-- result -->
+    <!-- RESULT -->
     <string name="fc_text_titleresult">ANALYSIS RESULT</string>
     <string name="fc_text_financialconditionresult">Your financial condition is</string>
     <string name="fc_desc_indicator">Financial Condition Indicator</string>
     <string name="fc_text_recommends">MONICCA RECOMMENDS</string>
     <string name="fc_text_balanceresult">Ideal Minimum Balance</string>
     <string name="fc_text_savingsresult">Ideal Minimum Monthly Savings</string>
-    <string name="fc_text_mortgageresult">Ideal Maximum Monthly Mortgage</string>
+    <string name="fc_text_instalmentresult">Ideal Maximum Monthly Instalment</string>
     <string name="fc_btn_save">save result</string>
 
-    <!-- history -->
+    <!-- HISTORY -->
     <string name="fc_text_titlehistory">FINANCIAL CHECK HISTORY</string>
     <string name="fc_desc_dropdownicon">Dropdown Icon</string>
     <string name="fc_btn_home">back to home</string>
 
-    <!-- Education Plan -->
-    <!-- main -->
+    <!-- EDUCATION PLAN -->
+    <!-- MAIN -->
     <string name="ep_desc_img">Education Plan Illustration Photo</string>
     <string name="ep_text_title">EDUCATION PLAN</string>
     <string name="ep_text_desc">An education planner calculator to determine how much money you should save to fund your education in the future.</string>
     <string name="ep_btn_start">start</string>
 
-    <!-- start -->
+    <!-- START -->
     <string name="ep_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
     <string name="ep_text_appinfo">APPLICANT INFORMATION</string>
     <string name="ep_hint_appname">Applicant Name</string>
@@ -99,7 +101,7 @@
     <string name="ep_text_desedulvl">Desired Education Level</string>
     <string name="ep_btn_next">next</string>
 
-    <!-- calculate -->
+    <!-- CALCULATE -->
     <string name="ep_text_headersec">PLEASE FILL IN REQUIRED DATA BELOW</string>
     <string name="ep_text_insinfo">DESIRED INSTITUTION INFORMATION</string>
     <string name="ep_hint_entfee">Institution Entrance Fee</string>
@@ -118,7 +120,7 @@
 
     <string name="ep_btn_afa">ask for advice</string>
 
-    <!-- result -->
+    <!-- RESULT -->
     <string name="ep_text_titleresult">ANALYSIS RESULT</string>
     <string name="ep_text_appname">Application Name</string>
     <string name="ep_text_insname">Institution Name</string>
@@ -129,18 +131,18 @@
     <string name="ep_desc_dropdownicon">Dropdown Icon</string>
     <string name="ep_btn_save">save result</string>
 
-    <!-- history -->
+    <!-- HISTORY -->
     <string name="ep_text_titlehistory">EDUCATION PLAN HISTORY</string>
     <string name="ep_btn_home">back to home</string>
 
-    <!-- goal base -->
-    <!-- main -->
+    <!-- GOAL BASE -->
+    <!-- MAIN -->
     <string name="gb_desc_bg">Goal Base Illustration Photo</string>
-    <string name="gb_desc_img">Goal Base Feature Icon</string>
+    <string name="gb_desc_icon">Goal Base Feature Icon</string>
     <string name="gb_text_title">GOAL BASE</string>
     <string name="gb_text_desc">Simple planner tool that help you to find out how much you have to save monthly or yearly to achieve your desired goals.</string>
 
-    <!-- start -->
+    <!-- START -->
     <string name="gb_text_header">PLEASE FILL IN REQUIRED DATA BELOW</string>
     <string name="gb_text_objinfo">OBJECT INFORMATION</string>
     <string name="gb_text_desobj">Desired Object</string>
@@ -169,7 +171,7 @@
 
     <string name="gb_btn_afa">ask for advice</string>
 
-    <!-- result -->
+    <!-- RESULT -->
     <string name="gb_text_titleresult">ANALYSIS RESULT</string>
     <string name="gb_text_objprice">Current Price or Cost</string>
     <string name="gb_text_estprice">Estimate Price or Cost</string>
@@ -177,11 +179,68 @@
     <string name="gb_desc_dropdownicon">Dropdown Icon</string>
     <string name="gb_btn_save">save result</string>
 
-    <!--history -->
+    <!-- HISTORY -->
     <string name="gb_text_titlehistory">GOAL BASE HISTORY</string>
     <string name="gb_btn_home">back to home</string>
 
-    <!-- spinner values-->
+    <!-- PERSONAL ADVISOR -->
+    <!-- MAIN -->
+    <string name="pa_desc_img">Personal Advisor Illustration Photo</string>
+    <string name="pa_text_title">PERSONAL ADVISOR</string>
+    <string name="pa_text_desc">An expert system-based feature to help you get recommendations and advices based on your answers.</string>
+    <string name="pa_btn_under_development">UNDER DEVELOPMENT</string>
+
+    <!-- START -->
+    <!-- SAVING QUESTIONS -->
+    <string name="pa_save_title">HOW DO YOU SPEND MONEY TO THIS DAY?</string>
+    <string name="pa_save_one">I’ve mostly saved more money than I’ve spent.</string>
+    <string name="pa_save_two">I usually spend more money than I have.</string>
+
+    <!-- DEBT QUESTIONS -->
+    <string name="pa_debt_title">ARE YOU A SAVER OR SPENDER?</string>
+    <string name="pa_debt_one">In the past year, I have always paid my credit card bill in full each month.</string>
+
+    <!-- TOLERANCE FOR AMBIGUITY QUESTIONS -->
+    <string name="pa_tol_title">TOLERANCE FOR AMBIGUITY QUESTIONS</string>
+    <string name="pa_tol_one">I\'m always open to other\'s opinion.</string>
+    <string name="pa_tol_two">I always feel comfortable in new environment.</string>
+    <string name="pa_tol_three">I always see problem from different perspectives.</string>
+    <string name="pa_tol_four">I always aware of my environment.</string>
+    <string name="pa_tol_five">I\'m a fast decision maker.</string>
+    <string name="pa_tol_six">I always seek informations before solving problem.</string>
+    <string name="pa_tol_seven">I believe that every problem has solution.</string>
+    <string name="pa_tol_eight">I\'m always critical in solving problem.</string>
+
+    <!-- PERSONAL GOALS QUESTIONS -->
+    <string name="pa_goals_title">PERSONAL GOALS QUESTIONS</string>
+    <string name="pa_goals_one">I know what to do for the next 5 years.</string>
+    <string name="pa_goals_two">I know how long it takes to achieve my goals.</string>
+    <string name="pa_goals_three">I know how to achieve my goals.</string>
+    <string name="pa_goals_four">I know what motivates my goals.</string>
+    <string name="pa_goals_five">I focus my efforts toward a better future.</string>
+
+    <!-- JOB SATISFICATION QUESTIONS -->
+    <string name="pa_job_title">JOB SATISFACTION QUESTIONS</string>
+    <string name="pa_job_one">I would describe my current job as my dream job.</string>
+    <string name="pa_job_two">I believe i\'m paid what i deserve.</string>
+    <string name="pa_job_three">The work i do is fully appreciated.</string>
+
+    <!-- ENTREPRENEURSHIP QUESTIONS -->
+    <string name="pa_ent_title">ENTREPRENEURSHIP QUESTIONS</string>
+    <string name="pa_ent_one">Independence is more important to me than job security.</string>
+    <string name="pa_ent_two">I readily adapt to changing circumstances. I like variety.</string>
+    <string name="pa_ent_three">I see myself in a successful business someday.</string>
+
+    <!-- ANSWER -->
+    <string name="pa_text_answerone">Strongly Disagree</string>
+    <string name="pa_text_answertwo">Disagree</string>
+    <string name="pa_text_answerthree">Agree</string>
+    <string name="pa_text_answerfour">Strongly Agree</string>
+
+    <string name="pa_btn_next">next</string>
+    <string name="pa_btn_afa">ask for advice</string>
+
+    <!-- SPINNER VALUES-->
     <string-array name="edulevel_list">
         <item>Elementary School</item>
         <item>Middle School</item>

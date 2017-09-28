@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
     android:orientation="vertical"
     tools:context="id.astrajingga.monicca.features.fc.FcMain">
+
+    <include layout="@layout/main_appbar_container" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,15 +14,15 @@
         android:layout_weight="2"
         android:gravity="center">
 
-        <!-- background photo -->
+        <!-- BACKGROUND PHOTO -->
         <ImageView
             android:contentDescription="@string/fc_desc_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/financial_checkup" />
+            android:src="@drawable/img_cover_financial_checkup" />
 
-        <!-- title -->
+        <!-- TITLE -->
         <TextView
             android:id="@+id/fc_text_logo"
             android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
             android:textStyle="bold"
             android:textAppearance="?android:textAppearanceMedium" />
 
-        <!-- line -->
+        <!-- LINE -->
         <View
             android:id="@+id/line"
             android:layout_width="match_parent"
@@ -45,9 +46,9 @@
             android:layout_marginBottom="8dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:background="@color/colorAccentLight" />
+            android:background="@color/white" />
 
-        <!-- desc -->
+        <!-- DESC -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,18 +56,18 @@
             android:layout_alignStart="@id/line"
             android:layout_marginEnd="32dp"
             android:text="@string/fc_text_desc"
-            android:textColor="@color/colorAccentLight" />
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 
-    <!-- button -->
+    <!-- BUTTON -->
     <Button
         android:id="@+id/fcmain_button_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_yellow"
         android:text="@string/fc_btn_start"
-        android:textColor="@color/colorAccentLight"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
 </LinearLayout>

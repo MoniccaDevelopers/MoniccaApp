@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="id.astrajingga.monicca.MainActivity">
+
+    <include layout="@layout/main_appbar_container" />
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_marginTop="8dp">
+
+        <!-- VIEW PAGER -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- VIEW PAGER INDICATOR -->
+        <LinearLayout
+            android:id="@+id/main_viewpager_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="6dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+
+    <!-- BODY -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:weightSum="2">
+
+        <!-- ROW 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- FINANCIAL CHECKUP -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/design_bg"
+                android:gravity="center"
+                android:onClick="onFinancialCheckup"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="4dp"
+                    android:contentDescription="@string/main_fc"
+                    android:onClick="onFinancialCheckup"
+                    android:src="@drawable/ic_financial_checkup"
+                    android:tint="@color/codGray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onFinancialCheckup"
+                    android:text="@string/main_fc"
+                    android:textColor="@color/codGray" />
+
+            </LinearLayout>
+
+            <!-- EDUCATION PLAN -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/design_bg"
+                android:gravity="center"
+                android:onClick="onEducationPlan"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="4dp"
+                    android:contentDescription="@string/main_fc"
+                    android:onClick="onEducationPlan"
+                    android:src="@drawable/ic_education_plan"
+                    android:tint="@color/codGray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onEducationPlan"
+                    android:text="@string/main_ep"
+                    android:textColor="@color/codGray" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ROW 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!-- GOAL BASE -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_bg"
+                    android:gravity="center"
+                    android:onClick="onGoalBase"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="@string/main_fc"
+                        android:onClick="onGoalBase"
+                        android:src="@drawable/ic_goal_base"
+                        android:tint="@color/codGray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onGoalBase"
+                        android:text="@string/main_gb"
+                        android:textColor="@color/codGray" />
+
+                </LinearLayout>
+
+                <!-- PERSONAL ADVISOR -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/design_bg"
+                    android:gravity="center"
+                    android:onClick="onPersonalAdvisor"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="@string/main_fc"
+                        android:onClick="onPersonalAdvisor"
+                        android:src="@drawable/ic_personal_advisor"
+                        android:tint="@color/codGray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onPersonalAdvisor"
+                        android:text="@string/main_pa"
+                        android:textColor="@color/codGray" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

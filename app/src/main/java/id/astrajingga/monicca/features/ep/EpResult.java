@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +16,10 @@ import com.ms.square.android.expandabletextview.ExpandableTextView;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
+import id.astrajingga.monicca.MainActivity;
 import id.astrajingga.monicca.R;
+import id.astrajingga.monicca.features.gb.GbResultAlt;
+import id.astrajingga.monicca.features.gb.GbStartAlt;
 
 /**
  * Created by Djaffar on 7/15/2017.
@@ -29,7 +34,8 @@ public class EpResult extends AppCompatActivity {
             epresultStringEducationlevel,
             epresultStringEnrolltime;
 
-    double epresultDoubleEnrolltime,
+    double epresultDoubleApplicantAge,
+            epresultDoubleEnrolltime,
             epresultDoubleEntranceyear,
             epresultDoubleEntrancemonth,
             epresultDoubleTuitionyear,
@@ -40,12 +46,25 @@ public class EpResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ep_result_activity);
 
+        // SET CUSTOM TOOLBAR
+        TextView tvToolbarTitle = (TextView) findViewById(R.id.tv_toolbar_title);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            tvToolbarTitle.setText(R.string.toolbar_education_plan);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         Bundle bundle = getIntent().getExtras();
 
         epresultStringApplicantname = bundle.getString("applicantname");
         epresultStringInstitutionname = bundle.getString("institutionname");
         epresultStringEducationlevel = bundle.getString("educationlevel");
 
+        epresultDoubleApplicantAge = bundle.getDouble("applicantage");
         epresultDoubleEnrolltime = bundle.getDouble("enrolltime");
         epresultDoubleEntranceyear = bundle.getDouble("entranceyear");
         epresultDoubleEntrancemonth = bundle.getDouble("entrancemonth");
@@ -100,22 +119,37 @@ public class EpResult extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // declare a bundle and fill it with variables
-                Bundle bundle = new Bundle();
-                bundle.putString("applicantname", epresultStringApplicantname);
-                bundle.putString("institutionname", epresultStringInstitutionname);
-                bundle.putString("educationlevel", epresultStringEducationlevel);
-                bundle.putString("enrolltime", epresultStringEnrolltime);
-
-                bundle.putDouble("entranceyear", epresultDoubleEntranceyear);
-                bundle.putDouble("entrancemonth", epresultDoubleEntrancemonth);
-                bundle.putDouble("tuitionyear", epresultDoubleTuitionyear);
-                bundle.putDouble("tuitionmonth", epresultDoubleTuitionmonth);
-
-                Intent intent = new Intent(EpResult.this, EpHistory.class);
-                intent.putExtras(bundle);
+                Intent intent =  new Intent(EpResult.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
+    }
+
+    // SET THIS TO BUGFIX RETURN FROM GOAL BASE RESULT ERROR
+    // HANDLE CUSTOM TOOLBAR BACK BUTTON
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        onBackPressed();
+        return true;
+
+    }
+
+    // SET THIS TO BUGFIX RETURN FROM GOAL BASE RESULT ERROR
+    // HANDLE SYSTEM BACK BUTTON
+    @Override
+    public void onBackPressed() {
+
+        Bundle bundle = new Bundle();
+        bundle.putString("applicantname", epresultStringApplicantname);
+        bundle.putDouble("applicantage", epresultDoubleApplicantAge);
+        bundle.putString("institutionname", epresultStringInstitutionname);
+        bundle.putString("educationlevel", epresultStringEducationlevel);
+
+        Intent intent = new Intent(EpResult.this, EpCalculate.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
     }
 }

@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:clickable="true"
-    tools:context="id.astrajingga.monicca.features.fc.FcResult">
+    tools:context="id.astrajingga.monicca.features.fc.FcResultAlt">
+
+    <include layout="@layout/main_appbar_container" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,11 +15,11 @@
 
         <!-- background photo -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/fc_desc_img"
             android:scaleType="centerCrop"
-            android:src="@drawable/financial_checkup" />
+            android:src="@drawable/img_cover_financial_checkup" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +41,7 @@
                     android:paddingRight="40dp"
                     android:text="@string/fc_text_titleresult"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textColor="@color/colorAccentLight"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -93,6 +95,7 @@
                             android:id="@+id/fcresult_img_indicator"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:src="@drawable/img_indicator_bad"
                             android:contentDescription="@string/fc_desc_indicator" />
 
                     </LinearLayout>
@@ -103,7 +106,7 @@
                         android:layout_marginBottom="4dp"
                         android:text="@string/fc_text_recommends"
                         android:textAlignment="center"
-                        android:textColor="@color/colorAccentLight"
+                        android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -145,7 +148,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="4dp"
                             android:layout_marginTop="4dp"
-                            android:background="@color/colorAccentDark" />
+                            android:background="@color/silver" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -176,7 +179,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="4dp"
                             android:layout_marginTop="4dp"
-                            android:background="@color/colorAccentDark" />
+                            android:background="@color/silver" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -187,11 +190,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@string/fc_text_mortgageresult"
+                                android:text="@string/fc_text_instalmentresult"
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/fcresult_text_mortgage"
+                                android:id="@+id/fcresult_text_instalment"
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
@@ -214,7 +217,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_yellow"
-        android:text="@string/fc_btn_save"
+        android:text="BACK TO HOME"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 

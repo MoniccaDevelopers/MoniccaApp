@@ -3,11 +3,14 @@ package id.astrajingga.monicca.features.gb;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import id.astrajingga.monicca.R;
+import id.astrajingga.monicca.adapter.ListViewGoalBaseAdapter;
 
 /**
  * Created by Djaffar on 7/15/2017.
@@ -15,16 +18,16 @@ import id.astrajingga.monicca.R;
 
 public class GbMainAlt extends AppCompatActivity {
 
-    // references to our images
+    // LIST VIEW IMAGES
     private int[] images = {
-            R.drawable.gb_btn_car,
-            R.drawable.gb_btn_bike,
-            R.drawable.gb_btn_wedding,
-            R.drawable.gb_btn_trip,
-            R.drawable.gb_btn_gadget
+            R.drawable.ic_car,
+            R.drawable.ic_bike,
+            R.drawable.ic_marriage,
+            R.drawable.ic_trip,
+            R.drawable.ic_gadget
     };
 
-    // references to our text
+    // LIST VIEW TITLES
     private String[] text = {
             "Car",
             "Bike",
@@ -38,13 +41,25 @@ public class GbMainAlt extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gb_main_activity_alt);
 
-        GridView gridView = (GridView) findViewById(R.id.gbmain_gridview);
+        // SET CUSTOM TOOLBAR
+        TextView tvToolbarTitle = (TextView) findViewById(R.id.tv_toolbar_title);
 
-        GridAdapter gridAdapter = new GridAdapter(this, text, images);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        gridView.setAdapter(gridAdapter);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            tvToolbarTitle.setText(R.string.toolbar_goal_base);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView listView = (ListView) findViewById(R.id.gbmain_listview);
+
+        ListViewGoalBaseAdapter listViewGoalBaseAdapter = new ListViewGoalBaseAdapter(this, text, images);
+
+        listView.setAdapter(listViewGoalBaseAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 

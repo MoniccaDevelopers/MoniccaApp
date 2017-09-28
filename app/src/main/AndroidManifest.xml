@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".auth.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,70 +12,195 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- FcMain -->
-        <activity android:name=".Intro"
+        <!-- MAIN -->
+        <activity
+            android:name=".intro.IntroActivity"
             android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".SigninActivity"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".Signin"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Signup"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Main"
+
+        <!-- SIGN IN -->
+        <activity
+            android:name=".SignupActivity"
             android:screenOrientation="portrait" />
 
-        <!-- financial check -->
-        <activity android:name=".features.fc.FcMain"
+        <!-- MAIN -->
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".features.fc.FcStart"
+
+        <!-- FINANCIAL CHECKUP -->
+        <activity
+            android:name=".features.fc.FcMain"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
+
+        <!-- FINANCIAL CHECKUP START -->
+        <activity
+            android:name=".features.fc.FcStartAlt"
+            android:parentActivityName=".features.fc.FcMain"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity android:name=".features.fc.FcResult"
-            android:screenOrientation="portrait" />
-        <activity android:name=".features.fc.FcHistory"
-            android:screenOrientation="portrait" />
+            android:windowSoftInputMode="adjustPan">
 
-        <!-- education plan -->
-        <activity android:name=".features.ep.EpMain"
-            android:screenOrientation="portrait" />
-        <activity android:name=".features.ep.EpStart"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.fc.FcMain" />
+
+        </activity>
+
+        <!-- FINANCIAL CHECKUP RESULT -->
+        <activity
+            android:name=".features.fc.FcResultAlt"
+            android:parentActivityName=".features.fc.FcStartAlt"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.fc.FcStartAlt" />
+
+        </activity>
+
+        <!-- FINANCIAL CHECKUP HISTORY -->
+
+        <!-- EDUCATION PLAN -->
+        <activity
+            android:name=".features.ep.EpMain"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
+
+        <!-- EDUCATION PLAN START -->
+        <activity
+            android:name=".features.ep.EpStart"
+            android:parentActivityName=".features.ep.EpMain"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity android:name=".features.ep.EpCalculate"
+            android:windowSoftInputMode="adjustPan">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.ep.EpMain" />
+
+        </activity>
+
+        <!-- EDUCATION PLAN CALCULATE -->
+        <activity
+            android:name=".features.ep.EpCalculate"
+            android:parentActivityName=".features.ep.EpStart"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity android:name=".features.ep.EpResult"
-            android:screenOrientation="portrait" />
-        <activity android:name=".features.ep.EpHistory"
-            android:screenOrientation="portrait" />
+            android:windowSoftInputMode="adjustPan">
 
-        <!-- goal base -->
-        <activity android:name=".features.gb.GbMainAlt"
-            android:screenOrientation="portrait" />
-        <activity android:name=".features.gb.GbStartAlt"
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.ep.EpStart" />
+
+        </activity>
+
+        <!-- EDUCATION PLAN RESULT -->
+        <activity
+            android:name=".features.ep.EpResult"
+            android:parentActivityName=".features.ep.EpCalculate"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.ep.EpCalculate" />
+
+        </activity>
+
+        <!-- EDUCATION PLAN HISTORY -->
+
+        <!-- GOAL BASE -->
+        <activity
+            android:name=".features.gb.GbMainAlt"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
+
+        <!-- GOAL BASE START -->
+        <activity
+            android:name=".features.gb.GbStartAlt"
+            android:parentActivityName=".features.gb.GbMainAlt"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateVisible|adjustPan"/>
-        <activity android:name=".features.gb.GbResultAlt"
+            android:windowSoftInputMode="adjustPan">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.gb.GbMainAlt" />
+
+        </activity>
+
+        <!-- GOAL BASE RESULT -->
+        <activity
+            android:name=".features.gb.GbResultAlt"
+            android:parentActivityName=".features.gb.GbStartAlt"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".features.gb.GbStartAlt" />
+
+        </activity>
+
+        <!-- GOAL BASE HISTORY -->
+
+        <!-- PERSONAL ADVISOR -->
+        <activity
+            android:name=".features.pa.PaMain"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+        </activity>
+        <activity
+            android:name=".features.pa.PaQuestionOne"
             android:screenOrientation="portrait" />
-        <activity android:name=".features.gb.GbHistoryAlt"
+        <activity
+            android:name=".features.pa.PaQuestionTwo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.pa.PaQuestionThree"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.pa.PaQuestionFour"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.pa.PaQuestionFive"
             android:screenOrientation="portrait" />
 
-        <!-- personal advisor -->
-        <activity android:name=".features.pa.PaMain"
+        <!-- MISC -->
+        <activity
+            android:name=".settings.Settings"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".settings.Settings"
-            android:screenOrientation="portrait" />
-
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <provider android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider"
-            android:exported="true" />
 
     </application>
 

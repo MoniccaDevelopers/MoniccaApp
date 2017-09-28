@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- palette -->
-    <color name="colorPrimary">#424242</color>
-    <color name="colorPrimaryDark">#424242</color>
+    <!-- DEFAULT PALETTE -->
+    <color name="colorPrimary">@color/codGray</color>
+    <color name="colorPrimaryDark">@android:color/black</color>
     <color name="colorAccent">#FEAA0A</color>
-    <color name="colorAccentDark">#BDBDBD</color>
-    <color name="colorAccentLight">@android:color/white</color>
 
+    <!-- BASE PALETTE -->
+    <color name="transparent">@android:color/transparent</color>
+    <color name="black">@android:color/black</color>
+    <color name="white">@android:color/white</color>
 
-    <array name="array_dot_active">
-        <item>@color/colorAccent</item>
-        <item>@color/colorAccent</item>
-        <item>@color/colorAccent</item>
-        <item>@color/colorAccent</item>
-    </array>
-    
-    <array name="array_dot_inactive">
-        <item>@color/colorAccentLight</item>
-        <item>@color/colorAccentLight</item>
-        <item>@color/colorAccentLight</item>
-        <item>@color/colorAccentLight</item>
-    </array>
+    <!-- CUSTOM PALETTE -->
+    <color name="silver">#BDBDBD</color>
+    <color name="tundora">#484848</color>
+    <color name="codGray">#1B1B1B</color>
+
 </resources>
