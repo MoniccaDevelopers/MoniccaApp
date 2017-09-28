@@ -7,6 +7,6 @@
         android:right="8dp"
         android:top="8dp" />
 
-    <solid android:color="@color/colorAccentLight" />
+    <solid android:color="@color/white" />
 
 </shape>

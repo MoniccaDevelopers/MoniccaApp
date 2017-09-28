@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@drawable/design_bg"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/gbmain_img_feature"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/gb_desc_icon"
+            android:tint="@color/codGray" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/tundora" />
+
+    <TextView
+        android:id="@+id/gbmain_text_feature"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:textColor="@color/codGray"
+        android:textSize="20sp" />
+
+</LinearLayout>

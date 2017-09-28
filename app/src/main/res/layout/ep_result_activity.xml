@@ -7,6 +7,8 @@
     android:clickable="true"
     tools:context="id.astrajingga.monicca.features.ep.EpResult">
 
+    <include layout="@layout/main_appbar_container" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -14,11 +16,11 @@
 
         <!-- background photo -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/ep_desc_img"
             android:scaleType="centerCrop"
-            android:src="@drawable/education_plan" />
+            android:src="@drawable/img_cover_education_plan" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +41,7 @@
                     android:text="@string/ep_text_titleresult"
                     android:textAlignment="center"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textColor="@color/colorAccentLight"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
 
             </RelativeLayout>
@@ -126,7 +128,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="4dp"
                             android:layout_marginTop="4dp"
-                            android:background="@color/colorAccentDark" />
+                            android:background="@color/silver" />
 
                         <!-- education level -->
                         <LinearLayout
@@ -157,7 +159,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="4dp"
                             android:layout_marginTop="4dp"
-                            android:background="@color/colorAccentDark" />
+                            android:background="@color/silver" />
 
                         <!-- enroll time -->
                         <LinearLayout
@@ -202,7 +204,7 @@
                         android:layout_marginBottom="4dp"
                         android:text="@string/ep_text_rec"
                         android:textStyle="bold"
-                        android:textColor="@color/colorAccentLight"/>
+                        android:textColor="@color/white"/>
 
                     <!-- entrance fee -->
                     <com.ms.square.android.expandabletextview.ExpandableTextView
@@ -245,8 +247,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_rs_yellow"
-        android:text="@string/ep_btn_save"
-        android:textColor="@color/colorAccentLight"
+        android:text="BACK TO HOME"
+        android:textColor="@color/white"
         android:textStyle="bold"/>
 
 </LinearLayout>

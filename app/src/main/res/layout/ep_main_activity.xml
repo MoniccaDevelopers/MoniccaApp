@@ -6,6 +6,8 @@
     android:orientation="vertical"
     tools:context="id.astrajingga.monicca.features.ep.EpMain">
 
+    <include layout="@layout/main_appbar_container" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -15,10 +17,10 @@
         <!-- background photo -->
         <ImageView
             android:contentDescription="@string/ep_desc_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/education_plan" />
+            android:src="@drawable/img_cover_education_plan" />
 
         <!-- title -->
         <TextView android:id="@+id/ep_text_logo"
@@ -43,7 +45,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:background="@color/colorAccentLight" />
+            android:background="@color/white" />
 
         <!-- desc -->
         <TextView
@@ -51,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@id/line"
             android:layout_marginEnd="32dp"
-            android:textColor="@color/colorAccentLight"
+            android:textColor="@color/white"
             android:layout_below="@id/line"
             android:text="@string/ep_text_desc" />
 
@@ -63,7 +65,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_yellow"
         android:text="@string/ep_btn_start"
-        android:textColor="@color/colorAccentLight"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
 </LinearLayout>
