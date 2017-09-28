@@ -2,9 +2,8 @@ package id.astrajingga.monicca.features.ep;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,13 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import id.astrajingga.monicca.R;
-import id.astrajingga.monicca.features.fc.FcHistory;
-import id.astrajingga.monicca.features.fc.FcResult;
-
-import static java.security.AccessController.getContext;
 
 /**
  * Created by Djaffar on 7/15/2017.
@@ -45,6 +41,18 @@ public class EpStart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ep_start_activity);
+
+        // SET CUSTOM TOOLBAR
+        TextView tvToolbarTitle = (TextView) findViewById(R.id.tv_toolbar_title);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            tvToolbarTitle.setText(R.string.toolbar_education_plan);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         epstartEdittextApplicantname = (EditText) findViewById(R.id.epstart_edittext_applicantname);
         epstartEdittextApplicantage = (EditText) findViewById(R.id.epstart_edittext_applicantage);

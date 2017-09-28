@@ -3,38 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
     android:orientation="vertical"
     tools:context="id.astrajingga.monicca.features.ep.EpStart">
+
+    <include layout="@layout/main_appbar_container" />
 
     <!-- logo -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:clickable="true">
+        android:layout_weight="2">
 
         <!-- background photo -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/ep_desc_img"
             android:scaleType="centerCrop"
-            android:src="@drawable/education_plan" />
+            android:src="@drawable/img_cover_education_plan" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clickable="true"
             android:orientation="vertical">
 
             <!-- title -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusableInTouchMode="true">
+                android:layout_weight="1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -45,7 +42,7 @@
                     android:text="@string/ep_text_header"
                     android:textAlignment="center"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textColor="@color/colorAccentLight"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -68,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:text="@string/ep_text_appinfo"
-                        android:textColor="@color/colorAccentLight"
+                        android:textColor="@color/white"
                         android:textStyle="bold"/>
 
                     <LinearLayout
@@ -86,15 +83,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:textColorHint="@color/colorAccentDark">
+                            android:textColorHint="@color/silver">
 
                             <EditText android:id="@+id/epstart_edittext_applicantname"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ep_hint_appname"
                                 android:imeOptions="actionNext"
+
                                 android:inputType="text|textNoSuggestions"
-                                android:privateImeOptions="nm"
                                 android:maxLines="1" />
 
                         </android.support.design.widget.TextInputLayout>
@@ -104,7 +101,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:textColorHint="@color/colorAccentDark">
+                            android:textColorHint="@color/silver">
 
                             <EditText android:id="@+id/epstart_edittext_applicantage"
                                 android:layout_width="match_parent"
@@ -126,14 +123,14 @@
                             android:layout_marginEnd="4dp"
                             android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
-                            android:background="@color/colorAccentDark" />
+                            android:background="@color/silver" />
 
                         <!-- institution name field -->
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:textColorHint="@color/colorAccentDark">
+                            android:textColorHint="@color/silver">
 
                             <EditText
                                 android:id="@+id/epstart_edittext_institutionname"
@@ -142,7 +139,6 @@
                                 android:hint="@string/ep_hint_insname"
                                 android:imeOptions="actionDone"
                                 android:inputType="text|textNoSuggestions"
-                                android:privateImeOptions="nm"
                                 android:maxLines="1" />
 
                         </android.support.design.widget.TextInputLayout>
@@ -187,7 +183,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_yellow"
         android:text="@string/ep_btn_next"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
 </LinearLayout>

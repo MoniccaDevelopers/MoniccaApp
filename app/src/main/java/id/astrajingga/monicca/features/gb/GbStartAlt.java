@@ -3,6 +3,7 @@ package id.astrajingga.monicca.features.gb;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -44,6 +45,18 @@ public class GbStartAlt extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gb_start_activity_alt);
 
+        // SET CUSTOM TOOLBAR
+        TextView tvToolbarTitle = (TextView) findViewById(R.id.tv_toolbar_title);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            tvToolbarTitle.setText(R.string.toolbar_goal_base);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         Intent intent = getIntent();
         object = intent.getStringExtra("object");
 
@@ -54,27 +67,27 @@ public class GbStartAlt extends AppCompatActivity {
         // state the object price rate
         TextView gbstartTextRate = (TextView) findViewById(R.id.gbstart_text_rate);
         TextView gbstartTextRatetitle = (TextView) findViewById(R.id.gbstart_text_ratetitle);
-        switch (object) {
-            case "Car":
-                gbstartTextRatetitle.setText(R.string.gb_text_car_rate);
-                gbstartTextRate.setText(R.string.gb_text_car);
-                break;
-            case "Bike":
-                gbstartTextRatetitle.setText(R.string.gb_text_bike_rate);
-                gbstartTextRate.setText(R.string.gb_text_bike);
-                break;
-            case "Wedding":
-                gbstartTextRatetitle.setText(R.string.gb_text_wedding_rate);
-                gbstartTextRate.setText(R.string.gb_text_wedding);
-                break;
-            case "Trip":
-                gbstartTextRatetitle.setText(R.string.gb_text_trip_rate);
-                gbstartTextRate.setText(R.string.gb_text_trip);
-                break;
-            default:
-                gbstartTextRatetitle.setText(R.string.gb_text_gadget_rate);
-                gbstartTextRate.setText(R.string.gb_text_gadget);
-                break;
+
+        if (object.equals("Car")) {
+            gbstartTextRatetitle.setText(R.string.gb_text_car_rate);
+            gbstartTextRate.setText(R.string.gb_text_car);
+
+        } else if (object.equals("Bike")) {
+            gbstartTextRatetitle.setText(R.string.gb_text_bike_rate);
+            gbstartTextRate.setText(R.string.gb_text_bike);
+
+        } else if (object.equals("Wedding")) {
+            gbstartTextRatetitle.setText(R.string.gb_text_wedding_rate);
+            gbstartTextRate.setText(R.string.gb_text_wedding);
+
+        } else if (object.equals("Trip")) {
+            gbstartTextRatetitle.setText(R.string.gb_text_trip_rate);
+            gbstartTextRate.setText(R.string.gb_text_trip);
+
+        } else {
+            gbstartTextRatetitle.setText(R.string.gb_text_gadget_rate);
+            gbstartTextRate.setText(R.string.gb_text_gadget);
+
         }
 
         objectName = (EditText) findViewById(R.id.gbstart_edittext_objectname);
@@ -113,48 +126,47 @@ public class GbStartAlt extends AppCompatActivity {
                     return;
                 }
 
-                FormulaMonth formulaMonth = new FormulaMonth();
-                FormulaYear formulaYear = new FormulaYear();
+                GbFormulaMonth gbFormulaMonth = new GbFormulaMonth();
+                GbFormulaYear gbFormulaYear = new GbFormulaYear();
                 price = Double.valueOf(priceString);
                 deadline = Double.valueOf(deadlineString);
                 time = objectTime.getSelectedItem().toString();
 
-                switch (object) {
-                    case "Car":
-                        if (time.equals("Month")) {
-                            result = formulaMonth.Car(price, deadline);
-                        } else {
-                            result = formulaYear.Car(price, deadline);
-                        }
-                        break;
-                    case "Bike":
-                        if (time.equals("Month")) {
-                            result = formulaMonth.Bike(price, deadline);
-                        } else {
-                            result = formulaYear.Bike(price, deadline);
-                        }
-                        break;
-                    case "Wedding":
-                        if (time.equals("Month")) {
-                            result = formulaMonth.Wedding(price, deadline);
-                        } else {
-                            result = formulaYear.Wedding(price, deadline);
-                        }
-                        break;
-                    case "Trip":
-                        if (time.equals("Month")) {
-                            result = formulaMonth.Trip(price, deadline);
-                        } else {
-                            result = formulaYear.Trip(price, deadline);
-                        }
-                        break;
-                    default:
-                        if (time.equals("Month")) {
-                            result = formulaMonth.Gadget(price, deadline);
-                        } else {
-                            result = formulaYear.Gadget(price, deadline);
-                        }
-                        break;
+                if (object.equals("Car")) {
+                    if (time.equals("Month")) {
+                        result = gbFormulaMonth.Car(price, deadline);
+                    } else {
+                        result = gbFormulaYear.Car(price, deadline);
+                    }
+
+                } else if (object.equals("Bike")) {
+                    if (time.equals("Month")) {
+                        result = gbFormulaMonth.Bike(price, deadline);
+                    } else {
+                        result = gbFormulaYear.Bike(price, deadline);
+                    }
+
+                } else if (object.equals("Wedding")) {
+                    if (time.equals("Month")) {
+                        result = gbFormulaMonth.Wedding(price, deadline);
+                    } else {
+                        result = gbFormulaYear.Wedding(price, deadline);
+                    }
+
+                } else if (object.equals("Trip")) {
+                    if (time.equals("Month")) {
+                        result = gbFormulaMonth.Trip(price, deadline);
+                    } else {
+                        result = gbFormulaYear.Trip(price, deadline);
+                    }
+
+                } else {
+                    if (time.equals("Month")) {
+                        result = gbFormulaMonth.Gadget(price, deadline);
+                    } else {
+                        result = gbFormulaYear.Gadget(price, deadline);
+                    }
+
                 }
 
                 Bundle bundle = new Bundle();
@@ -173,7 +185,7 @@ public class GbStartAlt extends AppCompatActivity {
         });
     }
 
-    // objectprice EditText TextWatcher
+    // price EditText TextWatcher
     private TextWatcher TextwatcherObjectprice() {
         return new TextWatcher() {
             @Override

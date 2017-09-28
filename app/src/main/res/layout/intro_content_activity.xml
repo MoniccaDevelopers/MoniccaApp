@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="id.astrajingga.monicca.Intro">
+    tools:context="id.astrajingga.monicca.intro.IntroActivity">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/intro_viewpager"

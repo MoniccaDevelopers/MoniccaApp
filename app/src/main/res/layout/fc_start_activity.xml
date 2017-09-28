@@ -1,40 +1,35 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
     android:orientation="vertical"
-    tools:context="id.astrajingga.monicca.features.fc.FcStart">
+    tools:context="id.astrajingga.monicca.features.fc.FcStartAlt">
+
+    <include layout="@layout/main_appbar_container" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clickable="true">
+        android:layout_weight="1">
 
         <!-- background photo -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:contentDescription="@string/fc_desc_img"
             android:scaleType="centerCrop"
-            android:src="@drawable/financial_checkup" />
+            android:src="@drawable/img_cover_financial_checkup" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clickable="true"
             android:orientation="vertical">
 
             <!-- title -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusableInTouchMode="true">
+                android:layout_weight="1">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -45,7 +40,7 @@
                     android:text="@string/fc_text_header"
                     android:textAlignment="center"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textColor="@color/colorAccentLight"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
             </RelativeLayout>
@@ -55,7 +50,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="5"
-                android:clickable="true"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
                 android:paddingLeft="40dp"
@@ -67,15 +61,14 @@
                     android:layout_marginBottom="4dp"
                     android:text="@string/fc_text_accinfo"
                     android:textAllCaps="true"
-                    android:textColor="@color/colorAccentLight"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
                     android:background="@drawable/field_bg_white"
-                    android:clickable="true"
                     android:orientation="vertical"
                     android:paddingBottom="14dp"
                     android:paddingLeft="16dp"
@@ -87,24 +80,22 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- balance field -->
+                        <!-- BALANCE FIELD -->
                         <android.support.design.widget.TextInputLayout
                             android:id="@+id/fcstart_textlayout_balance"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
-                            android:textColorHint="@color/colorAccentDark"
-                            app:passwordToggleEnabled="true"
-                            app:passwordToggleTint="@color/colorAccentDark">
+                            android:textColorHint="@color/silver">
 
                             <EditText
                                 android:id="@+id/fcstart_edittext_balance"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:drawableEnd="@drawable/signin_visibilityoff"
                                 android:hint="@string/fc_hint_balance"
+                                android:drawableRight="@drawable/ic_idr"
                                 android:imeOptions="actionNext"
-                                android:inputType="numberPassword"
+                                android:inputType="number|phone"
                                 android:maxLength="17"
                                 android:maxLines="1" />
 
@@ -112,70 +103,62 @@
 
                     </LinearLayout>
 
-
-
-                    <!-- income field -->
+                    <!-- INCOME FIELD -->
                     <android.support.design.widget.TextInputLayout
                         android:id="@+id/fcstart_textlayout_income"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
-                        android:textColorHint="@color/colorAccentDark"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/colorAccentDark">
+                        android:textColorHint="@color/silver">
 
                         <EditText
                             android:id="@+id/fcstart_edittext_income"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/signin_visibilityoff"
                             android:hint="@string/fc_hint_income"
                             android:imeOptions="actionNext"
-                            android:inputType="numberPassword"
+                            android:drawableRight="@drawable/ic_idr"
+                            android:inputType="number|phone"
                             android:maxLength="17"
                             android:maxLines="1" />
 
                     </android.support.design.widget.TextInputLayout>
 
-                    <!-- savings field -->
+                    <!-- SAVINGS FIELD -->
                     <android.support.design.widget.TextInputLayout
                         android:id="@+id/fcstart_textlayout_savings"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorAccentDark"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/colorAccentDark">
+                        android:textColorHint="@color/silver">
 
                         <EditText
                             android:id="@+id/fcstart_edittext_savings"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/signin_visibilityoff"
                             android:hint="@string/fc_hint_savings"
                             android:imeOptions="actionNext"
-                            android:inputType="numberPassword"
+                            android:drawableRight="@drawable/ic_idr"
+                            android:inputType="number|phone"
                             android:maxLength="17"
                             android:maxLines="1" />
 
                     </android.support.design.widget.TextInputLayout>
 
-                    <!-- mortgage field -->
+                    <!-- INSTALMENT FIELD -->
                     <android.support.design.widget.TextInputLayout
-                        android:id="@+id/fcstart_textlayout_mortgage"
+                        android:id="@+id/fcstart_textlayout_instalment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColorHint="@color/colorAccentDark"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/colorAccentDark">
+                        android:textColorHint="@color/silver">
 
                         <EditText
-                            android:id="@+id/fcstart_edittext_mortgage"
+                            android:id="@+id/fcstart_edittext_instalment"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/signin_visibilityoff"
-                            android:hint="@string/fc_hint_mortgage"
+                            android:hint="@string/fc_hint_instalment"
                             android:imeOptions="actionDone"
-                            android:inputType="numberPassword"
+                            android:drawableRight="@drawable/ic_idr"
+                            android:inputType="number|phone"
                             android:maxLength="17"
                             android:maxLines="1" />
 
@@ -189,14 +172,14 @@
 
     </RelativeLayout>
 
-    <!-- button -->
+    <!-- BUTTON -->
     <Button
         android:id="@+id/fcstart_button_calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg_yellow"
         android:text="@string/fc_btn_afa"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
 </LinearLayout>

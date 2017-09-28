@@ -3,6 +3,8 @@ package id.astrajingga.monicca.features.gb;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import com.ms.square.android.expandabletextview.ExpandableTextView;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
+import id.astrajingga.monicca.MainActivity;
 import id.astrajingga.monicca.R;
 
 /**
@@ -39,6 +42,18 @@ public class GbResultAlt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gb_result_activity_alt);
+
+        // SET CUSTOM TOOLBAR
+        TextView tvToolbarTitle = (TextView) findViewById(R.id.tv_toolbar_title);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            tvToolbarTitle.setText(R.string.toolbar_goal_base);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         Bundle bundle = getIntent().getExtras();
 
@@ -102,19 +117,33 @@ public class GbResultAlt extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // declare a bundle and fill it with variables
-                Bundle bundle = new Bundle();
-                bundle.putString("object", object);
-                bundle.putString("name", name);
-                bundle.putString("deadline", deadlineString);
-                bundle.putString("time", time);
-                bundle.putDouble("price", price);
-                bundle.putDoubleArray("result", result);
-
-                Intent intent = new Intent(GbResultAlt.this, GbHistoryAlt.class);
-                intent.putExtras(bundle);
+                Intent intent =  new Intent(GbResultAlt.this, MainActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
+
+    }
+
+    // SET THIS TO BUGFIX RETURN FROM GOAL BASE RESULT ERROR
+    // HANDLE CUSTOM TOOLBAR BACK BUTTON
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        onBackPressed();
+        return true;
+
+    }
+
+    // SET THIS TO BUGFIX RETURN FROM GOAL BASE RESULT ERROR
+    // HANDLE SYSTEM BACK BUTTON
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(GbResultAlt.this, GbStartAlt.class);
+        intent.putExtra("object", object);
+        startActivity(intent);
+
     }
 }
